@@ -1,7 +1,8 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
-#include "World.h"
-#include "../TestEntity.h"
+#include "apMoon/World.h"
+#include "TestEntity.h"
+#include "TestComponent.h"
 
 int main() {
     sf::RenderWindow renderWindow(sf::VideoMode(600, 600), "SFML not works!");
@@ -11,6 +12,7 @@ int main() {
     testEntity->name = "Test";
 
     World::get_instance()->push_entity(testEntity);
+    testEntity->add_component(new TestComponent);
 
     while (renderWindow.isOpen())
     {

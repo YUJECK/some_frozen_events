@@ -1,0 +1,10 @@
+# ninja log v5
+1	892	1701892538372079823	CMakeFiles/some_frozen_events.dir/apMoon/World.cpp.o	aee9a9aa3030dcd3
+1	870	1701892538348746499	CMakeFiles/some_frozen_events.dir/apMoon/Renderer/WorldSprite.cpp.o	eac5fcfe4190b76
+0	24	1701892732785305151	build.ninja	4d3598b04bc50ca1
+1	19	1701892537498746832	CMakeFiles/some_frozen_events.dir/apMoon/Renderer/RendererManager.cpp.o	f888933c3a9cc2d7
+0	19	1701892537498746832	CMakeFiles/some_frozen_events.dir/apMoon/Component.cpp.o	2e8db841b263de76
+0	967	1701892538445413127	CMakeFiles/some_frozen_events.dir/main.cpp.o	a303936863cc6aa6
+0	686	1701892538165413237	CMakeFiles/some_frozen_events.dir/apMoon/Entity.cpp.o	f78b44b4a4daf37
+0	705	1701892538182079898	CMakeFiles/some_frozen_events.dir/TestEntity.cpp.o	99e6ae2641db8c2e
+1	693	1701892538172079901	CMakeFiles/some_frozen_events.dir/TestComponent.cpp.o	fc440deacbfbbee6

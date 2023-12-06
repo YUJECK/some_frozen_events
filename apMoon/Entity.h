@@ -6,6 +6,7 @@
 #include<iostream>
 #include<map>
 #include<vector>
+#include<typeinfo>
 #include "Component.h"
 
 #define FREEZINGNOSE_ENTITY_H
@@ -15,7 +16,7 @@ public:
     std::string name;
 
 private:
-    std::vector<Component*> components;
+    std::map<const std::type_info, Component*> components;
 
 public:
     virtual void start_entity() = 0;
@@ -23,7 +24,9 @@ public:
     virtual void destroy_entity() = 0;
 
     void add_component(Component* component);
-    void remove_component(Component* component);
+
+    void remove_component(const std::type_info componentType);
+
     void update_all_components(Component* component);
 };
 
