@@ -21,6 +21,7 @@ public:
     virtual void start_entity() = 0;
     virtual void update_entity() = 0;
     virtual void destroy_entity() = 0;
+
     void add_component(Component* component);
     void remove_component(Component* component);
     void update_all_components(Component* component);

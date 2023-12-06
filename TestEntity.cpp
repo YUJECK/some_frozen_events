@@ -8,7 +8,6 @@
 
 void TestEntity::start_entity()
 {
-    std::cout << "DA";
 }
 
 void TestEntity::destroy_entity() {

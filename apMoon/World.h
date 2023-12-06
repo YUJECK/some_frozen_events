@@ -4,9 +4,12 @@
 class World
 {
 private:
+    static World* instance;
     std::vector<Entity*> entities;
+    World() {}
+    World& operator=(World);
 
 public:
-    World();
+    static World* get_instance();
     void push_entity(Entity* entity);
 };
