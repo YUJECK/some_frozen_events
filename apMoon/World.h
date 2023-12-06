@@ -4,7 +4,7 @@
 class World
 {
 private:
-    std::vector<Entity*> test;
+    std::vector<Entity*> entities;
 
 public:
     World();

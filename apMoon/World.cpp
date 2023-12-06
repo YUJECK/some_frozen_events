@@ -6,8 +6,9 @@
 //
 
 void World::push_entity(Entity *entity) {
-    test.push_back(entity);
-    std::cout << test[0]->name;
+    entities.push_back(entity);
+    entity->start_entity();
+    std::cout << entity->name;
 }
 
 World::World() {
