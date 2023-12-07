@@ -12,7 +12,10 @@ int main() {
     testEntity->name = "Test";
 
     World::get_instance()->push_entity(testEntity);
+
     testEntity->add_component(new TestComponent);
+
+    testEntity->get_component(typeid(TestComponent).name())->start_component();
 
     while (renderWindow.isOpen())
     {

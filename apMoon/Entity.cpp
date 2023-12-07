@@ -6,22 +6,26 @@
 #include "../TestComponent.h"
 #include<typeinfo>
 
-void Entity::add_component(Component* component) {
-    const std::type_info& typeInfo = typeid(component);
-    components.insert(typeInfo, component);
+void Entity::add_component(Component* component)
+{
+    components[typeid(component).name()] = component;
     component->start_component();
-
-    TestComponent cp;
-    components.insert(typeid(component), cp);
 }
 
-void Entity::remove_component(const std::type_info componentType)
+void Entity::remove_component(std::type_info componentType)
 {
-    Component *component = components[typeid(componentType)];
-    components.erase(typeid(componentType));
+    Component *component = components[componentType.name()];
+    components.erase(componentType.name());
+
     delete component;
 }
 
-void Entity::update_all_components(Component* component) {
+void Entity::update_all_components()
+{
+    auto iterator = components.begin();
 
+    for (; iterator != components.end(); iterator++)
+    {
+        (*iterator).second->update_component();
+    }
 }

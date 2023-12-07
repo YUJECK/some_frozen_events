@@ -5,6 +5,8 @@
 #ifndef FREEZINGNOSE_COMPONENT_H
 #define FREEZINGNOSE_COMPONENT_H
 
+#include <iostream>
+
 class Component
 {
 public:

@@ -8,7 +8,8 @@
 
 #include "apMoon/Component.h"
 
-class TestComponent : public Component{
+class TestComponent : public Component
+{
     void destroy_component() override;
     void start_component() override;
     void update_component() override;

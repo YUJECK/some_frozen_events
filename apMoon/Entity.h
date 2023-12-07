@@ -16,18 +16,23 @@ public:
     std::string name;
 
 private:
-    std::map<const std::type_info, Component*> components;
+    std::map<std::string, Component*> components;
 
 public:
     virtual void start_entity() = 0;
     virtual void update_entity() = 0;
     virtual void destroy_entity() = 0;
 
+    Component* get_component(std::string name)
+    {
+        return components[name];
+    }
+
     void add_component(Component* component);
 
-    void remove_component(const std::type_info componentType);
+    void remove_component(std::type_info componentName);
 
-    void update_all_components(Component* component);
+    void update_all_components();
 };
 
 

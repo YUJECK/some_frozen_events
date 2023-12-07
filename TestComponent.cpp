@@ -9,9 +9,9 @@ void TestComponent::update_component() {
 
 }
 
-void TestComponent::start_component() {
-
-    std::cout << "Start";
+void TestComponent::start_component()
+{
+    std::cout << "Start" << std::endl;
 }
 
 void TestComponent::destroy_component() {
