@@ -8,16 +8,8 @@
 
 void Entity::add_component(Component* component)
 {
-    components[typeid(component).name()] = component;
+    components.emplace(&typeid(component), component);
     component->start_component();
-}
-
-void Entity::remove_component(std::type_info componentType)
-{
-    Component *component = components[componentType.name()];
-    components.erase(componentType.name());
-
-    delete component;
 }
 
 void Entity::update_all_components()

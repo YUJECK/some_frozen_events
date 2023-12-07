@@ -10,9 +10,10 @@
 
 class TestComponent : public Component
 {
-    void destroy_component() override;
+public:
     void start_component() override;
     void update_component() override;
+    void destroy_component() override;
 };
 
 

@@ -1,5 +1,7 @@
 #include "iostream"
 #include "World.h"
+#include "Renderer/RendererManager.h"
+#include "Renderer/SpriteRenderer.h"
 
 //
 // Created by destructive_crab on 12/4/23.
@@ -23,6 +25,13 @@ void World::push_entity(Entity *entity) {
 
     entities.push_back(entity);
     entity->start_entity();
+
+    SpriteRenderer* component;
+
+    if(entity->has_component(component))
+        RendererManager::get_instance()->push(component->get_drawable());
+
+    delete component;
 }
 
 void World::delete_entity(Entity *entity) {

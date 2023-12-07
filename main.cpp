@@ -4,18 +4,17 @@
 #include "TestEntity.h"
 #include "TestComponent.h"
 
-int main() {
+int main()
+{
     sf::RenderWindow renderWindow(sf::VideoMode(600, 600), "SFML not works!");
 
     TestEntity* testEntity = new TestEntity;
 
-    testEntity->name = "Test";
+    testEntity->name = "test";
 
     World::get_instance()->push_entity(testEntity);
 
     testEntity->add_component(new TestComponent);
-
-    testEntity->get_component(typeid(TestComponent).name())->start_component();
 
     while (renderWindow.isOpen())
     {

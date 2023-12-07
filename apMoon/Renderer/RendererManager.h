@@ -6,9 +6,27 @@
 #define FREEZINGNOSE_RENDERERMANAGER_H
 
 
-class RendererManager {
-public:
+#include "Renderer.h"
+#include<SFML/Graphics.hpp>
 
+class RendererManager
+{
+public:
+    static RendererManager* get_instance();
+
+    void tick();
+
+    void push(sf::Drawable* drawable);
+    void erase(sf::Drawable* drawable);
+
+private:
+    static RendererManager* instance;
+    Renderer* renderer;
+
+    std::vector<sf::Drawable*> drawables;
+
+    RendererManager(){ }
+    RendererManager& operator=(RendererManager);
 };
 
 

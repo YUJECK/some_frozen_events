@@ -6,11 +6,12 @@
 #define FREEZINGNOSE_WORLDSPRITE_H
 
 #include <SFML/Graphics.hpp>
+#include "../Component.h"
 
-class WorldSprite {
+class SpriteRenderer : public Component {
 
 public:
-    virtual sf::Drawable get_drawable() = 0;
+    virtual sf::Drawable* get_drawable() = 0;
 
 };
 
