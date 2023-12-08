@@ -14,11 +14,15 @@ add_executable(some_frozen_events main.cpp
         TestEntity.h
         apMoon/Renderer/RendererManager.cpp
         apMoon/Renderer/RendererManager.h
-        apMoon/Renderer/SpriteRenderer.cpp
-        apMoon/Renderer/SpriteRenderer.h
+        apMoon/Renderer/IRendererComponent.cpp
+        apMoon/Renderer/IRendererComponent.h
         TestComponent.cpp
         TestComponent.h
-        apMoon/Renderer/Renderer.h
+        apMoon/Renderer/RendererMethod.h
+        apMoon/Renderer/SpriteRenderer.cpp
+        apMoon/Renderer/SpriteRenderer.h
+        apMoon/Renderer/BaseRenderer.cpp
+        apMoon/Renderer/BaseRenderer.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

@@ -8,16 +8,13 @@
 
 void Entity::add_component(Component* component)
 {
-    components.emplace(&typeid(component), component);
+    components.push_back(component);
     component->start_component();
 }
 
 void Entity::update_all_components()
 {
-    auto iterator = components.begin();
-
-    for (; iterator != components.end(); iterator++)
-    {
-        (*iterator).second->update_component();
+    for (int i = 0; i < components.size(); ++i) {
+        components[i]->update_component();
     }
 }

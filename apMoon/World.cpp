@@ -1,7 +1,7 @@
 #include "iostream"
 #include "World.h"
 #include "Renderer/RendererManager.h"
-#include "Renderer/SpriteRenderer.h"
+#include "Renderer/IRendererComponent.h"
 
 //
 // Created by destructive_crab on 12/4/23.
@@ -26,12 +26,13 @@ void World::push_entity(Entity *entity) {
     entities.push_back(entity);
     entity->start_entity();
 
-    SpriteRenderer* component;
+    IRendererComponent* component = nullptr;
 
     if(entity->has_component(component))
         RendererManager::get_instance()->push(component->get_drawable());
 
-    delete component;
+    if(component != nullptr)
+        delete component;
 }
 
 void World::delete_entity(Entity *entity) {
@@ -41,4 +42,45 @@ void World::delete_entity(Entity *entity) {
     entity->destroy_entity();
     entities.erase(std::remove(entities.begin(), entities.end(), entity));
     delete entity;
+}
+
+void World::start_world()
+{
+    while (renderWindow->isOpen())
+    {
+        renderWindow->clear();
+
+        sf::Event event;
+        while (renderWindow->pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed) {
+                renderWindow->close();
+            }
+        }
+
+        for (int i = 0; i < entities.size(); ++i) {
+            entities[i]->update_entity();
+            entities[i]->update_all_components();
+        }
+
+        RendererManager::get_instance()->tick();
+
+        renderWindow->display();
+    }
+}
+
+World::World()
+{
+    renderWindow = new sf::RenderWindow(sf::VideoMode(600, 600), "SFML not works!");
+}
+
+sf::RenderWindow* World::get_window() {
+    return renderWindow;
+}
+
+World::~World() {
+    for (int i = 0; i < entities.size(); ++i) {
+        delete entities[i];
+    }
+    delete instance;
 }

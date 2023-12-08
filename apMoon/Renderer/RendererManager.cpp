@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include "RendererManager.h"
+#include "BaseRenderer.h"
+#include "../World.h"
 
 RendererManager* RendererManager::instance = 0;
 
@@ -16,8 +18,6 @@ RendererManager* RendererManager::get_instance() {
 
 void RendererManager::push(sf::Drawable *drawable) {
     drawables.push_back(drawable);
-
-    std::cout << "OHUET" << std::endl;
 }
 
 void RendererManager::erase(sf::Drawable *drawable) {
@@ -26,12 +26,22 @@ void RendererManager::erase(sf::Drawable *drawable) {
 }
 
 void RendererManager::tick() {
-    for (int i = 0; i < drawables.size(); ++i)
+    for (int i = 0; i < drawables.size(); i++)
     {
-        renderer->Draw(drawables[i]);
+        renderer->Draw(drawables[i], renderWindow);
     }
 }
 
 RendererManager &RendererManager::operator=(RendererManager) {
     return *this;
+}
+
+RendererManager::RendererManager() {
+    renderer = new BaseRenderer;
+    renderWindow = World::get_instance()->get_window();
+}
+
+RendererManager::~RendererManager() {
+    delete renderer;
+    delete instance;
 }
