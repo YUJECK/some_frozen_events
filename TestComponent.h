@@ -2,9 +2,8 @@
 // Created by destructive_crab on 12/6/23.
 //
 
-#ifndef FREEZINGNOSE_TESTCOMPONENT_H
-#define FREEZINGNOSE_TESTCOMPONENT_H
-
+#ifndef SOME_FROZEN_EVENTS_TESTCOMPONENT_H
+#define SOME_FROZEN_EVENTS_TESTCOMPONENT_H
 
 #include "apMoon/Component.h"
 
@@ -17,4 +16,4 @@ public:
 };
 
 
-#endif //FREEZINGNOSE_TESTCOMPONENT_H
+#endif //SOME_FROZEN_EVENTS_TESTCOMPONENT_H

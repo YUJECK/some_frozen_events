@@ -5,9 +5,10 @@
 
 int main()
 {
-    TestEntity* testEntity = new TestEntity;
+    TestEntity *testEntity = new TestEntity;
 
     testEntity->name = "test";
+    //testEntity->set_position(300, 300);
 
     World::get_instance()->push_entity(testEntity);
 

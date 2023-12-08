@@ -1,3 +1,6 @@
+#ifndef SOME_FROZEN_EVENTS_WORLD_H
+#define SOME_FROZEN_EVENTS_WORLD_H
+
 #include <vector>
 #include <algorithm>
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -13,10 +16,13 @@ public:
     void start_world();
 
 private:
-    static World* instance;
     sf::RenderWindow* renderWindow;
     std::vector<Entity*> entities;
+
+    static World* instance;
     World();
     ~World();
     World& operator=(World);
 };
+
+#endif //SOME_FROZEN_EVENTS_WORLD_H

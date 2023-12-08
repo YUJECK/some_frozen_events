@@ -16,5 +16,5 @@ void TestComponent::update_component()
 
 void TestComponent::destroy_component()
 {
-    std::cout << "Destroy";
+    std::cout << "Destroy" << std::endl;
 }

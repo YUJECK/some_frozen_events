@@ -2,8 +2,8 @@
 // Created by destructive_crab on 12/6/23.
 //
 
-#ifndef FREEZINGNOSE_WORLDSPRITE_H
-#define FREEZINGNOSE_WORLDSPRITE_H
+#ifndef SOME_FROZEN_EVENTS_WORLDSPRITE_H
+#define SOME_FROZEN_EVENTS_WORLDSPRITE_H
 
 #include <SFML/Graphics.hpp>
 #include "../Component.h"
@@ -19,4 +19,4 @@ public:
 };
 
 
-#endif //FREEZINGNOSE_WORLDSPRITE_H
+#endif //SOME_FROZEN_EVENTS_WORLDSPRITE_H

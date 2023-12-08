@@ -5,7 +5,6 @@
 #ifndef SOME_FROZEN_EVENTS_BASERENDERER_H
 #define SOME_FROZEN_EVENTS_BASERENDERER_H
 
-
 #include "RendererMethod.h"
 
 class BaseRenderer : public RendererMethod

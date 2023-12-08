@@ -109,6 +109,12 @@ build CMakeFiles/some_frozen_events.dir/apMoon/Renderer/BaseRenderer.cpp.o: CXX_
   OBJECT_DIR = CMakeFiles/some_frozen_events.dir
   OBJECT_FILE_DIR = CMakeFiles/some_frozen_events.dir/apMoon/Renderer
 
+build CMakeFiles/some_frozen_events.dir/apMoon/Transform.cpp.o: CXX_COMPILER__some_frozen_events_unscanned_Debug /home/destructive_crab/CLionProjects/some_frozen_events/apMoon/Transform.cpp || cmake_object_order_depends_target_some_frozen_events
+  DEP_FILE = CMakeFiles/some_frozen_events.dir/apMoon/Transform.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/some_frozen_events.dir
+  OBJECT_FILE_DIR = CMakeFiles/some_frozen_events.dir/apMoon
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target some_frozen_events
@@ -117,7 +123,7 @@ build CMakeFiles/some_frozen_events.dir/apMoon/Renderer/BaseRenderer.cpp.o: CXX_
 #############################################
 # Link the executable some_frozen_events
 
-build some_frozen_events: CXX_EXECUTABLE_LINKER__some_frozen_events_Debug CMakeFiles/some_frozen_events.dir/main.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/World.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Entity.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Component.cpp.o CMakeFiles/some_frozen_events.dir/TestEntity.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/RendererManager.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/IRendererComponent.cpp.o CMakeFiles/some_frozen_events.dir/TestComponent.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/SpriteRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/BaseRenderer.cpp.o
+build some_frozen_events: CXX_EXECUTABLE_LINKER__some_frozen_events_Debug CMakeFiles/some_frozen_events.dir/main.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/World.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Entity.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Component.cpp.o CMakeFiles/some_frozen_events.dir/TestEntity.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/RendererManager.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/IRendererComponent.cpp.o CMakeFiles/some_frozen_events.dir/TestComponent.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/SpriteRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/BaseRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Transform.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lsfml-graphics  -lsfml-system  -lsfml-window
   OBJECT_DIR = CMakeFiles/some_frozen_events.dir

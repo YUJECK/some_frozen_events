@@ -14,6 +14,7 @@ public:
     ~SpriteRenderer();
 
     sf::Drawable * get_drawable() override;
+    void update_component() override;
 
 private:
     sf::Sprite* sprite;

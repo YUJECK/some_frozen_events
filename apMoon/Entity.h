@@ -2,14 +2,17 @@
 // Created by destructive_crab on 12/6/23.
 //
 
-#ifndef FREEZINGNOSE_ENTITY_H
-#include<iostream>
+#ifndef SOME_FROZEN_EVENTS_ENTITY_H
+#define SOME_FROZEN_EVENTS_ENTITY_H
+
 #include<map>
+#include<iostream>
 #include<vector>
 #include<typeinfo>
 #include "Component.h"
+#include "Transform.h"
 
-#define FREEZINGNOSE_ENTITY_H
+class Component;
 
 class Entity {
 public:
@@ -17,15 +20,28 @@ public:
 
 private:
     std::vector<Component *> components;
+    Transform* transform;
 
 public:
+    ~Entity();
+
     virtual void start_entity() = 0;
 
     virtual void update_entity() = 0;
 
     virtual void destroy_entity() = 0;
 
+    sf::Vector2<float> get_position();
+
+    void set_position(sf::Vector2<float> position);
+
+    float get_rotation();
+
+    void set_rotation(float rotation);
+
     void add_component(Component* component);
+
+    void update_all_components();
 
     template<class TComponent>
     bool has_component(TComponent &out)
@@ -74,8 +90,7 @@ public:
             delete component;
     }
 
-    void update_all_components();
+    void set_position(float x, float y);
 };
 
-
-#endif //FREEZINGNOSE_ENTITY_H
+#endif //SOME_FROZEN_EVENTS_ENTITY_H

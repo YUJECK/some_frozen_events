@@ -16,3 +16,7 @@ SpriteRenderer::SpriteRenderer(sf::Texture image)
 SpriteRenderer::~SpriteRenderer() {
     delete sprite;
 }
+
+void SpriteRenderer::update_component() {
+    sprite->setPosition(daddy->get_position());
+}

@@ -1,8 +1,8 @@
 //
 // Created by destructive_crab on 12/7/23.
 //
-#ifndef RENDERERMETHOD_H
-#define RENDERERMETHOD_H
+#ifndef SOME_FROZEN_EVENTS_RENDERERMETHOD_H
+#define SOME_FROZEN_EVENTS_RENDERERMETHOD_H
 
 
 #include<SFML/Graphics.hpp>
@@ -13,4 +13,4 @@ public:
     virtual void Draw(sf::Drawable* drawable, sf::RenderWindow* window) = 0;
 };
 
-#endif
+#endif //SOME_FROZEN_EVENTS_RENDERERMETHOD_H
