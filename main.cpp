@@ -12,7 +12,7 @@ int main()
 
     World::get_instance()->push_entity(testEntity);
 
-    World::get_instance()->start_world();
+    World::get_instance()->start_game_loop();
 
     delete testEntity;
     return 0;

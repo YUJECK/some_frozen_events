@@ -42,11 +42,12 @@ void World::delete_entity(Entity *entity) {
     delete entity;
 }
 
-void World::start_world()
+void World::start_game_loop()
 {
     while (renderWindow->isOpen())
     {
         renderWindow->clear();
+
 
         sf::Event event;
         while (renderWindow->pollEvent(event))
@@ -56,14 +57,14 @@ void World::start_world()
             }
         }
 
+        InputService::get_instance()->tick();
+
         for (int i = 0; i < entities.size(); ++i) {
             entities[i]->update_entity();
             entities[i]->update_all_components();
         }
 
-        InputService::get_instance()->tick();
         RendererManager::get_instance()->tick();
-
         renderWindow->display();
     }
 }

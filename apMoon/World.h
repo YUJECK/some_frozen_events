@@ -13,7 +13,7 @@ public:
     sf::RenderWindow* get_window();
     void push_entity(Entity* entity);
     void delete_entity(Entity* entity);
-    void start_world();
+    void start_game_loop();
 
 private:
     sf::RenderWindow* renderWindow;
