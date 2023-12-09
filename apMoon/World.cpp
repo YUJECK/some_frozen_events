@@ -2,6 +2,7 @@
 #include "World.h"
 #include "Renderer/RendererManager.h"
 #include "Renderer/IRendererComponent.h"
+#include "Inputs/InputService.h"
 
 //
 // Created by destructive_crab on 12/4/23.
@@ -60,6 +61,7 @@ void World::start_world()
             entities[i]->update_all_components();
         }
 
+        InputService::get_instance()->tick();
         RendererManager::get_instance()->tick();
 
         renderWindow->display();

@@ -5,7 +5,6 @@
 #include "Component.h"
 
 void Component::set_daddy(Entity* entity) {
-    std::cout << entity->name << std::endl;
     daddy = entity;
 }
 

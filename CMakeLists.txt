@@ -24,8 +24,8 @@ add_executable(some_frozen_events main.cpp
         apMoon/Renderer/BaseRenderer.h
         apMoon/Transform.h
         apMoon/Transform.cpp
-        apMoon/Inputs/InputSystem.cpp
-        apMoon/Inputs/InputSystem.h
+        apMoon/Inputs/InputService.cpp
+        apMoon/Inputs/InputService.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)
