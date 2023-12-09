@@ -13,7 +13,8 @@ void Entity::add_component(Component* component)
 
 void Entity::update_all_components()
 {
-    for (int i = 0; i < components.size(); ++i) {
+    for (int i = 0; i < components.size(); ++i)
+    {
         components[i]->update_component();
     }
 }
@@ -25,6 +26,7 @@ sf::Vector2<float> Entity::get_position() {
 void Entity::set_position(sf::Vector2<float> position) {
     transform->position = &position;
 }
+
 void Entity::set_position(float x, float y) {
     transform->position->x = x;
     transform->position->y = y;
@@ -44,4 +46,8 @@ Entity::~Entity() {
     }
 
     delete transform;
+}
+
+Entity::Entity() {
+    transform = new Transform;
 }

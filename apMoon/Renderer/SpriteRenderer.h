@@ -8,13 +8,17 @@
 #include "IRendererComponent.h"
 #include <SFML/Graphics.hpp>
 
-class SpriteRenderer : public IRendererComponent{
+class SpriteRenderer : public IRendererComponent
+{
 public:
     SpriteRenderer(sf::Texture image);
     ~SpriteRenderer();
 
     sf::Drawable * get_drawable() override;
+
     void update_component() override;
+    void destroy_component() override;
+    void start_component() override;
 
 private:
     sf::Sprite* sprite;

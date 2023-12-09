@@ -30,9 +30,6 @@ void World::push_entity(Entity *entity) {
 
     if(entity->has_component(component))
         RendererManager::get_instance()->push(component->get_drawable());
-
-    if(component != nullptr)
-        delete component;
 }
 
 void World::delete_entity(Entity *entity) {

@@ -4,6 +4,7 @@
 
 #include "TestEntity.h"
 #include "apMoon/Renderer/SpriteRenderer.h"
+#include "MovementComponent.h"
 #include<iostream>
 #include<SFML/Graphics.hpp>
 
@@ -12,7 +13,10 @@ void TestEntity::start_entity()
     sf::Texture texture;
     texture.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Square.png");
 
-    add_component(new SpriteRenderer(texture));
+    SpriteRenderer* sp = new SpriteRenderer(texture);
+
+    add_component(new MovementComponent);
+    add_component(sp);
 }
 
 void TestEntity::destroy_entity()

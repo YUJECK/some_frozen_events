@@ -23,6 +23,7 @@ private:
     Transform* transform;
 
 public:
+    Entity();
     ~Entity();
 
     virtual void start_entity() = 0;

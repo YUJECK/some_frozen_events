@@ -15,12 +15,14 @@ class Component
 protected:
     Entity* daddy;
 public:
+    Component();
     ~Component();
+
+    void set_daddy(Entity* entity);
 
     virtual void start_component() = 0;
     virtual void update_component() = 0;
     virtual void destroy_component() = 0;
-    void set_daddy(Entity* entity);
 };
 
 

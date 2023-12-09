@@ -2,8 +2,8 @@
 // Created by destructive_crab on 12/6/23.
 //
 
-#ifndef SOME_FROZEN_EVENTS_WORLDSPRITE_H
-#define SOME_FROZEN_EVENTS_WORLDSPRITE_H
+#ifndef SOME_FROZEN_EVENTS_IRENDERERCOMPONENT_H
+#define SOME_FROZEN_EVENTS_IRENDERERCOMPONENT_H
 
 #include <SFML/Graphics.hpp>
 #include "../Component.h"
@@ -12,11 +12,11 @@ class IRendererComponent : public Component {
 
 public:
     virtual sf::Drawable* get_drawable() = 0;
-    void update_component() override;
-    void start_component() override;
-    void destroy_component() override;
 
+    virtual void update_component() override = 0;
+    virtual void start_component() override = 0;
+    virtual void destroy_component() override = 0;
 };
 
 
-#endif //SOME_FROZEN_EVENTS_WORLDSPRITE_H
+#endif //SOME_FROZEN_EVENTS_IRENDERERCOMPONENT_H

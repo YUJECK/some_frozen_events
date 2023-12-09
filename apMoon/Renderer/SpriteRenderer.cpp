@@ -18,5 +18,15 @@ SpriteRenderer::~SpriteRenderer() {
 }
 
 void SpriteRenderer::update_component() {
+    std::cout << (daddy->get_position().x) << " " << (daddy->get_position().y)<< std::endl;
     sprite->setPosition(daddy->get_position());
+}
+
+void SpriteRenderer::destroy_component() {
+
+}
+
+void SpriteRenderer::start_component()
+{
+    std::cout << "start" << std::endl;
 }
