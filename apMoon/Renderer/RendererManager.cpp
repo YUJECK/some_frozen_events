@@ -16,16 +16,22 @@ RendererManager* RendererManager::get_instance() {
     return instance;
 }
 
-void RendererManager::push(sf::Drawable *drawable) {
+void RendererManager::push(IRendererComponent *drawable) {
     drawables.push_back(drawable);
 }
 
-void RendererManager::erase(sf::Drawable *drawable) {
+void RendererManager::erase(IRendererComponent *drawable) {
     drawables.erase(std::remove(drawables.begin(), drawables.end(), drawable));
     delete drawable;
 }
 
 void RendererManager::tick() {
+
+    if(view)
+    {
+        renderWindow->setView(*view);
+    }
+
     for (int i = 0; i < drawables.size(); i++)
     {
         renderer->Draw(drawables[i], renderWindow);
@@ -44,4 +50,8 @@ RendererManager::RendererManager() {
 RendererManager::~RendererManager() {
     delete renderer;
     delete instance;
+}
+
+void RendererManager::apply_view(sf::View *view) {
+    this->view = view;
 }

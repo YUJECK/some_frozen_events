@@ -12,6 +12,7 @@ class SpriteRenderer : public IRendererComponent
 {
 public:
     SpriteRenderer(sf::Texture image);
+    SpriteRenderer(char* path);
     ~SpriteRenderer();
 
     sf::Drawable * get_drawable() override;

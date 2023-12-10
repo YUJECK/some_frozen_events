@@ -5,7 +5,6 @@
 #ifndef SOME_FROZEN_EVENTS_RENDERERMANAGER_H
 #define SOME_FROZEN_EVENTS_RENDERERMANAGER_H
 
-
 #include "RendererMethod.h"
 #include<SFML/Graphics.hpp>
 
@@ -16,15 +15,17 @@ public:
 
     void tick();
 
-    void push(sf::Drawable* drawable);
-    void erase(sf::Drawable* drawable);
+    void apply_view(sf::View* view);
+    void push(IRendererComponent* drawable);
+    void erase(IRendererComponent* drawable);
 
 private:
     static RendererManager* instance;
     RendererMethod* renderer;
     sf::RenderWindow* renderWindow;
+    sf::View* view;
 
-    std::vector<sf::Drawable*> drawables;
+    std::vector<IRendererComponent*> drawables;
 
     RendererManager();
     ~RendererManager();

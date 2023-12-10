@@ -4,6 +4,6 @@
 
 #include "BaseRenderer.h"
 
-void BaseRenderer::Draw(sf::Drawable *drawable, sf::RenderWindow* window) {
-    window->draw(*drawable);
+void BaseRenderer::Draw(IRendererComponent *drawable, sf::RenderWindow* window) {
+    window->draw(*drawable->get_drawable());
 }

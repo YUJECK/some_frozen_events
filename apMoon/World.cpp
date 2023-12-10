@@ -3,11 +3,17 @@
 #include "Renderer/RendererManager.h"
 #include "Renderer/IRendererComponent.h"
 #include "Inputs/InputService.h"
+#include "../Wall.h"
 
 //
 // Created by destructive_crab on 12/4/23.
 //
 World* World::instance = 0;
+
+World::World()
+{
+    renderWindow = new sf::RenderWindow(sf::VideoMode(600, 600), "SFML not works!");
+}
 
 World &World::operator=(World) {
     return *this;
@@ -30,7 +36,7 @@ void World::push_entity(Entity *entity) {
     IRendererComponent* component = nullptr;
 
     if(entity->has_component(component))
-        RendererManager::get_instance()->push(component->get_drawable());
+        RendererManager::get_instance()->push(component);
 }
 
 void World::delete_entity(Entity *entity) {
@@ -69,11 +75,6 @@ void World::start_game_loop()
     }
 }
 
-World::World()
-{
-    renderWindow = new sf::RenderWindow(sf::VideoMode(600, 600), "SFML not works!");
-}
-
 sf::RenderWindow* World::get_window() {
     return renderWindow;
 }
@@ -83,4 +84,23 @@ World::~World() {
         delete entities[i];
     }
     delete instance;
+}
+
+WorldMap *World::get_map() {
+    return map;
+}
+
+void World::load_map(sf::Image image) {
+    map = new WorldMap(image);
+
+    for (int x = 0; x < map->WIDTH; ++x) {
+        for (int y = 0; y < map->HEIGHT; ++y) {
+            if(map->get(x, y) == 1)
+            {
+                Wall *wall = new Wall("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Wall.png");
+                wall->set_position(x*map->CELL, y*map->CELL);
+                push_entity(wall);
+            }
+        }
+    }
 }

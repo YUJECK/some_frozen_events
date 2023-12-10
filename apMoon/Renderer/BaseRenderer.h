@@ -10,7 +10,7 @@
 class BaseRenderer : public RendererMethod
 {
 public:
-    void Draw(sf::Drawable* drawable, sf::RenderWindow* window) override;
+    void Draw(IRendererComponent *drawable, sf::RenderWindow* window) override;
 };
 
 

@@ -8,7 +8,9 @@
 #include "apMoon/Entity.h"
 
 class TestEntity : public Entity {
-
+private:
+    sf::View *view;
+public:
     void start_entity() override;
 
     void update_entity() override;
