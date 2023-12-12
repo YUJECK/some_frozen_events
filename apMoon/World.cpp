@@ -92,12 +92,13 @@ WorldMap *World::get_map() {
 
 void World::load_map(sf::Image image) {
     map = new WorldMap(image);
+    const char* path = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Wall.png";
 
     for (int x = 0; x < map->WIDTH; ++x) {
         for (int y = 0; y < map->HEIGHT; ++y) {
             if(map->get(x, y) == 1)
             {
-                Wall *wall = new Wall("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Wall.png");
+                Wall *wall = new Wall(path);
                 wall->set_position(x*map->CELL, y*map->CELL);
                 push_entity(wall);
             }

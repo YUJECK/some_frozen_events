@@ -12,11 +12,9 @@
 void TestEntity::start_entity()
 {
     view = new sf::View;
+    view->zoom(0.6);
 
-    sf::Texture texture;
-    texture.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Square.png");
-
-    SpriteRenderer* sp = new SpriteRenderer(texture);
+    SpriteRenderer* sp = new SpriteRenderer("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Square.png");
 
     add_component(new MovementComponent);
     add_component(sp);

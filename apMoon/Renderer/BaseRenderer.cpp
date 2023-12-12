@@ -4,6 +4,11 @@
 
 #include "BaseRenderer.h"
 
-void BaseRenderer::Draw(IRendererComponent *drawable, sf::RenderWindow* window) {
+void BaseRenderer::draw(IRendererComponent *drawable, sf::RenderWindow* window) {
     window->draw(*drawable->get_drawable());
+}
+
+void BaseRenderer::tick() {
+
+
 }

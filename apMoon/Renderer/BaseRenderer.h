@@ -6,11 +6,13 @@
 #define SOME_FROZEN_EVENTS_BASERENDERER_H
 
 #include "RendererMethod.h"
+#include "../World.h"
 
 class BaseRenderer : public RendererMethod
 {
 public:
-    void Draw(IRendererComponent *drawable, sf::RenderWindow* window) override;
+    void draw(IRendererComponent *drawable, sf::RenderWindow* window) override;
+    void tick() override;
 };
 
 

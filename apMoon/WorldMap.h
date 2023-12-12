@@ -10,7 +10,7 @@
 
 #define MAP_WIDTH 40
 #define MAP_HEIGHT 40
-#define CELL_SIZE 24
+#define CELL_SIZE 16
 
 class WorldMap {
 public:
@@ -24,7 +24,7 @@ private:
 public:
     const int WIDTH = 40;
     const int HEIGHT = 40;
-    const int CELL = 24;
+    const int CELL = 16;
 
 private:
     int map[MAP_WIDTH][MAP_HEIGHT];

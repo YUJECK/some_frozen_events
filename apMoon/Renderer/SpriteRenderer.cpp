@@ -4,17 +4,18 @@
 
 #include "SpriteRenderer.h"
 
-SpriteRenderer::SpriteRenderer(sf::Texture image)
+SpriteRenderer::SpriteRenderer(sf::Texture* texture)
 {
-    sprite = new sf::Sprite(image);
+    this->texture = texture;
+    sprite = new sf::Sprite(*texture);
 }
 
-SpriteRenderer::SpriteRenderer(char *path) {
-    sf::Texture texture;
+SpriteRenderer::SpriteRenderer(const char *path) {
+    texture = new sf::Texture;
 
-    texture.loadFromFile(path);
+    texture->loadFromFile(path);
     sprite = new sf::Sprite();
-    sprite->setTexture(texture);
+    sprite->setTexture(*texture);
 }
 
 sf::Drawable *SpriteRenderer::get_drawable() {
@@ -23,6 +24,7 @@ sf::Drawable *SpriteRenderer::get_drawable() {
 
 SpriteRenderer::~SpriteRenderer() {
     delete sprite;
+    delete texture;
 }
 
 void SpriteRenderer::update_component() {
