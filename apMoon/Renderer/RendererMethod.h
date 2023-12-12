@@ -11,8 +11,7 @@
 class RendererMethod
 {
 public:
-    virtual void draw(IRendererComponent *drawable, sf::RenderWindow* window) = 0;
-    virtual void tick() = 0;
+    virtual void draw(IRendererComponent *drawable[], sf::RenderWindow* window) = 0;
 };
 
 #endif //SOME_FROZEN_EVENTS_RENDERERMETHOD_H

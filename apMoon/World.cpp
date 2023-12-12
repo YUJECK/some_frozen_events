@@ -12,7 +12,7 @@ World* World::instance = 0;
 
 World::World()
 {
-    renderWindow = new sf::RenderWindow(sf::VideoMode(600, 600), "SFML not works!");
+    renderWindow = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML not works!");
 }
 
 World &World::operator=(World) {

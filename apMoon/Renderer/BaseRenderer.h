@@ -11,8 +11,7 @@
 class BaseRenderer : public RendererMethod
 {
 public:
-    void draw(IRendererComponent *drawable, sf::RenderWindow* window) override;
-    void tick() override;
+    void draw(IRendererComponent *drawable[], sf::RenderWindow* window) override;
 };
 
 

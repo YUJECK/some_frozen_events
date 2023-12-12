@@ -32,12 +32,7 @@ void RendererManager::tick() {
         renderWindow->setView(*view);
     }
 
-    renderer->tick();
-
-    for (int i = 0; i < drawables.size(); i++)
-    {
-        renderer->draw(drawables[i], renderWindow);
-    }
+    renderer->draw(drawables.data(), renderWindow);
 }
 
 RendererManager &RendererManager::operator=(RendererManager) {

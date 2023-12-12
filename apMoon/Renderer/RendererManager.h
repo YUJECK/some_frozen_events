@@ -8,6 +8,9 @@
 #include "RendererMethod.h"
 #include<SFML/Graphics.hpp>
 
+#define WINDOW_WIDTH 600
+#define WINDOW_HEIGHT 600
+
 class RendererManager
 {
 public:
@@ -26,6 +29,7 @@ private:
     sf::View* view;
 
     std::vector<IRendererComponent*> drawables;
+    IRendererComponent* drawables_test[];
 
     RendererManager();
     ~RendererManager();
