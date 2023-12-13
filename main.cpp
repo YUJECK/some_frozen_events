@@ -8,7 +8,7 @@ int main()
     Player *testEntity = new Player;
 
     testEntity->name = "test";
-    testEntity->set_position(300, 300);
+    testEntity->set_position(250, 100);
 
     sf::Image image;
     image.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");

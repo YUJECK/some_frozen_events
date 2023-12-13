@@ -8,9 +8,15 @@
 
 void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf::RenderWindow* window) {
     if(!window1)
-        window1 = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML not works!!");;
+    {
+        window1 = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML not works!!");
 
-    double posX = World::get_instance()->get_player_pos().x / CELL_SIZE, posY = World::get_instance()->get_player_pos().y / CELL_SIZE;
+    }
+    window1->clear();
+
+    double posX = World::get_instance()->get_player_pos().x / CELL_SIZE;
+    double posY = World::get_instance()->get_player_pos().y / CELL_SIZE;
+
     double dirX = -1, dirY = 0;
     double planeX = 0, planeY = 0.66;
 
@@ -61,9 +67,9 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
 
         while(hit == 0)
         {
-            if(sideDistX < sideDistY)
+            if (sideDistX < sideDistY)
             {
-                sideDistX += deltaDistY;
+                sideDistX += deltaDistX;
                 mapX += stepX;
                 side = 0;
             }
@@ -74,54 +80,63 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
                 side = 1;
             }
 
-            if(World::get_instance()->get_map()->get(mapX, mapY) > 0)
-            {
+            if (World::get_instance()->get_map()->get(mapX, mapY) > 0) {
                 hit = 1;
             }
-
-            if(side == 0)
-            {
-                perpWallDist = sideDistX - deltaDistX;
-            }
-            else
-            {
-                perpWallDist = sideDistY - deltaDistY;
-            }
-
-            int lineHeight = (int)(MAP_HEIGHT / perpWallDist);
-
-            int drawStart = -lineHeight / 2 + MAP_HEIGHT / 2;
-
-            if(drawStart < 0)
-                drawStart = 0;
-
-            int drawEnd = lineHeight / 2 + MAP_HEIGHT / 2;
-
-            if(drawEnd >= MAP_HEIGHT)
-            {
-                drawEnd = MAP_HEIGHT - 1;
-            }
-
-            drawLine(x, drawStart, drawEnd, window);
         }
+
+        if(side == 0)
+        {
+            perpWallDist = sideDistX - deltaDistX;
+        }
+        else
+        {
+            perpWallDist = sideDistY - deltaDistY;
+        }
+
+        int lineHeight = (int)(MAP_HEIGHT / perpWallDist);
+
+        int drawStart = -lineHeight / 2 + MAP_HEIGHT / 2;
+
+        if(drawStart < 0)
+            drawStart = 0;
+
+        int drawEnd = lineHeight / 2 + MAP_HEIGHT / 2;
+
+        if(drawEnd >= MAP_HEIGHT)
+        {
+            drawEnd = MAP_HEIGHT - 1;
+        }
+
+        drawLine(x, drawStart, drawEnd, window, World::get_instance()->get_map()->get(mapX, mapY));
 
         for (int i = 0; i < drawablesCount; ++i) {
             window1->draw(*drawables[i]->get_drawable());
         }
+
+        window1->display();
     }
 }
 
-void BaseRenderer::drawLine(int x, int y1, int y2, sf::RenderWindow * window) {
-
+void BaseRenderer::drawLine(int x, int y1, int y2, sf::RenderWindow * window, int wallinx) {
     sf::RectangleShape* shape = new sf::RectangleShape;
     shape->setSize(sf::Vector2f(CELL_SIZE, (y2-y1) * CELL_SIZE));
     shape->setPosition(x * CELL_SIZE, y1 * CELL_SIZE);
 
-//    if(InputService::get_instance()->is_key_down(sf::Keyboard::Space))
-//    {
-//        std::cout << "x: " << x << " x2: " << x2 << std::endl;
-//        std::cout << "y1: " << y1 << " y2: " << y2 << std::endl;
-//    }
+    switch (wallinx) {
+        case 1:
+            shape->setFillColor(sf::Color::White);
+            break;
+        case 2:
+            shape->setFillColor(sf::Color::Red);
+            break;
+        case 3:
+            shape->setFillColor(sf::Color::Green);
+            break;
+        case 4:
+            shape->setFillColor(sf::Color::Blue);
+            break;
+    }
 
     window->draw(*shape);
 
