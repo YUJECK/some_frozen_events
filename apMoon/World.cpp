@@ -37,6 +37,8 @@ void World::push_entity(Entity *entity) {
 
     if(entity->has_component(component))
         RendererManager::get_instance()->push(component);
+
+    player = dynamic_cast<Player *>(entity);
 }
 
 void World::delete_entity(Entity *entity) {
@@ -104,4 +106,12 @@ void World::load_map(sf::Image image) {
             }
         }
     }
+}
+
+Player *World::get_player() {
+    return player;
+}
+
+sf::Vector2<float> World::get_player_pos() {
+    return player->get_position();
 }

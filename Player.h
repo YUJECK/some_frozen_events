@@ -2,12 +2,12 @@
 // Created by destructive_crab on 12/6/23.
 //
 
-#ifndef SOME_FROZEN_EVENTS_TESTENTITY_H
-#define SOME_FROZEN_EVENTS_TESTENTITY_H
+#ifndef SOME_FROZEN_EVENTS_PLAYER_H
+#define SOME_FROZEN_EVENTS_PLAYER_H
 
 #include "apMoon/Entity.h"
 
-class TestEntity : public Entity {
+class Player : public Entity {
 private:
     sf::View *view;
 public:
@@ -18,4 +18,4 @@ public:
     void destroy_entity() override;
 };
 
-#endif //SOME_FROZEN_EVENTS_TESTENTITY_H
+#endif //SOME_FROZEN_EVENTS_PLAYER_H

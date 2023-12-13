@@ -6,6 +6,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "Entity.h"
 #include "WorldMap.h"
+#include "../Player.h"
 
 class World
 {
@@ -13,6 +14,8 @@ public:
     static World* get_instance();
     sf::RenderWindow* get_window();
     WorldMap* get_map();
+    Player* get_player();
+    sf::Vector2<float> get_player_pos();
 
     void push_entity(Entity* entity);
     void delete_entity(Entity* entity);
@@ -23,6 +26,7 @@ private:
     static World* instance;
 
     sf::RenderWindow* renderWindow;
+    Player* player;
     WorldMap *map;
     std::vector<Entity*> entities;
 

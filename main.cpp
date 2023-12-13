@@ -1,11 +1,11 @@
 #include <SFML/Window/Event.hpp>
 #include "apMoon/World.h"
-#include "TestEntity.h"
+#include "Player.h"
 #include "MovementComponent.h"
 
 int main()
 {
-    TestEntity *testEntity = new TestEntity;
+    Player *testEntity = new Player;
 
     testEntity->name = "test";
     testEntity->set_position(300, 300);

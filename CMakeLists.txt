@@ -10,8 +10,8 @@ add_executable(some_frozen_events main.cpp
         apMoon/Entity.cpp
         apMoon/Component.cpp
         apMoon/Component.h
-        TestEntity.cpp
-        TestEntity.h
+        Player.cpp
+        Player.h
         apMoon/Renderer/RendererManager.cpp
         apMoon/Renderer/RendererManager.h
         apMoon/Renderer/IRendererComponent.h

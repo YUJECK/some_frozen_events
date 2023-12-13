@@ -10,8 +10,11 @@
 
 class BaseRenderer : public RendererMethod
 {
+private:
+    void drawLine(int x, int y1, int y2, sf::RenderWindow * window);
+    sf::RenderWindow* window1;
 public:
-    void draw(IRendererComponent *drawable[], sf::RenderWindow* window) override;
+    void draw(IRendererComponent *drawables[],  int drawablesCount, sf::RenderWindow* window) override;
 };
 
 
