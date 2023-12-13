@@ -8,8 +8,8 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-#define MAP_WIDTH 40
-#define MAP_HEIGHT 40
+#define MAP_WIDTH 100
+#define MAP_HEIGHT 80
 #define CELL_SIZE 16
 
 class WorldMap {
@@ -22,8 +22,8 @@ private:
     int process_color(sf::Color color);
 
 public:
-    const int WIDTH = 40;
-    const int HEIGHT = 40;
+    const int WIDTH = 100;
+    const int HEIGHT = 80;
     const int CELL = 16;
 
 private:

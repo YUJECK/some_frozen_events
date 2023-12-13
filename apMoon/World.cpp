@@ -98,8 +98,17 @@ void World::load_map(sf::Image image) {
 
     for (int x = 0; x < map->WIDTH; ++x) {
         for (int y = 0; y < map->HEIGHT; ++y) {
-            if(map->get(x, y) == 1)
+            if(map->get(x, y) > 0)
             {
+                if(map->get(x, y) == 1)
+                    path = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/1.png";
+                if(map->get(x, y) == 2)
+                    path = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/2.png";
+                if(map->get(x, y) == 3)
+                    path = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/3.png";
+                if(map->get(x, y) == 4)
+                    path = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/4.png";
+
                 Wall *wall = new Wall(path);
                 wall->set_position(x*map->CELL, y*map->CELL);
                 push_entity(wall);
