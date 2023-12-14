@@ -56,7 +56,6 @@ void World::start_game_loop()
     {
         renderWindow->clear();
 
-
         sf::Event event;
         while (renderWindow->pollEvent(event))
         {

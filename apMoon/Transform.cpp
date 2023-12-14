@@ -5,12 +5,12 @@
 
 Transform::Transform(float x, float y) {
     position = new sf::Vector2<float>(x, y);
-    rotation = new float;
+    rotation = new float(0);
 }
 
 Transform::Transform() {
     position = new sf::Vector2<float>(0, 0);
-    rotation = new float;
+    rotation = new float(0);
 }
 
 Transform::~Transform() {

@@ -92,6 +92,8 @@ public:
     }
 
     void set_position(float x, float y);
+
+    void rotate(float rotation);
 };
 
 #endif //SOME_FROZEN_EVENTS_ENTITY_H

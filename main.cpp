@@ -6,11 +6,10 @@
 int main()
 {
     Player *testEntity = new Player;
-
-    testEntity->name = "test";
     testEntity->set_position(600, 700);
 
     sf::Image image;
+    testEntity->name = "test";
     image.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");
 
     World::get_instance()->load_map(image);

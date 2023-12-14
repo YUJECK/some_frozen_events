@@ -40,6 +40,10 @@ void Entity::set_rotation(float rotation) {
     transform->rotation = &rotation;
 }
 
+void Entity::rotate(float rotation) {
+    *transform->rotation += rotation;
+}
+
 Entity::~Entity() {
     for (int i = 0; i < components.size(); ++i) {
         delete components[i];

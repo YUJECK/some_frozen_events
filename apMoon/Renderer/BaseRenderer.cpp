@@ -7,21 +7,20 @@
 #include "../Inputs/InputService.h"
 #include<math.h>
 
+#define PI 3.14159265359
+
 void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf::RenderWindow* window) {
     if(!window1)
     {
         window1 = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML not works!!");
-
     }
+
     window1->clear();
-    sf::View view;
-    view.setCenter(World::get_instance()->get_player_pos());
-    window1->setView(view);
 
     double posX = World::get_instance()->get_player_pos().x / CELL_SIZE;
     double posY = World::get_instance()->get_player_pos().y / CELL_SIZE;
 
-    double dirX = -1, dirY = 0;
+    double dirX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180)), dirY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180));
     double planeX = 0, planeY = 0.66;
 
     for (int x = 0; x < MAP_WIDTH; x++)
@@ -69,6 +68,7 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
             sideDistY = (mapY + 1.0 - posY) * deltaDistY;
         }
 
+        //DDA
         while(hit == 0)
         {
             if (sideDistX < sideDistY)
@@ -84,7 +84,7 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
                 side = 1;
             }
 
-            if (World::get_instance()->get_map()->get(mapX, mapY) > 0) {
+            if (World::get_instance()->get_map()->get(mapX, mapY) == 1) {
                 hit = 1;
             }
         }
@@ -102,8 +102,9 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
 
         int drawStart = -lineHeight / 2 + MAP_HEIGHT / 2;
 
-        if(drawStart < 0)
+        if(drawStart < 0) {
             drawStart = 0;
+        }
 
         int drawEnd = lineHeight / 2 + MAP_HEIGHT / 2;
 
@@ -118,33 +119,16 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
             window1->draw(*drawables[i]->get_drawable());
         }
 
-        if (InputService::get_instance()->is_key_down(sf::Keyboard::D))
-        {
-            //both camera direction and camera plane must be rotated
-            double oldDirX = dirX;
-            dirX = dirX * std::cos(-10) - dirY * std::sin(-10);
-            dirY = oldDirX * std::sin(-10) + dirY * std::cos(-10);
-            double oldPlaneX = planeX;
-            planeX = planeX * std::cos(-10) - planeY * std::sin(-10);
-            planeY = oldPlaneX * std::sin(-10) + planeY * std::cos(-10);
-        }
-        //rotate to the left
-        if (InputService::get_instance()->is_key_down(sf::Keyboard::A))
-        {
-            //both camera direction and camera plane must be rotated
-            double oldDirX = dirX;
-            dirX = dirX * std::cos(10) - dirY * std::sin(10);
-            dirY = oldDirX * std::sin(10) + dirY * std::cos(10);
-            double oldPlaneX = planeX;
-            planeX = planeX * std::cos(10) - planeY * std::sin(10);
-            planeY = oldPlaneX * std::sin(10) + planeY * std::cos(10);
-        }
+        sf::View view;
+        view.setCenter(World::get_instance()->get_player_pos());
+        window1->setView(view);
 
         window1->display();
     }
 }
 
 void BaseRenderer::drawLine(int x, int y1, int y2, sf::RenderWindow * window, int wallinx, int side) {
+
     sf::RectangleShape* shape = new sf::RectangleShape;
     shape->setSize(sf::Vector2f(CELL_SIZE, (y2-y1) * CELL_SIZE));
     shape->setPosition(x * CELL_SIZE, y1 * CELL_SIZE);

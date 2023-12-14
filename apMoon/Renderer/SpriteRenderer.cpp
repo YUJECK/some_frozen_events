@@ -29,6 +29,7 @@ SpriteRenderer::~SpriteRenderer() {
 
 void SpriteRenderer::update_component() {
     sprite->setPosition(daddy->get_position());
+    sprite->setRotation(daddy->get_rotation());
 }
 
 void SpriteRenderer::destroy_component() {
