@@ -17,6 +17,7 @@ private:
 
 public:
     InputService();
+    ~InputService();
 
     static InputService* get_instance();
 

@@ -13,8 +13,21 @@ class BaseRenderer : public RendererMethod
 private:
     void drawLine(int x, int y1, int y2, sf::RenderWindow * window, int wallinx, int side);
     sf::RenderWindow* window1;
+
+    int a = 1;
 public:
     void draw(IRendererComponent *drawables[],  int drawablesCount, sf::RenderWindow* window) override;
+
+    float prevAngle = 0;
+
+    float posX;
+    float posY;
+
+    double dirX = 1;
+    double dirY = 1;
+
+    double planeX = 0;
+    double planeY = 0.66;
 };
 
 

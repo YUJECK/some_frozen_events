@@ -6,7 +6,7 @@
 int main()
 {
     Player *testEntity = new Player;
-    testEntity->set_position(600, 700);
+    testEntity->set_position(120, 190);
 
     sf::Image image;
     testEntity->name = "test";

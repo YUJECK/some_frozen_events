@@ -42,6 +42,7 @@ RendererManager &RendererManager::operator=(RendererManager) {
 RendererManager::RendererManager() {
     renderer = new BaseRenderer;
     renderWindow = World::get_instance()->get_window();
+    renderWindow->setFramerateLimit(60);
 }
 
 RendererManager::~RendererManager() {

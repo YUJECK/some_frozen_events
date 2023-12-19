@@ -41,3 +41,7 @@ InputService *InputService::get_instance() {
 
     return instance;
 }
+
+InputService::~InputService() {
+    delete instance;
+}

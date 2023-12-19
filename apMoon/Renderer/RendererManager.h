@@ -8,8 +8,8 @@
 #include "RendererMethod.h"
 #include<SFML/Graphics.hpp>
 
-#define WINDOW_WIDTH 1000
-#define WINDOW_HEIGHT 800
+#define WINDOW_WIDTH 1080
+#define WINDOW_HEIGHT 720
 
 class RendererManager
 {

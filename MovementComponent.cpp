@@ -16,17 +16,21 @@ void MovementComponent::start_component()
 
 void MovementComponent::update_component() {
     if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::W))
-        daddy->set_position(daddy->get_position().x + cos(daddy->get_rotation() * (PI / 180)), daddy->get_position().y +  sin(daddy->get_rotation() * (PI / 180)));
-
-    if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::S)) {
-        daddy->set_position(daddy->get_position().x - cos(daddy->get_rotation() * (PI / 180)), daddy->get_position().y - sin(daddy->get_rotation() * (PI / 180)));
+    {
+        daddy->set_position(daddy->get_position().x + cos(daddy->get_rotation() * (PI / 180)),
+                            daddy->get_position().y + sin(daddy->get_rotation() * (PI / 180)));
     }
 
-    if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::A))
-        daddy->rotate(-5);
+    if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::S)) {
+        daddy->set_position(daddy->get_position().x - cos(daddy->get_rotation() * (PI / 180)),
+                            daddy->get_position().y - sin(daddy->get_rotation() * (PI / 180)));
+    }
 
     if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::D))
-        daddy->rotate(5);
+        daddy->rotate(1);
+
+    if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::A))
+        daddy->rotate(-1);
 }
 
 void MovementComponent::destroy_component()

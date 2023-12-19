@@ -82,6 +82,7 @@ sf::RenderWindow* World::get_window() {
 
 World::~World() {
     for (int i = 0; i < entities.size(); ++i) {
+        entities[i]->destroy_entity();
         delete entities[i];
     }
     delete instance;

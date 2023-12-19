@@ -5,9 +5,7 @@
 #include "Player.h"
 #include "apMoon/Renderer/SpriteRenderer.h"
 #include "MovementComponent.h"
-#include "apMoon/Renderer/RendererManager.h"
 #include<iostream>
-#include<SFML/Graphics.hpp>
 
 void Player::start_entity()
 {

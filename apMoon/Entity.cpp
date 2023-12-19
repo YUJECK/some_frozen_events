@@ -41,7 +41,17 @@ void Entity::set_rotation(float rotation) {
 }
 
 void Entity::rotate(float rotation) {
-    *transform->rotation += rotation;
+    float primaryAngle = *transform->rotation + rotation;
+
+    if (primaryAngle > 360 || primaryAngle < 0)
+    {
+        primaryAngle = (int)rotation % 360;
+
+        if(primaryAngle < 0)
+            primaryAngle += 360;
+    }
+
+    *transform->rotation = primaryAngle;
 }
 
 Entity::~Entity() {
