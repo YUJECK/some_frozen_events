@@ -115,7 +115,7 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
 
         if (drawMode == DRAW_3D)
         { // drawing 3d render
-            Stripe stripe = Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY));
+            Stripe stripe = Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY), side);
 
             drawLine(stripe, window);
         } else { //drawing all objects from global pool
@@ -134,8 +134,12 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
 void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window) {
 
     sf::RectangleShape* shape = new sf::RectangleShape;
-    shape->setSize(sf::Vector2f(CELL_SIZE, (stripe.yEnd - stripe.yStart) * CELL_SIZE));
-    shape->setPosition(stripe.x * CELL_SIZE, stripe.yStart * CELL_SIZE);
+
+    double xScale = (double)WINDOW_WIDTH / (double)(MAP_WIDTH * CELL_SIZE);
+    double yScale = (double)WINDOW_HEIGHT / (double)(MAP_HEIGHT * CELL_SIZE);
+
+    shape->setSize(sf::Vector2f(CELL_SIZE * xScale, (stripe.yEnd - stripe.yStart) * CELL_SIZE * yScale));
+    shape->setPosition(stripe.x * CELL_SIZE * xScale, stripe.yStart * CELL_SIZE * yScale);
 
     switch (stripe.wallIndex) {
         case 1:
@@ -152,18 +156,31 @@ void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window) {
             break;
     }
 
-//    if(side == 1)
-//    {
-//        shape->setFillColor(sf::Color(shape->getFillColor().r / 2, shape->getFillColor().g / 2, shape->getFillColor().b / 2));
-//    }
+    int resDist = ((int)stripe.dist/2);
 
+    if(resDist > 0)
+    {
+        shape->setFillColor(sf::Color(shape->getFillColor().r / resDist,
+                                      shape->getFillColor().g / resDist,
+                                      shape->getFillColor().b / resDist));
+    }
+
+
+    if(stripe.side == 1)
+    {
+        shape->setFillColor(sf::Color(shape->getFillColor().r / 2,
+                                      shape->getFillColor().g / 2,
+                                      shape->getFillColor().b / 2));
+    }
 
     window->draw(*shape);
 
     delete shape;
 }
 
-double BaseRenderer::dist(double x1, double y1, double x2, double y2) {
+double BaseRenderer::dist(double playerX, double playerY, double hitX, double hitY) {
+    double  x = hitX - playerX;
+    double  y = hitY - playerY;
 
-    return std::pow(x2/CELL_SIZE-x1, 2) + std::pow(y2/CELL_SIZE-y1, 2);
+    return std::sqrt(std::pow(x, 2) + std::pow(y, 2));
 }

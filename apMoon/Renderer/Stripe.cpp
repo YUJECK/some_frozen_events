@@ -4,5 +4,5 @@
 
 #include "Stripe.h"
 
-Stripe::Stripe(int x, int yStart, int yEnd, int wallIndex, double dist) : x(x), yStart(yStart), yEnd(yEnd),
-                                                                          wallIndex(wallIndex), dist(dist) {}
+Stripe::Stripe(int x, int yStart, int yEnd, int wallIndex, double dist, int side) : x(x), yStart(yStart), yEnd(yEnd),
+                                                                          wallIndex(wallIndex), dist(dist), side(side){}

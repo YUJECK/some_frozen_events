@@ -40,10 +40,10 @@ void MovementComponent::update_component() {
 
 
     if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::D))
-        daddy->rotate(1);
+        daddy->rotate(1.5);
 
     if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::A))
-        daddy->rotate(-1);
+        daddy->rotate(-1.5);
 }
 
 void MovementComponent::destroy_component()

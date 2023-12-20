@@ -9,14 +9,15 @@
 class Stripe {
 
 public:
-    Stripe(int x, int yStart, int yEnd, int wallIndex, double dist);
+    Stripe(int x, int yStart, int yEnd, int wallIndex, double dist, int side);
 
 public:
     int x;
     int yStart;
     int yEnd;
-    int wallIndex;
     double dist;
+    int side;
+    int wallIndex;
 };
 
 
