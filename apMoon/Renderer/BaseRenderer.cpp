@@ -5,65 +5,28 @@
 #include "BaseRenderer.h"
 #include "RendererManager.h"
 #include "../Inputs/InputService.h"
+#include "Stripe.h"
 #include<math.h>
 
 #define PI 3.14159265359
+#define DRAW_MAP -1
+#define DRAW_3D 1
 
 void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf::RenderWindow* window) {
-//    if(!window1)
-//    {
-//        window1 = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML not works!!");
-//    }
-
-//    window1->clear();
 
     posX = World::get_instance()->get_player_pos().x / CELL_SIZE;
     posY = World::get_instance()->get_player_pos().y / CELL_SIZE;
 
     double rotationAngle = World::get_instance()->get_player()->get_rotation() - prevAngle;
 
-    if (rotationAngle != 0) {
+    if (rotationAngle != 0) { //rotating
         dirX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180));
         dirY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180));
 
+        //perpendicular to dirs
         planeX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
         planeY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
-
-        std::cout << planeX << " " << planeY << std::endl;
-
-        //std::cout << dirX << " " << dirY << " " << World::get_instance()->get_player()->get_rotation() << std::endl;
-
-//        double prevPlaneX = planeX;
-//
-//        planeX = planeX * cos(rotationAngle) - planeY * sin(rotationAngle);
-//        planeY = prevPlaneX * sin(rotationAngle) + planeY * cos(rotationAngle);
     }
-
-//    if(InputService::get_instance()->is_key_down(sf::Keyboard::A))
-//    {
-//        float oldDirX = dirX;
-//
-//        dirX = dirX * cos(-rotationSpeed) - dirY * sin(-rotationSpeed);
-//        dirY = oldDirX * sin(-rotationSpeed) + dirY * cos(-rotationSpeed);
-//
-//        float oldPlaneX = planeX;
-//
-//        planeX = planeX * cos(-rotationSpeed) - planeY * sin(-rotationSpeed);
-//        dirY = oldPlaneX * sin(-rotationSpeed) + planeY * cos(-rotationSpeed);
-//    }
-//
-//    if(InputService::get_instance()->is_key_down(sf::Keyboard::D))
-//    {
-//        float oldDirX = dirX;
-//
-//        dirX = dirX * cos(rotationSpeed) - dirY * sin(rotationSpeed);
-//        dirY = oldDirX * sin(rotationSpeed) + dirY * cos(rotationSpeed);
-//
-//        float oldPlaneX = planeX;
-//
-//        planeX = planeX * cos(rotationSpeed) - planeY * sin(rotationSpeed);
-//        planeY = oldPlaneX * sin(rotationSpeed) + planeY * cos(rotationSpeed);
-//    }
 
     for (int x = 0; x < MAP_WIDTH; x++) {
         double cameraX = 2 * x / double(MAP_WIDTH) - 1;
@@ -116,11 +79,9 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
                 side = 1;
             }
 
-            if (World::get_instance()->get_map()->get(mapX, mapY) >= 1) {
-                hit = 1;
-            }
+            hit = World::get_instance()->get_map()->get(mapX, mapY);
 
-            if (a == -1) //draw raycasts
+            if (drawMode == DRAW_MAP) //draw raycasts
             {
                 sf::RectangleShape *rectangleShape = new sf::RectangleShape(
                         sf::Vector2f(1 * CELL_SIZE / 2, 1 * CELL_SIZE / 2));
@@ -152,38 +113,31 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
             drawEnd = MAP_HEIGHT - 1;
         }
 
-        if (a == 1) {
-            drawLine(x, drawStart, drawEnd, window, World::get_instance()->get_map()->get(mapX, mapY), side, mapX, mapY,
-                     World::get_instance()->get_player_pos());
-        } else {
+        if (drawMode == DRAW_3D)
+        { // drawing 3d render
+            Stripe stripe = Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY));
+
+            drawLine(stripe, window);
+        } else { //drawing all objects from global pool
             for (int i = 0; i < drawablesCount; ++i) {
                 window->draw(*drawables[i]->get_drawable());
             }
         }
-
-
-
-//        sf::View view;
-//        view.setCenter(World::get_instance()->get_player_pos());
-//        window1->setView(view);
-//
-//        window1->display();
     }
 
     if (InputService::get_instance()->is_key_down(sf::Keyboard::Space))
-        a *= -1;
+        drawMode *= -1;
 
     prevAngle = World::get_instance()->get_player()->get_rotation();
 }
 
-void BaseRenderer::drawLine(int x, int y1, int y2, sf::RenderWindow *window, int wallinx, int side, int i, int i1,
-                            sf::Vector2<float> vector2) {
+void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window) {
 
     sf::RectangleShape* shape = new sf::RectangleShape;
-    shape->setSize(sf::Vector2f(CELL_SIZE, (y2-y1) * CELL_SIZE));
-    shape->setPosition(x * CELL_SIZE, y1 * CELL_SIZE);
+    shape->setSize(sf::Vector2f(CELL_SIZE, (stripe.yEnd - stripe.yStart) * CELL_SIZE));
+    shape->setPosition(stripe.x * CELL_SIZE, stripe.yStart * CELL_SIZE);
 
-    switch (wallinx) {
+    switch (stripe.wallIndex) {
         case 1:
             shape->setFillColor(sf::Color::White);
             break;
@@ -198,10 +152,10 @@ void BaseRenderer::drawLine(int x, int y1, int y2, sf::RenderWindow *window, int
             break;
     }
 
-    if(side == 1)
-    {
-        shape->setFillColor(sf::Color(shape->getFillColor().r / 2, shape->getFillColor().g / 2, shape->getFillColor().b / 2));
-    }
+//    if(side == 1)
+//    {
+//        shape->setFillColor(sf::Color(shape->getFillColor().r / 2, shape->getFillColor().g / 2, shape->getFillColor().b / 2));
+//    }
 
 
     window->draw(*shape);
@@ -213,4 +167,3 @@ double BaseRenderer::dist(double x1, double y1, double x2, double y2) {
 
     return std::pow(x2/CELL_SIZE-x1, 2) + std::pow(y2/CELL_SIZE-y1, 2);
 }
-

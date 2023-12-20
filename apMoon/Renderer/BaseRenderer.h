@@ -7,18 +7,15 @@
 
 #include "RendererMethod.h"
 #include "../World.h"
+#include "Stripe.h"
 
 class BaseRenderer : public RendererMethod
 {
 private:
-    void drawLine(int x, int y1, int y2, sf::RenderWindow *window, int wallinx, int side, int i, int i1,
-                  sf::Vector2<float> vector2);
-
+    void drawLine(Stripe stripe, sf::RenderWindow* window);
     double dist(double x1, double y1, double x2, double y2);
 
-    sf::RenderWindow* window1;
-
-    int a = 1;
+    int drawMode = 1;
 public:
     void draw(IRendererComponent *drawables[],  int drawablesCount, sf::RenderWindow* window) override;
 
@@ -32,6 +29,7 @@ public:
 
     double planeX = 0.9;
     double planeY = 0.66;
+
 };
 
 

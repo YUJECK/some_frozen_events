@@ -127,6 +127,12 @@ build CMakeFiles/some_frozen_events.dir/Wall.cpp.o: CXX_COMPILER__some_frozen_ev
   OBJECT_DIR = CMakeFiles/some_frozen_events.dir
   OBJECT_FILE_DIR = CMakeFiles/some_frozen_events.dir
 
+build CMakeFiles/some_frozen_events.dir/apMoon/Renderer/Stripe.cpp.o: CXX_COMPILER__some_frozen_events_unscanned_Debug /home/destructive_crab/CLionProjects/some_frozen_events/apMoon/Renderer/Stripe.cpp || cmake_object_order_depends_target_some_frozen_events
+  DEP_FILE = CMakeFiles/some_frozen_events.dir/apMoon/Renderer/Stripe.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/some_frozen_events.dir
+  OBJECT_FILE_DIR = CMakeFiles/some_frozen_events.dir/apMoon/Renderer
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target some_frozen_events
@@ -135,7 +141,7 @@ build CMakeFiles/some_frozen_events.dir/Wall.cpp.o: CXX_COMPILER__some_frozen_ev
 #############################################
 # Link the executable some_frozen_events
 
-build some_frozen_events: CXX_EXECUTABLE_LINKER__some_frozen_events_Debug CMakeFiles/some_frozen_events.dir/main.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/World.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Entity.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Component.cpp.o CMakeFiles/some_frozen_events.dir/Player.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/RendererManager.cpp.o CMakeFiles/some_frozen_events.dir/MovementComponent.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/SpriteRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/BaseRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Transform.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Inputs/InputService.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/WorldMap.cpp.o CMakeFiles/some_frozen_events.dir/Wall.cpp.o
+build some_frozen_events: CXX_EXECUTABLE_LINKER__some_frozen_events_Debug CMakeFiles/some_frozen_events.dir/main.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/World.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Entity.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Component.cpp.o CMakeFiles/some_frozen_events.dir/Player.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/RendererManager.cpp.o CMakeFiles/some_frozen_events.dir/MovementComponent.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/SpriteRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/BaseRenderer.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Transform.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Inputs/InputService.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/WorldMap.cpp.o CMakeFiles/some_frozen_events.dir/Wall.cpp.o CMakeFiles/some_frozen_events.dir/apMoon/Renderer/Stripe.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lsfml-graphics  -lsfml-system  -lsfml-window
   OBJECT_DIR = CMakeFiles/some_frozen_events.dir
