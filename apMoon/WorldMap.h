@@ -8,7 +8,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-#define MAP_WIDTH 24
+#define MAP_WIDTH 36
 #define MAP_HEIGHT 36
 #define CELL_SIZE 16
 

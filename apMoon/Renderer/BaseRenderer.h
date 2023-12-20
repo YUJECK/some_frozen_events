@@ -11,7 +11,11 @@
 class BaseRenderer : public RendererMethod
 {
 private:
-    void drawLine(int x, int y1, int y2, sf::RenderWindow * window, int wallinx, int side);
+    void drawLine(int x, int y1, int y2, sf::RenderWindow *window, int wallinx, int side, int i, int i1,
+                  sf::Vector2<float> vector2);
+
+    double dist(double x1, double y1, double x2, double y2);
+
     sf::RenderWindow* window1;
 
     int a = 1;
@@ -26,7 +30,7 @@ public:
     double dirX = 1;
     double dirY = 1;
 
-    double planeX = 0;
+    double planeX = 0.9;
     double planeY = 0.66;
 };
 
