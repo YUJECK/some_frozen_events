@@ -12,7 +12,7 @@
 class BaseRenderer : public RendererMethod
 {
 private:
-    void drawLine(Stripe stripe, sf::RenderWindow* window);
+    void drawLine(Stripe stripe, sf::RenderWindow* window, Stripe* prevStripe);
     double dist(double playerX, double playerY, double hitX, double hitY);
 
     int drawMode = 1;

@@ -13,7 +13,6 @@
 #define DRAW_3D 1
 
 void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf::RenderWindow* window) {
-
     posX = World::get_instance()->get_player_pos().x / CELL_SIZE;
     posY = World::get_instance()->get_player_pos().y / CELL_SIZE;
 
@@ -24,11 +23,13 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
         dirY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180));
 
         //perpendicular to dirs
-        planeX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
-        planeY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
+        planeX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90)/1.5;
+        planeY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90)/1.5;
     }
 
+    Stripe* prevStripe = 0 ;
     for (int x = 0; x < MAP_WIDTH; x++) {
+
         double cameraX = 2 * x / double(MAP_WIDTH) - 1;
 
         double rayDirX = dirX + planeX * cameraX;
@@ -115,9 +116,15 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
 
         if (drawMode == DRAW_3D)
         { // drawing 3d render
-            Stripe stripe = Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY), side);
+            Stripe* stripe = new Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY), side);
 
-            drawLine(stripe, window);
+            drawLine(*stripe, window, prevStripe);
+
+            if(prevStripe)
+                delete prevStripe;
+
+            prevStripe = stripe;
+
         } else { //drawing all objects from global pool
             for (int i = 0; i < drawablesCount; ++i) {
                 window->draw(*drawables[i]->get_drawable());
@@ -131,51 +138,109 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
     prevAngle = World::get_instance()->get_player()->get_rotation();
 }
 
-void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window) {
+void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window, Stripe* prevStripe) {
+    double xScale = (double) WINDOW_WIDTH / (double) (MAP_WIDTH * CELL_SIZE);
+    double yScale = (double) WINDOW_HEIGHT / (double) (MAP_HEIGHT * CELL_SIZE);
 
-    sf::RectangleShape* shape = new sf::RectangleShape;
+    if (prevStripe == nullptr) {
 
-    double xScale = (double)WINDOW_WIDTH / (double)(MAP_WIDTH * CELL_SIZE);
-    double yScale = (double)WINDOW_HEIGHT / (double)(MAP_HEIGHT * CELL_SIZE);
+        sf::RectangleShape *shape = new sf::RectangleShape;
 
-    shape->setSize(sf::Vector2f(CELL_SIZE * xScale, (stripe.yEnd - stripe.yStart) * CELL_SIZE * yScale));
-    shape->setPosition(stripe.x * CELL_SIZE * xScale, stripe.yStart * CELL_SIZE * yScale);
+        shape->setSize(sf::Vector2f(CELL_SIZE * xScale, (stripe.yEnd - stripe.yStart) * CELL_SIZE * yScale));
+        shape->setPosition(stripe.x * CELL_SIZE * xScale, stripe.yStart * CELL_SIZE * yScale);
 
-    switch (stripe.wallIndex) {
-        case 1:
-            shape->setFillColor(sf::Color::White);
-            break;
-        case 2:
-            shape->setFillColor(sf::Color::Red);
-            break;
-        case 3:
-            shape->setFillColor(sf::Color::Green);
-            break;
-        case 4:
-            shape->setFillColor(sf::Color::Blue);
-            break;
+        switch (stripe.wallIndex) {
+            case 1:
+                shape->setFillColor(sf::Color::White);
+                break;
+            case 2:
+                shape->setFillColor(sf::Color::Red);
+                break;
+            case 3:
+                shape->setFillColor(sf::Color::Green);
+                break;
+            case 4:
+                shape->setFillColor(sf::Color::Blue);
+                break;
+        }
+
+        int resDist = ((int) stripe.dist / 2);
+
+        if (resDist > 0) {
+            shape->setFillColor(sf::Color(shape->getFillColor().r / resDist,
+                                          shape->getFillColor().g / resDist,
+                                          shape->getFillColor().b / resDist));
+        }
+
+
+        if (stripe.side == 1) {
+            shape->setFillColor(sf::Color(shape->getFillColor().r / 2,
+                                          shape->getFillColor().g / 2,
+                                          shape->getFillColor().b / 2));
+        }
+        window->draw(*shape);
+
+        delete shape;
+
     }
+    else{
+        double btwYStart = prevStripe->yStart*CELL_SIZE;
+        double btwYEnd = prevStripe->yEnd*CELL_SIZE;
 
-    int resDist = ((int)stripe.dist/2);
+        for (int xbtw = prevStripe->x*CELL_SIZE; xbtw < stripe.x*CELL_SIZE; xbtw++)
+        {
+            sf::RectangleShape *shape = new sf::RectangleShape;
 
-    if(resDist > 0)
-    {
-        shape->setFillColor(sf::Color(shape->getFillColor().r / resDist,
-                                      shape->getFillColor().g / resDist,
-                                      shape->getFillColor().b / resDist));
+            if(prevStripe->yStart > stripe.yStart && btwYStart >= stripe.yStart * CELL_SIZE)
+            {
+                btwYStart-=1;
+                btwYEnd+=1;
+            }
+            else if(btwYStart <= stripe.yStart* CELL_SIZE)
+            {
+                btwYStart += 1;
+                btwYEnd -= 1;
+            }
+
+            shape->setSize(sf::Vector2f(1, (btwYEnd - btwYStart)));
+            shape->setPosition(xbtw * xScale, btwYStart * yScale);
+
+            switch (stripe.wallIndex) {
+                case 1:
+                    shape->setFillColor(sf::Color::White);
+                    break;
+                case 2:
+                    shape->setFillColor(sf::Color::Red);
+                    break;
+                case 3:
+                    shape->setFillColor(sf::Color::Green);
+                    break;
+                case 4:
+                    shape->setFillColor(sf::Color::Blue);
+                    break;
+            }
+
+            int resDist = ((int) stripe.dist / 2);
+
+            if (resDist > 0) {
+                shape->setFillColor(sf::Color(shape->getFillColor().r / resDist,
+                                              shape->getFillColor().g / resDist,
+                                              shape->getFillColor().b / resDist));
+            }
+
+
+            if (stripe.side == 1) {
+                shape->setFillColor(sf::Color(shape->getFillColor().r / 2,
+                                              shape->getFillColor().g / 2,
+                                              shape->getFillColor().b / 2));
+            }
+
+            window->draw(*shape);
+
+            delete shape;
+
+        }
     }
-
-
-    if(stripe.side == 1)
-    {
-        shape->setFillColor(sf::Color(shape->getFillColor().r / 2,
-                                      shape->getFillColor().g / 2,
-                                      shape->getFillColor().b / 2));
-    }
-
-    window->draw(*shape);
-
-    delete shape;
 }
 
 double BaseRenderer::dist(double playerX, double playerY, double hitX, double hitY) {
