@@ -14,8 +14,7 @@ SpriteRenderer::SpriteRenderer(const char *path) {
     texture = new sf::Texture;
 
     texture->loadFromFile(path);
-    sprite = new sf::Sprite();
-    sprite->setTexture(*texture);
+    sprite = new sf::Sprite(*texture);
 }
 
 sf::Drawable *SpriteRenderer::get_drawable() {

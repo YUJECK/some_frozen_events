@@ -1,7 +1,7 @@
-#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics.hpp>
+#include <cstring>
 #include "apMoon/World.h"
 #include "Player.h"
-#include "MovementComponent.h"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
 
     sf::Image image;
     testEntity->name = "test";
-    image.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");
+    image.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\FirstLevel.png");
 
     World::get_instance()->load_map(image);
     World::get_instance()->push_entity(testEntity);

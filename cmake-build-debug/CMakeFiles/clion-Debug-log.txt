@@ -1,4 +1,13 @@
-/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/destructive_crab/CLionProjects/some_frozen_events -B /home/destructive_crab/CLionProjects/some_frozen_events/cmake-build-debug
--- Configuring done (0.0s)
--- Generating done (0.0s)
--- Build files have been written to: /home/destructive_crab/CLionProjects/some_frozen_events/cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "D:\VS PROJECTS\C++\sfe\some_frozen_events-curr-" -B "D:\VS PROJECTS\C++\sfe\some_frozen_events-curr-\cmake-build-debug"
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/VS PROJECTS/C++/sfe/some_frozen_events-curr-/cmake-build-debug

@@ -12,7 +12,7 @@ void Player::start_entity()
 //    view = new sf::View;
 //    view->zoom(0.6);
 
-    SpriteRenderer* sp = new SpriteRenderer("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Square.png");
+    SpriteRenderer* sp = new SpriteRenderer("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\Square.png");
 
     add_component(new MovementComponent);
     add_component(sp);
