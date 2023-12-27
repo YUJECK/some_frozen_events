@@ -8,28 +8,31 @@
 #include "RendererMethod.h"
 #include "../World.h"
 #include "Stripe.h"
+#include "RendererManager.h"
 
 class BaseRenderer : public RendererMethod
 {
 private:
-    void drawLine(Stripe stripe, sf::RenderWindow* window, Stripe* prevStripe);
-    double dist(double playerX, double playerY, double hitX, double hitY);
+    void draw_line(Stripe stripe, sf::RenderWindow* window);
+    void draw_buffer(sf::RenderWindow* window);
 
+    double dist(double playerX, double playerY, double hitX, double hitY);
     int drawMode = 1;
-public:
-    void draw(IRendererComponent *drawables[],  int drawablesCount, sf::RenderWindow* window) override;
 
     float prevAngle = 0;
 
+    sf::Color buffer[WINDOW_HEIGHT][WINDOW_WIDTH];
     float posX;
+
     float posY;
-
     double dirX = 1;
-    double dirY = 1;
 
+    double dirY = 1;
     double planeX = 0.9;
     double planeY = 0.66;
 
+public:
+    void draw(IRendererComponent *drawables[],  int drawablesCount, sf::RenderWindow* window) override;
 };
 
 

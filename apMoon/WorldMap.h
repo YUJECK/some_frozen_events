@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "MapCell.h"
 
 #define MAP_WIDTH 36
 #define MAP_HEIGHT 36
@@ -15,11 +16,13 @@
 class WorldMap {
 public:
     WorldMap(sf::Image image);
+    ~WorldMap();
 
     int get(int x, int y);
+    MapCell * get_cell(int x, int y);
 
 private:
-    int process_color(sf::Color color);
+    MapCell * process_color(sf::Color color);
 
 public:
     const int WIDTH = MAP_WIDTH;
@@ -27,7 +30,7 @@ public:
     const int CELL = CELL_SIZE;
 
 private:
-    int map[MAP_WIDTH][MAP_HEIGHT];
+    MapCell* map[MAP_WIDTH][MAP_HEIGHT];
 };
 
 

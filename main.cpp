@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <cstring>
 #include "apMoon/World.h"
 #include "Player.h"
 
