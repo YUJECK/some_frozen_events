@@ -23,15 +23,15 @@ public:
     void start_game_loop();
 
 private:
+    World();
+    ~World();
+
     static World* instance;
 
     sf::RenderWindow* renderWindow;
     Player* player;
     WorldMap *map;
     std::vector<Entity*> entities;
-
-    World();
-    ~World();
 
     World& operator=(World);
 };

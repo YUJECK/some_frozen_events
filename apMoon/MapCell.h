@@ -16,7 +16,6 @@ public:
 public:
     int get_index();
     sf::Texture* get_texture();
-
 private:
     int index;
     sf::Texture * texture;

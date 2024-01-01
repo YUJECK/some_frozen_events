@@ -20,7 +20,7 @@ void MovementComponent::update_component() {
         daddy->set_position(daddy->get_position().x + cos(daddy->get_rotation() * (PI / 180)),
                             daddy->get_position().y + sin(daddy->get_rotation() * (PI / 180)));
 
-        if (World::get_instance()->get_map()->get(daddy->get_position().x / CELL_SIZE, daddy->get_position().y / CELL_SIZE ) > 0)
+        if (World::get_instance()->get_map()->get(daddy->get_position().x, daddy->get_position().y ) > 0)
         {
             daddy->set_position(daddy->get_position().x - cos(daddy->get_rotation() * (PI / 180)),
                                 daddy->get_position().y - sin(daddy->get_rotation() * (PI / 180)));
@@ -31,7 +31,7 @@ void MovementComponent::update_component() {
         daddy->set_position(daddy->get_position().x - cos(daddy->get_rotation() * (PI / 180)),
                             daddy->get_position().y - sin(daddy->get_rotation() * (PI / 180)));
 
-        if (World::get_instance()->get_map()->get(daddy->get_position().x / CELL_SIZE, daddy->get_position().y / CELL_SIZE) > 0)
+        if (World::get_instance()->get_map()->get(daddy->get_position().x, daddy->get_position().y) > 0)
         {
             daddy->set_position(daddy->get_position().x + cos(daddy->get_rotation() * (PI / 180)),
                                 daddy->get_position().y + sin(daddy->get_rotation() * (PI / 180)));
@@ -48,5 +48,4 @@ void MovementComponent::update_component() {
 
 void MovementComponent::destroy_component()
 {
-    std::cout << "Destroy" << std::endl;
 }

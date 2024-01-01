@@ -1,4 +1,3 @@
-#include <cstring>
 #include "iostream"
 #include "World.h"
 #include "Renderer/RendererManager.h"
@@ -13,7 +12,7 @@ World* World::instance = 0;
 
 World::World()
 {
-    renderWindow = new sf::RenderWindow(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML not works!");
+    renderWindow = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "SFML not works!", sf::Style::Fullscreen);
 }
 
 World &World::operator=(World) {
@@ -97,8 +96,6 @@ void World::load_map(sf::Image image) {
     map = new WorldMap(image);
     const char* path = "";
 
-    const char* ASSETS_FOLDER = "D:/VS PROJECTS/C++/sfe/some_frozen_events-curr-/Assets";
-
     for (int x = 0; x < map->WIDTH; ++x) {
         for (int y = 0; y < map->HEIGHT; ++y) {
             if(map->get(x, y) > 0)
@@ -113,7 +110,7 @@ void World::load_map(sf::Image image) {
                     path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\4.png";
 
                 Wall *wall = new Wall(path);
-                wall->set_position(x*map->CELL, y*map->CELL);
+                wall->set_position(x, y);
                 push_entity(wall);
             }
         }

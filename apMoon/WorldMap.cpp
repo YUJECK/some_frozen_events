@@ -6,9 +6,18 @@
 
 WorldMap::WorldMap(sf::Image image) {
 
-    for (int x = 0; x < MAP_WIDTH; ++x) {
-        for (int y = 0; y < MAP_HEIGHT; ++y) {
+    for (int x = 0; x < UP_MAP_WIDTH; ++x) {
+        for (int y = 0; y < UP_MAP_HEIGHT; ++y) {
             map[x][y] = process_color(image.getPixel(x, y));
+        }
+    }
+}
+
+WorldMap::~WorldMap() {
+
+    for (int x = 0; x < UP_MAP_WIDTH; ++x) {
+        for (int y = 0; y < UP_MAP_HEIGHT; ++y) {
+            delete map[x][y];
         }
     }
 }
@@ -42,13 +51,4 @@ int WorldMap::get(int x, int y) {
 
 MapCell * WorldMap::get_cell(int x, int y) {
     return map[x][y];
-}
-
-WorldMap::~WorldMap() {
-
-    for (int x = 0; x < MAP_WIDTH; ++x) {
-        for (int y = 0; y < MAP_HEIGHT; ++y) {
-            delete map[x][y];
-        }
-    }
 }

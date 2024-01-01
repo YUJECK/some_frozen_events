@@ -22,8 +22,8 @@ add_executable(some_frozen_events main.cpp
         apMoon/Renderer/RendererMethod.h
         apMoon/Renderer/SpriteRenderer.cpp
         apMoon/Renderer/SpriteRenderer.h
-        apMoon/Renderer/BaseRenderer.cpp
-        apMoon/Renderer/BaseRenderer.h
+        apMoon/Renderer/Pseudo3DRenderer.cpp
+        apMoon/Renderer/Pseudo3DRenderer.h
         apMoon/Transform.h
         apMoon/Transform.cpp
         apMoon/Inputs/InputService.cpp
@@ -36,6 +36,8 @@ add_executable(some_frozen_events main.cpp
         apMoon/Renderer/Stripe.h
         apMoon/MapCell.cpp
         apMoon/MapCell.h
+        apMoon/MapRenderer.cpp
+        apMoon/MapRenderer.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

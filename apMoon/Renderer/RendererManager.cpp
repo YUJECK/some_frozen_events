@@ -4,8 +4,7 @@
 
 #include <iostream>
 #include "RendererManager.h"
-#include "BaseRenderer.h"
-#include "../World.h"
+#include "Pseudo3DRenderer.h"
 
 RendererManager* RendererManager::instance = 0;
 
@@ -14,6 +13,17 @@ RendererManager* RendererManager::get_instance() {
         instance = new RendererManager;
 
     return instance;
+}
+
+RendererManager::RendererManager() {
+    renderer = new Pseudo3DRenderer;
+    renderWindow = World::get_instance()->get_window();
+    renderWindow->setFramerateLimit(60);
+}
+
+RendererManager::~RendererManager() {
+    delete renderer;
+    delete instance;
 }
 
 void RendererManager::push(IRendererComponent *drawable) {
@@ -39,16 +49,6 @@ RendererManager &RendererManager::operator=(RendererManager) {
     return *this;
 }
 
-RendererManager::RendererManager() {
-    renderer = new BaseRenderer;
-    renderWindow = World::get_instance()->get_window();
-    renderWindow->setFramerateLimit(60);
-}
-
-RendererManager::~RendererManager() {
-    delete renderer;
-    delete instance;
-}
 
 void RendererManager::apply_view(sf::View *view) {
     this->view = view;
