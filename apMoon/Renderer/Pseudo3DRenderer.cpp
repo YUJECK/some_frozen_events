@@ -12,10 +12,8 @@ Pseudo3DRenderer::Pseudo3DRenderer()
     WINDOW_WIDTH = World::get_instance()->get_window()->getSize().x;
     WINDOW_HEIGHT = World::get_instance()->get_window()->getSize().y;
 
-    buffer = new sf::Uint32[WINDOW_HEIGHT*WINDOW_WIDTH];
-
     screen_tex = new sf::Texture;
-    screen_tex->create(WINDOW_HEIGHT, WINDOW_WIDTH);
+    screen_tex->create(WINDOW_WIDTH, WINDOW_HEIGHT);
 
     screen_spr = new sf::Sprite;
     screen_spr->setTexture(*screen_tex);
@@ -24,7 +22,6 @@ Pseudo3DRenderer::Pseudo3DRenderer()
 Pseudo3DRenderer::~Pseudo3DRenderer() {
     delete screen_tex;
     delete screen_spr;
-    delete [] buffer;
 }
 
 void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf::RenderWindow* window) {
@@ -38,8 +35,8 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         dirY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180));
 
         //perpendicular to dirs
-        planeX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90) / 1.5;
-        planeY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90) / 1.5;
+        planeX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
+        planeY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
     }
 
     for (int x = 0; x < WINDOW_WIDTH; x++) {
@@ -68,7 +65,8 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         if (rayDirX < 0) {
             stepX = -1;
             sideDistX = (posX - mapX) * deltaDistX;
-        } else {
+        }
+        else {
             stepX = 1;
             sideDistX = (mapX + 1.0 - posX) * deltaDistX;
         }
@@ -76,7 +74,8 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         if (rayDirY < 0) {
             stepY = -1;
             sideDistY = (posY - mapY) * deltaDistY;
-        } else {
+        }
+        else {
             stepY = 1;
             sideDistY = (mapY + 1.0 - posY) * deltaDistY;
         }
@@ -98,7 +97,8 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
 
         if (side == 0) {
             perpWallDist = sideDistX - deltaDistX;
-        } else {
+        }
+        else {
             perpWallDist = sideDistY - deltaDistY;
         }
 
@@ -115,6 +115,10 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         if (drawEnd >= WINDOW_HEIGHT) {
             drawEnd = WINDOW_HEIGHT - 1;
         }
+
+        //draw_line(x, drawStart, drawEnd, window, hit->get_index(), side);
+
+        //setting up textures
 
         //setting up textures
 
@@ -150,20 +154,17 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
 
             sf::Uint32 color = hit->get_texture()->copyToImage().getPixel(texX, texY).toInteger();
 
-            if(side == 1)
-                color /= 2;
-
-            buffer[WINDOW_HEIGHT * y + x] = color;
+            buffer[y][x] = color;
         }
     }
 
-    // drawing 3d render
+    // drawing result buffer
     draw_buffer(window);
 
     //clear buffer
-    for (int yClear = 0; yClear < WINDOW_HEIGHT; ++yClear) {
-        for (int xClear = 0; xClear < WINDOW_WIDTH; ++xClear) {
-            buffer[WINDOW_HEIGHT * yClear + xClear] = 0;
+    for (int y = 0; y < WINDOW_HEIGHT; y++){
+        for (int x = 0; x < WINDOW_WIDTH; ++x) {
+            buffer[y][x] = 0;
         }
     }
 
@@ -174,4 +175,35 @@ void Pseudo3DRenderer::draw_buffer(sf::RenderWindow *window) {
     screen_tex->update(reinterpret_cast<const sf::Uint8 *>(buffer));
 
     window->draw(*screen_spr);
+}
+
+void Pseudo3DRenderer::draw_line(int x, int y1, int y2, sf::RenderWindow * window, int wallinx, int side) {
+    sf::RectangleShape* shape = new sf::RectangleShape;
+
+    shape->setSize(sf::Vector2f(1, (y2-y1)));
+    shape->setPosition(x, y1);
+
+    switch (wallinx) {
+        case 1:
+            shape->setFillColor(sf::Color::White);
+            break;
+        case 2:
+            shape->setFillColor(sf::Color::Red);
+            break;
+        case 3:
+            shape->setFillColor(sf::Color::Green);
+            break;
+        case 4:
+            shape->setFillColor(sf::Color::Blue);
+            break;
+    }
+
+    if(side == 1)
+    {
+        shape->setFillColor(sf::Color(shape->getFillColor().r / 2, shape->getFillColor().g / 2, shape->getFillColor().b / 2));
+    }
+
+    window->draw(*shape);
+
+    delete shape;
 }

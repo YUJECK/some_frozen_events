@@ -36,12 +36,6 @@ void RendererManager::erase(IRendererComponent *drawable) {
 }
 
 void RendererManager::tick() {
-
-//    if(view)
-//    {
-//        renderWindow->setView(*view);
-//    }
-
     renderer->draw(drawables.data(), drawables.size(), renderWindow);
 }
 
