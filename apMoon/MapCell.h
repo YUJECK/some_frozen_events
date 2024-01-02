@@ -15,11 +15,10 @@ public:
 
 public:
     int get_index();
-    sf::Texture* get_texture();
+    sf::Color get_pixel(int x, int y);
 private:
     int index;
-    sf::Texture * texture;
-
+    sf::Image image;
 };
 
 

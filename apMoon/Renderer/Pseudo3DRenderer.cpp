@@ -9,8 +9,13 @@
 
 Pseudo3DRenderer::Pseudo3DRenderer()
 {
+    PIby180 = PI / 180;
+
     WINDOW_WIDTH = World::get_instance()->get_window()->getSize().x;
     WINDOW_HEIGHT = World::get_instance()->get_window()->getSize().y;
+
+    buffer = new sf::Image;
+    buffer->create(WINDOW_WIDTH, WINDOW_HEIGHT);
 
     screen_tex = new sf::Texture;
     screen_tex->create(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -20,6 +25,7 @@ Pseudo3DRenderer::Pseudo3DRenderer()
 }
 
 Pseudo3DRenderer::~Pseudo3DRenderer() {
+    delete [] buffer;
     delete screen_tex;
     delete screen_spr;
 }
@@ -28,15 +34,17 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
     posX = World::get_instance()->get_player_pos().x;
     posY = World::get_instance()->get_player_pos().y;
 
-    double rotationAngle = World::get_instance()->get_player()->get_rotation() - prevAngle;
+    float angle = World::get_instance()->get_player()->get_rotation();
+
+    double rotationAngle = angle - prevAngle;
 
     if (rotationAngle != 0) { //rotating
-        dirX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180));
-        dirY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180));
+        dirX = cos(angle * PIby180);
+        dirY = sin(angle * PIby180);
 
         //perpendicular to dirs
-        planeX = cos(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
-        planeY = sin(World::get_instance()->get_player()->get_rotation() * (PI / 180) + 90);
+        planeX = cos(angle * PIby180 + 90);
+        planeY = sin(angle * PIby180 + 90);
     }
 
     for (int x = 0; x < WINDOW_WIDTH; x++) {
@@ -116,12 +124,7 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
             drawEnd = WINDOW_HEIGHT - 1;
         }
 
-        //draw_line(x, drawStart, drawEnd, window, hit->get_index(), side);
-
         //setting up textures
-
-        //setting up textures
-
         double wallX;
 
         if(side == 0)
@@ -130,7 +133,7 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         }
         else
         {
-            wallX = posX + perpWallDist + rayDirX;
+            wallX = posX + perpWallDist * rayDirX;
         }
         wallX -= floor(wallX);
 
@@ -152,9 +155,11 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
             int texY = (int)texPos & (CELL_SIZE - 1);
             texPos += step;
 
-            sf::Uint32 color = hit->get_texture()->copyToImage().getPixel(texX, texY).toInteger();
+            sf::Color color = hit->get_pixel(texX, texY);
 
-            buffer[y][x] = color;
+            color = process_color(color, side);
+
+            buffer->setPixel(x, y, color);
         }
     }
 
@@ -162,9 +167,9 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
     draw_buffer(window);
 
     //clear buffer
-    for (int y = 0; y < WINDOW_HEIGHT; y++){
-        for (int x = 0; x < WINDOW_WIDTH; ++x) {
-            buffer[y][x] = 0;
+    for (int x = 0; x < WINDOW_WIDTH; x++){
+        for (int y = 0; y < WINDOW_HEIGHT; ++y) {
+            buffer->setPixel(x, y, sf::Color(0, 0, 0, 0));
         }
     }
 
@@ -172,38 +177,13 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
 }
 
 void Pseudo3DRenderer::draw_buffer(sf::RenderWindow *window) {
-    screen_tex->update(reinterpret_cast<const sf::Uint8 *>(buffer));
-
+    screen_tex->update(*buffer);
     window->draw(*screen_spr);
 }
 
-void Pseudo3DRenderer::draw_line(int x, int y1, int y2, sf::RenderWindow * window, int wallinx, int side) {
-    sf::RectangleShape* shape = new sf::RectangleShape;
-
-    shape->setSize(sf::Vector2f(1, (y2-y1)));
-    shape->setPosition(x, y1);
-
-    switch (wallinx) {
-        case 1:
-            shape->setFillColor(sf::Color::White);
-            break;
-        case 2:
-            shape->setFillColor(sf::Color::Red);
-            break;
-        case 3:
-            shape->setFillColor(sf::Color::Green);
-            break;
-        case 4:
-            shape->setFillColor(sf::Color::Blue);
-            break;
-    }
-
+sf::Color Pseudo3DRenderer::process_color(sf::Color color, int side) {
     if(side == 1)
-    {
-        shape->setFillColor(sf::Color(shape->getFillColor().r / 2, shape->getFillColor().g / 2, shape->getFillColor().b / 2));
-    }
+        return sf::Color(color.r / 2, color.g / 2, color.b / 2);
 
-    window->draw(*shape);
-
-    delete shape;
+    return color;
 }

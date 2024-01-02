@@ -24,6 +24,7 @@ private:
     void draw_buffer(sf::RenderWindow* window);
 
     float prevAngle = 0;
+    double PIby180;
 
     float posX;
     float posY;
@@ -37,11 +38,11 @@ private:
     int WINDOW_WIDTH = 0;
     int WINDOW_HEIGHT = 0;
 
-    sf::Uint32 buffer[768][1366];
+    sf::Image* buffer;
     sf::Sprite* screen_spr;
     sf::Texture* screen_tex;
 
-    void draw_line(int x, int y1, int y2, sf::RenderWindow *window, int wallinx, int side);
+    sf::Color process_color(sf::Color color, int side);
 };
 
 

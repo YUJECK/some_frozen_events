@@ -36,8 +36,6 @@ add_executable(some_frozen_events main.cpp
         apMoon/Renderer/Stripe.h
         apMoon/MapCell.cpp
         apMoon/MapCell.h
-        apMoon/MapRenderer.cpp
-        apMoon/MapRenderer.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

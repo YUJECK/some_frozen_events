@@ -38,7 +38,8 @@ void World::push_entity(Entity *entity) {
     if(entity->has_component(component))
         RendererManager::get_instance()->push(component);
 
-    player = dynamic_cast<Player *>(entity);
+    if(!player)
+        player = dynamic_cast<Player *>(entity);
 }
 
 void World::delete_entity(Entity *entity) {
@@ -94,27 +95,27 @@ WorldMap *World::get_map() {
 
 void World::load_map(sf::Image image) {
     map = new WorldMap(image);
-    const char* path = "";
-
-    for (int x = 0; x < map->WIDTH; ++x) {
-        for (int y = 0; y < map->HEIGHT; ++y) {
-            if(map->get(x, y) > 0)
-            {
-                if(map->get(x, y) == 1)
-                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\1.png";
-                if (map->get(x, y) == 2)
-                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\2.png";
-                if(map->get(x, y) == 3)
-                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\3.png";
-                if(map->get(x, y) == 4)
-                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\4.png";
-
-                Wall *wall = new Wall(path);
-                wall->set_position(x, y);
-                push_entity(wall);
-            }
-        }
-    }
+//    const char* path = "";
+//
+//    for (int x = 0; x < map->WIDTH; ++x) {
+//        for (int y = 0; y < map->HEIGHT; ++y) {
+//            if(map->get(x, y) > 0)
+//            {
+//                if(map->get(x, y) == 1)
+//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\1.png";
+//                if (map->get(x, y) == 2)
+//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\2.png";
+//                if(map->get(x, y) == 3)
+//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\3.png";
+//                if(map->get(x, y) == 4)
+//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\4.png";
+//
+////                Wall *wall = new Wall(path);
+////                wall->set_position(x, y);
+////                push_entity(wall);
+//            }
+//        }
+//    }
 }
 
 Player *World::get_player() {

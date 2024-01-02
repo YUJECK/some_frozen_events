@@ -46,6 +46,9 @@ MapCell * WorldMap::process_color(sf::Color color) {
 }
 
 int WorldMap::get(int x, int y) {
+    if(x >= MAP_WIDTH) return 0;
+    if(y >= MAP_HEIGHT) return 0;
+
     return map[x][y]->get_index();
 }
 

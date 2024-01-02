@@ -29,7 +29,7 @@ private:
     static World* instance;
 
     sf::RenderWindow* renderWindow;
-    Player* player;
+    Player* player = 0;
     WorldMap *map;
     std::vector<Entity*> entities;
 

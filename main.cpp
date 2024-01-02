@@ -7,7 +7,7 @@ int main()
     srand(time(NULL));
 
     Player *testEntity = new Player;
-    testEntity->set_position(16, 16);
+    testEntity->set_position(3, 3);
 
     sf::Image image;
     testEntity->name = "test";
