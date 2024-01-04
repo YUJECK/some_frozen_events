@@ -8,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (2.5s)
--- Generating done (1.1s)
+-- Configuring done (2.0s)
+-- Generating done (0.8s)
 -- Build files have been written to: D:/VS PROJECTS/C++/sfe/some_frozen_events-curr-/cmake-build-debug

@@ -42,6 +42,9 @@ private:
     sf::Sprite* screen_spr;
     sf::Texture* screen_tex;
 
+    sf::Image floor_tex;
+    sf::Image ceiling_tex;
+
     sf::Color process_color(sf::Color color, int side);
 };
 

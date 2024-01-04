@@ -1,6 +1,7 @@
 //
 // Created by destructive_crab on 12/6/23.
-//w
+//
+
 #include <math.h>
 #include "MovementComponent.h"
 #include "apMoon/Inputs/InputService.h"
@@ -37,12 +38,11 @@ void MovementComponent::update_component() {
         }
     }
 
-
     if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::D))
-        daddy->rotate(1.5);
+        daddy->rotate(rotateSpeed);
 
     if (InputService::get_instance()->is_key_pressed(sf::Keyboard::Key::A))
-        daddy->rotate(-1.5);
+        daddy->rotate(-rotateSpeed);
 }
 
 void MovementComponent::destroy_component() { }

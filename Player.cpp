@@ -15,11 +15,6 @@ void Player::start_entity()
     add_component(sp);
 }
 
-void Player::destroy_entity()
-{
+void Player::destroy_entity() { }
 
-}
-
-void Player::update_entity()
-{
-}
+void Player::update_entity() { }

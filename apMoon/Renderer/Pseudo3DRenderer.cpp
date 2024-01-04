@@ -11,6 +11,9 @@ Pseudo3DRenderer::Pseudo3DRenderer()
 {
     PIby180 = PI / 180;
 
+    ceiling_tex.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\ceiling.png");
+    floor_tex.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\floor.png");
+
     WINDOW_WIDTH = World::get_instance()->get_window()->getSize().x;
     WINDOW_HEIGHT = World::get_instance()->get_window()->getSize().y;
 
@@ -47,6 +50,57 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         planeY = sin(angle * PIby180 + 90);
     }
 
+    sf::Image texture;
+    texture.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\1.png");
+
+    //floor and ceiling
+
+    for (int y = 0; y < WINDOW_HEIGHT; ++y) {
+        float rayDirX0 = dirX - planeX;
+        float rayDirX1 = dirX + planeX;
+
+        float rayDirY0 = dirY - planeY;
+        float rayDirY1 = dirY + planeY;
+
+        int curPos = y - WINDOW_HEIGHT / 2; //текущая позиция относительно центра экрана
+
+        float posZ = WINDOW_HEIGHT / 2; // вертикальная позиция камеры
+
+        float rowDistance = posZ / curPos;
+
+        float stepX = rowDistance * (rayDirX1 - rayDirX0) / WINDOW_WIDTH;
+        float stepY = rowDistance * (rayDirY1 - rayDirY0) / WINDOW_WIDTH;
+
+        float floorX = posX + rowDistance * rayDirX0;
+        float floorY = posY + rowDistance * rayDirY0;
+
+        for (unsigned int x = 0; x < WINDOW_WIDTH; ++x) { //полоска за полоской рисуем
+            int cellX = floorX;
+            int cellY = floorY;
+
+            int tx = (int) (CELL_SIZE * (floorX - cellX)) & (CELL_SIZE - 1);
+            int ty = (int) (CELL_SIZE * (floorY - cellY)) & (CELL_SIZE - 1);
+
+            floorX += stepX;
+            floorY += stepY;
+
+            sf::Color color;
+
+            //floor
+            color = floor_tex.getPixel(tx, ty);
+//            if(y != 0)
+//                color = sf::Color(color.r / (WINDOW_HEIGHT/y), color.b / (WINDOW_HEIGHT/y), color.g / (WINDOW_HEIGHT/y));
+
+            buffer->setPixel(x, y, color);
+
+            //ceiling
+            color = ceiling_tex.getPixel(tx, ty);
+//            if(y != 0)
+//                color = sf::Color(color.r / (WINDOW_HEIGHT/y), color.b / (WINDOW_HEIGHT/y), color.g / (WINDOW_HEIGHT/y));
+            buffer->setPixel(x, WINDOW_HEIGHT - y - 1, color);
+        }
+    }
+    //walls
     for (int x = 0; x < WINDOW_WIDTH; x++) {
         double cameraX = 2 * x / double(WINDOW_WIDTH) - 1;
 
