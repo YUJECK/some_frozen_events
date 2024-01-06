@@ -8,6 +8,9 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "MapCell.h"
+#include "Renderer/IRendererComponent.h"
+#include "Renderer/RayData.h"
+
 
 #define MAP_WIDTH 64
 #define MAP_HEIGHT 64
@@ -22,8 +25,13 @@ public:
     WorldMap(sf::Image image);
     ~WorldMap();
 
-    int get(int x, int y);
-    MapCell * get_cell(int x, int y);
+    int get(unsigned int x, unsigned int y);
+    MapCell * get_cell(unsigned int x, unsigned int y);
+
+    RayData raycast(sf::Vector2u position, sf::Vector2f direction);
+
+    void replace(unsigned int x, unsigned int y, MapCell* to);
+    void swap(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
 
 private:
     MapCell * process_color(sf::Color color);

@@ -3,8 +3,6 @@
 //
 
 #include "Pseudo3DRenderer.h"
-#include "RendererManager.h"
-#include "../Inputs/InputService.h"
 #include<math.h>
 
 Pseudo3DRenderer::Pseudo3DRenderer()
@@ -25,6 +23,8 @@ Pseudo3DRenderer::Pseudo3DRenderer()
 
     screen_spr = new sf::Sprite;
     screen_spr->setTexture(*screen_tex);
+
+    ZBuffer = new double [WINDOW_WIDTH];
 }
 
 Pseudo3DRenderer::~Pseudo3DRenderer() {
@@ -88,15 +88,11 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
 
             //floor
             color = floor_tex.getPixel(tx, ty);
-//            if(y != 0)
-//                color = sf::Color(color.r / (WINDOW_HEIGHT/y), color.b / (WINDOW_HEIGHT/y), color.g / (WINDOW_HEIGHT/y));
 
             buffer->setPixel(x, y, color);
 
             //ceiling
             color = ceiling_tex.getPixel(tx, ty);
-//            if(y != 0)
-//                color = sf::Color(color.r / (WINDOW_HEIGHT/y), color.b / (WINDOW_HEIGHT/y), color.g / (WINDOW_HEIGHT/y));
             buffer->setPixel(x, WINDOW_HEIGHT - y - 1, color);
         }
     }
@@ -143,7 +139,7 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         }
 
         //DDA
-        while (hit == nullptr || hit->get_index() == 0) {
+        while (hit == nullptr || hit->get_index() == 0 || hit->is_decoration()) {
             if (sideDistX < sideDistY) {
                 sideDistX += deltaDistX;
                 mapX += stepX;
@@ -214,6 +210,53 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
             color = process_color(color, side);
 
             buffer->setPixel(x, y, color);
+        }
+
+        ZBuffer[x] = perpWallDist;
+    }
+
+    for(int i = 0; i < drawablesCount; i++) {
+        //translate sprite position to relative to camera
+        double spriteX = drawables[i]->get_daddy()->get_position().x - posX;
+        double spriteY = drawables[i]->get_daddy()->get_position().y - posY;
+
+        double invDet = 1.0 / (planeX * dirY - dirX * planeY); //required for correct matrix multiplication
+
+        double transformX = invDet * (dirY * spriteX - dirX * spriteY);
+        double transformY = invDet * (-planeY * spriteX + planeX *
+                                                          spriteY); //this is actually the depth inside the screen, that what Z is in 3D
+
+        int spriteScreenX = int((WINDOW_WIDTH / 2) * (1 + transformX / transformY));
+
+        //calculate height of the sprite on screen
+        int spriteHeight = abs(
+                int(WINDOW_HEIGHT / (transformY))); //using 'transformY' instead of the real distance prevents fisheye
+        //calculate lowest and highest pixel to fill in current stripe
+        int drawStartY = -spriteHeight / 2 + WINDOW_HEIGHT / 2;
+        if (drawStartY < 0) drawStartY = 0;
+        int drawEndY = spriteHeight / 2 + WINDOW_HEIGHT / 2;
+        if (drawEndY >= WINDOW_HEIGHT) drawEndY = WINDOW_HEIGHT - 1;
+
+        //calculate width of the sprite
+        int spriteWidth = abs(int(WINDOW_HEIGHT / (transformY)));
+        int drawStartX = -spriteWidth / 2 + spriteScreenX;
+        if (drawStartX < 0) drawStartX = 0;
+        int drawEndX = spriteWidth / 2 + spriteScreenX;
+        if (drawEndX >= WINDOW_WIDTH) drawEndX = WINDOW_WIDTH - 1;
+
+        //loop through every vertical stripe of the sprite on screen
+        for (int stripe = drawStartX; stripe < drawEndX; stripe++) {
+            int texX = int(256 * (stripe - (-spriteWidth / 2 + spriteScreenX)) * CELL_SIZE / spriteWidth) / 256;
+
+            if (transformY > 0 && stripe > 0 && stripe < WINDOW_WIDTH && transformY < ZBuffer[stripe])
+                for (int y = drawStartY; y < drawEndY; y++) {
+                    int d = (y) * 256 - WINDOW_HEIGHT * 128 + spriteHeight * 128;
+                    int texY = ((d * CELL_SIZE) / spriteHeight) / 256;
+                    sf::Color color = drawables[i]->get_image()->getPixel(texX, texY);
+
+                    if(color != sf::Color(0,0,0,0))
+                        buffer->setPixel(stripe, y, color);
+                }
         }
     }
 

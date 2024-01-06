@@ -7,7 +7,6 @@
 
 #include "RendererMethod.h"
 #include "../World.h"
-#include "Stripe.h"
 #include "RendererManager.h"
 
 #define PI 3.14159265359
@@ -38,6 +37,7 @@ private:
     int WINDOW_WIDTH = 0;
     int WINDOW_HEIGHT = 0;
 
+    double * ZBuffer;
     sf::Image* buffer;
     sf::Sprite* screen_spr;
     sf::Texture* screen_tex;

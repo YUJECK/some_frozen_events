@@ -10,14 +10,20 @@
 
 class MapCell {
 public:
-    MapCell(int index, char* texture_path);
+    MapCell(int index, const char* texture_path, bool dec);
     ~MapCell();
 
-public:
+    bool is_decoration();
     int get_index();
+
+    const char *get_tex_path() const;
+
     sf::Color get_pixel(int x, int y);
+
 private:
     int index;
+    bool isDecoration;
+    const char* tex_path;
     sf::Image image;
 };
 

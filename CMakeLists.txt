@@ -32,10 +32,19 @@ add_executable(some_frozen_events main.cpp
         apMoon/WorldMap.h
         Wall.cpp
         Wall.h
-        apMoon/Renderer/Stripe.cpp
-        apMoon/Renderer/Stripe.h
         apMoon/MapCell.cpp
         apMoon/MapCell.h
+        apMoon/Renderer/IRendererComponent.cpp
+        PlayerShooting.cpp
+        PlayerShooting.h
+        apMoon/Renderer/RayData.cpp
+        apMoon/Renderer/RayData.h
+        Enemy.cpp
+        Enemy.h
+        Health.cpp
+        Health.h
+        PlayerHealth.cpp
+        PlayerHealth.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

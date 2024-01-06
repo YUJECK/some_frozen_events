@@ -45,3 +45,11 @@ InputService *InputService::get_instance() {
 InputService::~InputService() {
     delete instance;
 }
+
+bool InputService::is_left_mouse_button_pressed() {
+    return sf::Mouse::isButtonPressed(sf::Mouse::Left);
+}
+
+bool InputService::is_right_mouse_button_pressed() {
+    return sf::Mouse::isButtonPressed(sf::Mouse::Right);
+}

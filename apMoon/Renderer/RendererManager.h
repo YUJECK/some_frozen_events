@@ -5,8 +5,11 @@
 #ifndef SOME_FROZEN_EVENTS_RENDERERMANAGER_H
 #define SOME_FROZEN_EVENTS_RENDERERMANAGER_H
 
+#include <iostream>
+#include <SFML/Graphics.hpp>
 #include "RendererMethod.h"
-#include<SFML/Graphics.hpp>
+#include "../Inputs/InputService.h"
+#include "Pseudo3DRenderer.h"
 
 class RendererManager
 {
@@ -22,6 +25,7 @@ public:
 private:
     RendererManager();
     ~RendererManager();
+    static bool compare_decorations(IRendererComponent *left, IRendererComponent *right);
 
     static RendererManager* instance;
 

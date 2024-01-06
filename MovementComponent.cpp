@@ -48,11 +48,11 @@ void MovementComponent::update_component() {
 void MovementComponent::destroy_component() { }
 
 float MovementComponent::get_x_move() {
-    return cos(daddy->get_rotation() * PIby180) / 5;
+    return cos(daddy->get_rotation() * PIby180) / 2;
 }
 
 float MovementComponent::get_y_move() {
-    return sin(daddy->get_rotation() * PIby180) / 5;
+    return sin(daddy->get_rotation() * PIby180) / 2;
 }
 
 bool MovementComponent::check_collisions(sf::Vector2f pos) {

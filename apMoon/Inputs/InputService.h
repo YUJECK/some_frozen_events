@@ -26,6 +26,9 @@ public:
     bool is_key_pressed(sf::Keyboard::Key key);
     bool is_key_down(sf::Keyboard::Key key);
     bool is_key_up(sf::Keyboard::Key key);
+    bool is_left_mouse_button_pressed();
+
+    bool is_right_mouse_button_pressed();
 };
 
 

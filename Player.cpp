@@ -5,14 +5,15 @@
 #include "Player.h"
 #include "apMoon/Renderer/SpriteRenderer.h"
 #include "MovementComponent.h"
+#include "PlayerShooting.h"
+#include "PlayerHealth.h"
 #include<iostream>
 
 void Player::start_entity()
 {
-    SpriteRenderer* sp = new SpriteRenderer("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\Square.png");
-
     add_component(new MovementComponent);
-    add_component(sp);
+    add_component(new PlayerShooting);
+    add_component(new PlayerHealth);
 }
 
 void Player::destroy_entity() { }
