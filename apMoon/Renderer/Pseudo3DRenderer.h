@@ -6,7 +6,7 @@
 #define SOME_FROZEN_EVENTS_PSEUDO3DRENDERER_H
 
 #include "RendererMethod.h"
-#include "../World.h"
+#include "../Game.h"
 #include "RendererManager.h"
 
 #define PI 3.14159265359

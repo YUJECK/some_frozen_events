@@ -7,7 +7,6 @@
 #include "../Wall.h"
 
 WorldMap::WorldMap(sf::Image image) {
-
     for (int x = 0; x < UP_MAP_WIDTH; ++x) {
         for (int y = 0; y < UP_MAP_HEIGHT; ++y) {
             map[x][y] = process_color(image.getPixel(x, y));
@@ -16,7 +15,7 @@ WorldMap::WorldMap(sf::Image image) {
             {
                 Wall * wall = new Wall(map[x][y]->get_tex_path());
                 wall->set_position(x, y);
-                World::get_instance()->push_entity(wall);
+                Game::get_instance()->push_entity(wall);
             }
         }
     }
@@ -124,7 +123,7 @@ RayData WorldMap::raycast(sf::Vector2u position, sf::Vector2f direction) {
             mapY += stepY;
         }
 
-        hit = World::get_instance()->get_map()->get_cell(mapX, mapY);
+        hit = Game::get_instance()->get_map()->get_cell(mapX, mapY);
     }
 
 

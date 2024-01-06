@@ -5,7 +5,7 @@
 #include <math.h>
 #include "MovementComponent.h"
 #include "apMoon/Inputs/InputService.h"
-#include "apMoon/World.h"
+#include "apMoon/Game.h"
 
 #define PI 3.14159265359
 
@@ -56,5 +56,5 @@ float MovementComponent::get_y_move() {
 }
 
 bool MovementComponent::check_collisions(sf::Vector2f pos) {
-    return World::get_instance()->get_map()->get(pos.x, pos.y) > 0;
+    return Game::get_instance()->get_map()->get(pos.x, pos.y) > 0;
 }

@@ -16,7 +16,7 @@ protected:
     Entity* daddy;
 public:
     Component();
-    ~Component();
+    virtual ~Component();
 
     void set_daddy(Entity* entity);
     Entity* get_daddy() const;

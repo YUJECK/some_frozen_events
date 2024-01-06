@@ -7,6 +7,7 @@
 
 
 #include "SFML/Graphics/Texture.hpp"
+#include "Entity.h"
 
 class MapCell {
 public:
@@ -17,6 +18,7 @@ public:
     int get_index();
 
     const char *get_tex_path() const;
+    const Entity *get_entity();
 
     sf::Color get_pixel(int x, int y);
 
@@ -25,6 +27,9 @@ private:
     bool isDecoration;
     const char* tex_path;
     sf::Image image;
+    Entity * entity;
+
+    void set_entity(Entity *entity);
 };
 
 

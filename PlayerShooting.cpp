@@ -3,7 +3,7 @@
 //
 
 #include "PlayerShooting.h"
-#include "apMoon/World.h"
+#include "apMoon/Game.h"
 
 #define PIby180 3.14/180
 
@@ -13,8 +13,8 @@ void PlayerShooting::update_component() {
 
     if(InputService::get_instance()->is_left_mouse_button_pressed())
     {
-        RayData hit = World::get_instance()->get_map()->raycast(sf::Vector2u(daddy->get_position().x, daddy->get_position().y), sf::Vector2f(dirX, dirY));
-        World::get_instance()->get_map()->replace(hit.position.x, hit.position.y, new MapCell(0, "", false));
+        RayData hit = Game::get_instance()->get_map()->raycast(sf::Vector2u(daddy->get_position().x, daddy->get_position().y), sf::Vector2f(dirX, dirY));
+        Game::get_instance()->get_map()->replace(hit.position.x, hit.position.y, new MapCell(0, "", false));
     }
 }
 

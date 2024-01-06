@@ -18,6 +18,8 @@ public:
 
     void tick();
 
+    void switch_renderer_method(RendererMethod * method);
+
     void apply_view(sf::View* view);
     void push(IRendererComponent* drawable);
     void erase(IRendererComponent* drawable);
@@ -29,7 +31,7 @@ private:
 
     static RendererManager* instance;
 
-    RendererMethod* renderer;
+    RendererMethod* method;
     sf::RenderWindow* renderWindow;
 
     sf::View* view;

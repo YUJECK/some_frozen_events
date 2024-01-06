@@ -14,13 +14,13 @@ RendererManager* RendererManager::get_instance() {
 }
 
 RendererManager::RendererManager() {
-    renderer = new Pseudo3DRenderer;
-    renderWindow = World::get_instance()->get_window();
+    method = new Pseudo3DRenderer;
+    renderWindow = Game::get_instance()->get_window();
     renderWindow->setFramerateLimit(60);
 }
 
 RendererManager::~RendererManager() {
-    delete renderer;
+    delete method;
     delete instance;
 }
 
@@ -38,7 +38,7 @@ void RendererManager::tick() {
     if(!std::is_sorted(drawables.begin(), drawables.end()))
         std::sort(drawables.begin(), drawables.end(), compare_decorations);
 
-    renderer->draw(drawables.data(), drawables.size(), renderWindow);
+    method->draw(drawables.data(), drawables.size(), renderWindow);
 }
 
 RendererManager &RendererManager::operator=(RendererManager) {
@@ -51,4 +51,9 @@ void RendererManager::apply_view(sf::View *view) {
 
 bool RendererManager::compare_decorations(IRendererComponent *left, IRendererComponent *right) {
     return left->get_distance_to_player() > right->get_distance_to_player();
+}
+
+void RendererManager::switch_renderer_method(RendererMethod *method) {
+    delete method;
+    method = method;
 }

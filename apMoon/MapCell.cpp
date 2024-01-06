@@ -34,3 +34,10 @@ bool MapCell::is_decoration() {
 const char *MapCell::get_tex_path() const {
     return tex_path;
 }
+
+const Entity *MapCell::get_entity() {
+    return entity;
+}
+void MapCell::set_entity(Entity* entity) {
+    this->entity = entity;
+}

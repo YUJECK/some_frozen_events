@@ -12,8 +12,8 @@ Pseudo3DRenderer::Pseudo3DRenderer()
     ceiling_tex.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\ceiling.png");
     floor_tex.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\floor.png");
 
-    WINDOW_WIDTH = World::get_instance()->get_window()->getSize().x;
-    WINDOW_HEIGHT = World::get_instance()->get_window()->getSize().y;
+    WINDOW_WIDTH = Game::get_instance()->get_window()->getSize().x;
+    WINDOW_HEIGHT = Game::get_instance()->get_window()->getSize().y;
 
     buffer = new sf::Image;
     buffer->create(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -34,10 +34,10 @@ Pseudo3DRenderer::~Pseudo3DRenderer() {
 }
 
 void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf::RenderWindow* window) {
-    posX = World::get_instance()->get_player_pos().x;
-    posY = World::get_instance()->get_player_pos().y;
+    posX = Game::get_instance()->get_player_pos().x;
+    posY = Game::get_instance()->get_player_pos().y;
 
-    float angle = World::get_instance()->get_player()->get_rotation();
+    float angle = Game::get_instance()->get_player()->get_rotation();
 
     double rotationAngle = angle - prevAngle;
 
@@ -150,7 +150,7 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
                 side = 1;
             }
 
-            hit = World::get_instance()->get_map()->get_cell(mapX, mapY);
+            hit = Game::get_instance()->get_map()->get_cell(mapX, mapY);
         }
 
         if (side == 0) {
@@ -270,7 +270,7 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
         }
     }
 
-    prevAngle = World::get_instance()->get_player()->get_rotation();
+    prevAngle = Game::get_instance()->get_player()->get_rotation();
 }
 
 void Pseudo3DRenderer::draw_buffer(sf::RenderWindow *window) {

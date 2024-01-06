@@ -1,5 +1,5 @@
-#ifndef SOME_FROZEN_EVENTS_WORLD_H
-#define SOME_FROZEN_EVENTS_WORLD_H
+#ifndef SOME_FROZEN_EVENTS_GAME_H
+#define SOME_FROZEN_EVENTS_GAME_H
 
 #include <vector>
 #include <algorithm>
@@ -7,11 +7,12 @@
 #include "Entity.h"
 #include "WorldMap.h"
 #include "../Player.h"
+#include "Scene.h"
 
-class World
+class Game
 {
 public:
-    static World* get_instance();
+    static Game* get_instance();
     sf::RenderWindow* get_window();
     WorldMap* get_map();
     Player* get_player();
@@ -20,20 +21,24 @@ public:
     void push_entity(Entity* entity);
     void delete_entity(Entity* entity);
     void load_map(sf::Image image);
+    void load_scene(Scene *scene);
+
     void start_game_loop();
-
 private:
-    World();
-    ~World();
+    Game();
 
-    static World* instance;
+    ~Game();
 
+    static Game* instance;
     sf::RenderWindow* renderWindow;
+    Scene * currentScene = 0;
     Player* player = 0;
     WorldMap *map;
+    sf::Vector2u windowSize;
+
     std::vector<Entity*> entities;
 
-    World& operator=(World);
+    Game& operator=(Game);
 };
 
-#endif //SOME_FROZEN_EVENTS_WORLD_H
+#endif //SOME_FROZEN_EVENTS_GAME_H

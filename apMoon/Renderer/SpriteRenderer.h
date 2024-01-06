@@ -6,7 +6,7 @@
 #define SOME_FROZEN_EVENTS_SPRITERENDERER_H
 
 #include "IRendererComponent.h"
-#include "../World.h"
+#include "../Game.h"
 #include <SFML/Graphics.hpp>
 
 class SpriteRenderer : public IRendererComponent

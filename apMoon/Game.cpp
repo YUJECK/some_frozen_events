@@ -1,32 +1,35 @@
 #include "iostream"
-#include "World.h"
+#include "Game.h"
 #include "Renderer/RendererManager.h"
 #include "Renderer/IRendererComponent.h"
 #include "Inputs/InputService.h"
 #include "../Wall.h"
+#include "Scene.h"
+#include "GUI/GUIRenderer.h"
 
 //
 // Created by destructive_crab on 12/4/23.
 //
-World* World::instance = 0;
+Game* Game::instance = 0;
 
-World::World()
+Game::Game()
 {
-    renderWindow = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "SFML not works!", sf::Style::Fullscreen);
+    renderWindow = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "SFML not works!", sf::Style::Resize);
+    windowSize = renderWindow->getSize();
 }
 
-World &World::operator=(World) {
+Game &Game::operator=(Game) {
     return *this;
 }
 
-World* World::get_instance() {
+Game* Game::get_instance() {
     if(instance == nullptr)
-        instance = new World;
+        instance = new Game;
 
     return instance;
 }
 
-void World::push_entity(Entity *entity) {
+void Game::push_entity(Entity *entity) {
     if(entity == nullptr)
         return;
 
@@ -42,7 +45,7 @@ void World::push_entity(Entity *entity) {
         player = dynamic_cast<Player *>(entity);
 }
 
-void World::delete_entity(Entity *entity) {
+void Game::delete_entity(Entity *entity) {
     if(entity == nullptr)
         return;
 
@@ -51,7 +54,7 @@ void World::delete_entity(Entity *entity) {
     delete entity;
 }
 
-void World::start_game_loop()
+void Game::start_game_loop()
 {
     while (renderWindow->isOpen())
     {
@@ -63,6 +66,11 @@ void World::start_game_loop()
             if (event.type == sf::Event::Closed) {
                 renderWindow->close();
             }
+            if(event.type == sf::Event::Resized)
+            {
+                GUIRenderer::get_instance()->resize(windowSize, renderWindow->getSize());
+                windowSize = renderWindow->getSize();
+            }
         }
 
         InputService::get_instance()->tick();
@@ -73,15 +81,18 @@ void World::start_game_loop()
         }
 
         RendererManager::get_instance()->tick();
+
+        GUIRenderer::get_instance()->tick();
+        GUIRenderer::get_instance()->draw(renderWindow);
         renderWindow->display();
     }
 }
 
-sf::RenderWindow* World::get_window() {
+sf::RenderWindow* Game::get_window() {
     return renderWindow;
 }
 
-World::~World() {
+Game::~Game() {
     for (int i = 0; i < entities.size(); ++i) {
         entities[i]->destroy_entity();
         delete entities[i];
@@ -89,39 +100,30 @@ World::~World() {
     delete instance;
 }
 
-WorldMap *World::get_map() {
+WorldMap *Game::get_map() {
     return map;
 }
 
-void World::load_map(sf::Image image) {
+void Game::load_map(sf::Image image) {
     map = new WorldMap(image);
-//    const char* path = "";
-//
-//    for (int x = 0; x < map->WIDTH; ++x) {
-//        for (int y = 0; y < map->HEIGHT; ++y) {
-//            if(map->get(x, y) > 0)
-//            {
-//                if(map->get(x, y) == 1)
-//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\1.png";
-//                if (map->get(x, y) == 2)
-//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\2.png";
-//                if(map->get(x, y) == 3)
-//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\3.png";
-//                if(map->get(x, y) == 4)
-//                    path = "D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\4.png";
-//
-////                Wall *wall = new Wall(path);
-////                wall->set_position(x, y);
-////                push_entity(wall);
-//            }
-//        }
-//    }
+}
+void Game::load_scene(Scene * scene)
+{
+    if(currentScene)
+        delete currentScene;
+
+    for (int i = 0; i < entities.size(); ++i) {
+        delete entities[i];
+    }
+
+    currentScene = scene;
+    scene->upload();
 }
 
-Player *World::get_player() {
+Player *Game::get_player() {
     return player;
 }
 
-sf::Vector2<float> World::get_player_pos() {
+sf::Vector2<float> Game::get_player_pos() {
     return player->get_position();
 }

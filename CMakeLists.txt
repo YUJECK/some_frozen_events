@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(libs/SFML)
 
 add_executable(some_frozen_events main.cpp
-        apMoon/World.h
-        apMoon/World.cpp
+        apMoon/Game.h
+        apMoon/Game.cpp
         apMoon/Entity.h
         apMoon/Entity.cpp
         apMoon/Component.cpp
@@ -45,6 +45,22 @@ add_executable(some_frozen_events main.cpp
         Health.h
         PlayerHealth.cpp
         PlayerHealth.h
+        apMoon/Scene.cpp
+        apMoon/Scene.h
+        apMoon/BasicRenderer.cpp
+        apMoon/BasicRenderer.h
+        content/IntroLevel.cpp
+        content/IntroLevel.h
+        apMoon/GUI/GUILevel.cpp
+        apMoon/GUI/GUILevel.h
+        apMoon/GUI/GUIElement.cpp
+        apMoon/GUI/GUIElement.h
+        apMoon/GUI/GUIRenderer.cpp
+        apMoon/GUI/GUIRenderer.h
+        content/PlayerHUD.cpp
+        content/PlayerHUD.h
+        content/StaticImage.cpp
+        content/StaticImage.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

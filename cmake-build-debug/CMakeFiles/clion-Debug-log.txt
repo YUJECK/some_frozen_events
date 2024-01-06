@@ -9,5 +9,5 @@ CMake Deprecation Warning:
 
 
 -- Configuring done (0.2s)
--- Generating done (0.2s)
+-- Generating done (0.1s)
 -- Build files have been written to: D:/VS PROJECTS/C++/sfe/some_frozen_events-curr-/cmake-build-debug

@@ -24,7 +24,7 @@ private:
 
 public:
     Entity();
-    ~Entity();
+    virtual ~Entity();
 
     virtual void start_entity() = 0;
 

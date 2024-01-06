@@ -1,22 +1,16 @@
 #include <SFML/Graphics.hpp>
-#include "apMoon/World.h"
+#include "apMoon/Game.h"
 #include "Player.h"
+#include "content/IntroLevel.h"
 
 int main()
 {
     srand(time(NULL));
 
-    Player *testEntity = new Player;
-    testEntity->set_position(3, 3);
+    IntroLevel * intro = new IntroLevel;
+    Game::get_instance()->load_scene(intro);
 
-    sf::Image image;
-    testEntity->name = "test";
-    image.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\FirstLevel.png");
+    Game::get_instance()->start_game_loop();
 
-    World::get_instance()->load_map(image);
-    World::get_instance()->push_entity(testEntity);
-    World::get_instance()->start_game_loop();
-
-    delete testEntity;
     return 0;
 }

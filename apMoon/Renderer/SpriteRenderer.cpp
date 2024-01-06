@@ -44,7 +44,7 @@ sf::Image *SpriteRenderer::get_image() {
 }
 
 float SpriteRenderer::get_distance_to_player() {
-    return std::sqrt(std::abs(this->daddy->get_position().x - World::get_instance()->get_player_pos().x)
+    return std::sqrt(std::abs(this->daddy->get_position().x - Game::get_instance()->get_player_pos().x)
                         +
-                        std::abs(this->daddy->get_position().y - World::get_instance()->get_player_pos().y));
+                        std::abs(this->daddy->get_position().y - Game::get_instance()->get_player_pos().y));
 }
