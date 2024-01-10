@@ -114,11 +114,11 @@ void BaseRenderer::draw(IRendererComponent *drawables[], int drawablesCount, sf:
             drawEnd = MAP_HEIGHT - 1;
         }
 
-        if (drawMode == DRAW_3D) { // drawing 3d render
-            Stripe *stripe = new Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY), side);
+        if (drawMode == DRAW_3D)
+        { // drawing 3d render
+            Stripe* stripe = new Stripe(x, drawStart, drawEnd, hit, dist(posX, posY, mapX, mapY), side);
 
             drawLine(*stripe, window, prevStripe);
-            drawLine(*stripe, window, nullptr);
 
             if(prevStripe)
                 delete prevStripe;
@@ -146,7 +146,7 @@ void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window, Stripe* pre
 
         sf::RectangleShape *shape = new sf::RectangleShape;
 
-        shape->setSize(sf::Vector2f(xScale, (stripe.yEnd - stripe.yStart) * CELL_SIZE * yScale));
+        shape->setSize(sf::Vector2f(CELL_SIZE * xScale, (stripe.yEnd - stripe.yStart) * CELL_SIZE * yScale));
         shape->setPosition(stripe.x * CELL_SIZE * xScale, stripe.yStart * CELL_SIZE * yScale);
 
         switch (stripe.wallIndex) {
@@ -202,7 +202,7 @@ void BaseRenderer::drawLine(Stripe stripe, sf::RenderWindow* window, Stripe* pre
                 btwYEnd -= 1;
             }
 
-            shape->setSize(sf::Vector2f(1* xScale, (btwYEnd - btwYStart)* yScale));
+            shape->setSize(sf::Vector2f(1, (btwYEnd - btwYStart)));
             shape->setPosition(xbtw * xScale, btwYStart * yScale);
 
             switch (stripe.wallIndex) {

@@ -4,12 +4,12 @@
 #include "Transform.h"
 
 Transform::Transform(float x, float y) {
-    position = new sf::Vector2<float>(x, y);
+    position = new sf::Vector2f(x, y);
     rotation = new float(0);
 }
 
 Transform::Transform() {
-    position = new sf::Vector2<float>(0, 0);
+    position = new sf::Vector2f(0, 0);
     rotation = new float(0);
 }
 

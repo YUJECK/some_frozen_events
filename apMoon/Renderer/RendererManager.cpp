@@ -2,10 +2,7 @@
 // Created by destructive_crab on 12/6/23.
 //
 
-#include <iostream>
 #include "RendererManager.h"
-#include "BaseRenderer.h"
-#include "../World.h"
 
 RendererManager* RendererManager::instance = 0;
 
@@ -14,6 +11,17 @@ RendererManager* RendererManager::get_instance() {
         instance = new RendererManager;
 
     return instance;
+}
+
+RendererManager::RendererManager() {
+    method = new Pseudo3DRenderer;
+    renderWindow = Game::get_instance()->get_window();
+    renderWindow->setFramerateLimit(60);
+}
+
+RendererManager::~RendererManager() {
+    delete method;
+    delete instance;
 }
 
 void RendererManager::push(IRendererComponent *drawable) {
@@ -27,29 +35,25 @@ void RendererManager::erase(IRendererComponent *drawable) {
 
 void RendererManager::tick() {
 
-    if(view)
-    {
-        renderWindow->setView(*view);
-    }
+    if(!std::is_sorted(drawables.begin(), drawables.end()))
+        std::sort(drawables.begin(), drawables.end(), compare_decorations);
 
-    renderer->draw(drawables.data(), drawables.size(), renderWindow);
+    method->draw(drawables.data(), drawables.size(), renderWindow);
 }
 
 RendererManager &RendererManager::operator=(RendererManager) {
     return *this;
 }
 
-RendererManager::RendererManager() {
-    renderer = new BaseRenderer;
-    renderWindow = World::get_instance()->get_window();
-    renderWindow->setFramerateLimit(60);
-}
-
-RendererManager::~RendererManager() {
-    delete renderer;
-    delete instance;
-}
-
 void RendererManager::apply_view(sf::View *view) {
     this->view = view;
+}
+
+bool RendererManager::compare_decorations(IRendererComponent *left, IRendererComponent *right) {
+    return left->get_distance_to_player() > right->get_distance_to_player();
+}
+
+void RendererManager::switch_renderer_method(RendererMethod *method) {
+    delete method;
+    method = method;
 }

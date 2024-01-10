@@ -4,18 +4,21 @@
 
 #include "SpriteRenderer.h"
 
-SpriteRenderer::SpriteRenderer(sf::Texture* texture)
+SpriteRenderer::SpriteRenderer(sf::Texture* tex)
 {
-    this->texture = texture;
-    sprite = new sf::Sprite(*texture);
+    this->texture = tex;
+    image = new sf::Image(tex->copyToImage());
+    sprite = new sf::Sprite(*tex);
 }
 
 SpriteRenderer::SpriteRenderer(const char *path) {
     texture = new sf::Texture;
-
     texture->loadFromFile(path);
-    sprite = new sf::Sprite();
-    sprite->setTexture(*texture);
+
+    sprite = new sf::Sprite(*texture);
+
+    image = new sf::Image;
+    image->loadFromFile(path);
 }
 
 sf::Drawable *SpriteRenderer::get_drawable() {
@@ -28,14 +31,20 @@ SpriteRenderer::~SpriteRenderer() {
 }
 
 void SpriteRenderer::update_component() {
-    sprite->setPosition(daddy->get_position());
-    sprite->setRotation(daddy->get_rotation());
+    //    sprite->setPosition(daddy->get_position());
+//    sprite->setRotation(daddy->get_rotation());
 }
 
-void SpriteRenderer::destroy_component() {
+void SpriteRenderer::destroy_component() { }
 
+void SpriteRenderer::start_component() { }
+
+sf::Image *SpriteRenderer::get_image() {
+    return image;
 }
 
-void SpriteRenderer::start_component()
-{
+float SpriteRenderer::get_distance_to_player() {
+    return std::sqrt(std::abs(this->daddy->get_position().x - Game::get_instance()->get_player_pos().x)
+                        +
+                        std::abs(this->daddy->get_position().y - Game::get_instance()->get_player_pos().y));
 }

@@ -16,3 +16,7 @@ Component::~Component() {
     if(daddy)
         delete daddy;
 }
+
+Entity* Component::get_daddy() const {
+    return daddy;
+}

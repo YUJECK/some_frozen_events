@@ -5,27 +5,17 @@
 #include "Player.h"
 #include "apMoon/Renderer/SpriteRenderer.h"
 #include "MovementComponent.h"
+#include "PlayerShooting.h"
+#include "PlayerHealth.h"
 #include<iostream>
 
 void Player::start_entity()
 {
-//    view = new sf::View;
-//    view->zoom(0.6);
-
-    SpriteRenderer* sp = new SpriteRenderer("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/Square.png");
-
     add_component(new MovementComponent);
-    add_component(sp);
-
-//    RendererManager::get_instance()->apply_view(view);
+    add_component(new PlayerShooting);
+    add_component(new PlayerHealth);
 }
 
-void Player::destroy_entity()
-{
+void Player::destroy_entity() { }
 
-}
-
-void Player::update_entity()
-{
-//    view->setCenter(get_position());
-}
+void Player::update_entity() { }

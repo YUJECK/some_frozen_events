@@ -11,6 +11,7 @@
 class RendererMethod
 {
 public:
+
     virtual void draw(IRendererComponent *drawable[], int drawablesCount, sf::RenderWindow* window) = 0;
 };
 
