@@ -17,7 +17,7 @@ void IntroLevel::upload() {
 
     sf::Image image;
     testEntity->name = "test";
-    image.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\FirstLevel.png");
+    image.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");
 
     Game::get_instance()->load_map(image);
     Game::get_instance()->push_entity(testEntity);

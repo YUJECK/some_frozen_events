@@ -9,8 +9,8 @@ Pseudo3DRenderer::Pseudo3DRenderer()
 {
     PIby180 = PI / 180;
 
-    ceiling_tex.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\ceiling.png");
-    floor_tex.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\floor.png");
+    ceiling_tex.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/ceiling.png");
+    floor_tex.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/floor.png");
 
     WINDOW_WIDTH = Game::get_instance()->get_window()->getSize().x;
     WINDOW_HEIGHT = Game::get_instance()->get_window()->getSize().y;
@@ -51,7 +51,7 @@ void Pseudo3DRenderer::draw(IRendererComponent *drawables[], int drawablesCount,
     }
 
     sf::Image texture;
-    texture.loadFromFile("D:\\VS PROJECTS\\C++\\sfe\\some_frozen_events-curr-\\Assets\\1.png");
+    texture.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/1.png");
 
     //floor and ceiling
 

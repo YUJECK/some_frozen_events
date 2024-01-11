@@ -3,8 +3,6 @@ project(some_frozen_events)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_subdirectory(libs/SFML)
-
 add_executable(some_frozen_events main.cpp
         apMoon/Game.h
         apMoon/Game.cpp

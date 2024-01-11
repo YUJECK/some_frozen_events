@@ -11,7 +11,6 @@
 #include "Renderer/IRendererComponent.h"
 #include "Renderer/RayData.h"
 
-
 #define MAP_WIDTH 64
 #define MAP_HEIGHT 64
 
