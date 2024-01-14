@@ -54,14 +54,19 @@ MapCell * WorldMap::process_color(sf::Color color) {
 }
 
 int WorldMap::get(unsigned int x, unsigned int y) {
-    if(x >= MAP_WIDTH) return 0;
-    if(y >= MAP_HEIGHT) return 0;
+    if(x >= MAP_WIDTH) return 999;
+    if(y >= MAP_HEIGHT) return 999;
+    if(x <= 0) return 999;
+    if(y <= 0) return 999;
 
     return map[x][y]->get_index();
 }
 
 MapCell * WorldMap::get_cell(unsigned int x, unsigned int y) {
-    return map[x][y];
+    if(x < MAP_WIDTH && y < MAP_HEIGHT)
+        return map[x][y];
+
+    return nullptr;
 }
 
 void WorldMap::replace(unsigned int x, unsigned int y, MapCell *to) {
@@ -128,4 +133,17 @@ RayData WorldMap::raycast(sf::Vector2u position, sf::Vector2f direction) {
 
 
     return RayData(hit, sf::Vector2u(mapX, mapY));
+}
+
+void WorldMap::process_entities(Entity **entitiesPull, int entitiesCount) {
+
+    for (int x = 0; x < MAP_WIDTH; ++x) {
+        for (int y = 0; y < MAP_HEIGHT; ++y) {
+            get_cell(x,y)->set_entity(nullptr);
+        }
+    }
+
+    for (int i = 0; i < entitiesCount; ++i) {
+        get_cell(entitiesPull[i]->get_position().x, entitiesPull[i]->get_position().y)->set_entity(entitiesPull[i]);
+    }
 }

@@ -15,21 +15,23 @@ public:
     ~MapCell();
 
     bool is_decoration();
+
+    bool has_entity();
+
     int get_index();
-
-    const char *get_tex_path() const;
     const Entity *get_entity();
-
     sf::Color get_pixel(int x, int y);
 
+    void set_entity(Entity *newEntity);
+
+    const char *get_tex_path() const;
 private:
     int index;
     bool isDecoration;
     const char* tex_path;
-    sf::Image image;
-    Entity * entity;
+    sf::Image wallSprite;
 
-    void set_entity(Entity *entity);
+    Entity * entity = 0;
 };
 
 

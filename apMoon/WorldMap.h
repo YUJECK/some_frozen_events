@@ -29,6 +29,7 @@ public:
 
     RayData raycast(sf::Vector2u position, sf::Vector2f direction);
 
+    void process_entities(Entity **entitiesPull, int entitiesCount);
     void replace(unsigned int x, unsigned int y, MapCell* to);
     void swap(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
 

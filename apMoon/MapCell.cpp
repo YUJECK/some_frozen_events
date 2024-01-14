@@ -3,11 +3,11 @@
 //
 
 #include "MapCell.h"
+#include "Renderer/IRendererComponent.h"
 
 int MapCell::get_index() {
     return index;
 }
-
 
 MapCell::MapCell(int index, const char* texture_path, bool isDec) {
     this->index = index;
@@ -16,7 +16,7 @@ MapCell::MapCell(int index, const char* texture_path, bool isDec) {
 
     if(index > 0)
     {
-        image.loadFromFile(texture_path);
+        wallSprite.loadFromFile(texture_path);
     }
 }
 
@@ -24,7 +24,7 @@ MapCell::~MapCell() {
 }
 
 sf::Color MapCell::get_pixel(int x, int y) {
-    return image.getPixel(x, y);
+    return wallSprite.getPixel(x, y);
 }
 
 bool MapCell::is_decoration() {
@@ -38,6 +38,22 @@ const char *MapCell::get_tex_path() const {
 const Entity *MapCell::get_entity() {
     return entity;
 }
-void MapCell::set_entity(Entity* entity) {
-    this->entity = entity;
+
+void MapCell::set_entity(Entity* newEntity) {
+    this->entity = newEntity;
+
+    if(entity != nullptr)
+    {
+        IRendererComponent* component = nullptr;
+
+        if(entity->has_component(component))
+            isDecoration = true;
+    }
+}
+
+bool MapCell::has_entity() {
+    if(this->entity == nullptr)
+        return false;
+
+    return entity;
 }

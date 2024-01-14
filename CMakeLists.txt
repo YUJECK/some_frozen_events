@@ -37,8 +37,8 @@ add_executable(some_frozen_events main.cpp
         PlayerShooting.h
         apMoon/Renderer/RayData.cpp
         apMoon/Renderer/RayData.h
-        Enemy.cpp
-        Enemy.h
+        content/Enemies/Enemy.cpp
+        content/Enemies/Enemy.h
         Health.cpp
         Health.h
         PlayerHealth.cpp
@@ -59,6 +59,14 @@ add_executable(some_frozen_events main.cpp
         content/PlayerHUD.h
         content/StaticImage.cpp
         content/StaticImage.h
+        content/Enemies/PlayerTrigger.cpp
+        content/Enemies/PlayerTrigger.h
+        content/Enemies/EnemyMovement.cpp
+        content/Enemies/EnemyMovement.h
+        content/Enemies/Pathfinder.h
+        content/Enemies/Pathfinder.cpp
+        content/Enemies/PathNode.cpp
+        content/Enemies/PathNode.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

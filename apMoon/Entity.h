@@ -77,9 +77,11 @@ public:
     }
 
     template<class TComponent>
-    Component* get_component()
+    TComponent* get_component()
     {
-        return components[get_component_index<TComponent>()];
+        TComponent * component = dynamic_cast<TComponent *>(components[get_component_index<TComponent>()]);
+
+        return component;
     }
 
     template<class TComponent>

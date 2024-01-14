@@ -6,19 +6,24 @@
 #include "../apMoon/Game.h"
 #include "PlayerHUD.h"
 #include "../apMoon/GUI/GUIRenderer.h"
+#include "Enemies/Enemy.h"
 
 void IntroLevel::upload() {
     PlayerHUD * hud = new PlayerHUD(sf::Vector2f(0,0), sf::Vector2f(0,0));
 
     GUIRenderer::get_instance()->push_level(hud);
 
-    Player *testEntity = new Player;
-    testEntity->set_position(3, 3);
+    Player *player = new Player;
+    player->set_position(2, 10);
 
-    sf::Image image;
-    testEntity->name = "test";
-    image.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");
+    Enemy *testEnemy = new Enemy;
+    testEnemy->set_position(4, 10);
 
-    Game::get_instance()->load_map(image);
-    Game::get_instance()->push_entity(testEntity);
+    sf::Image intro_level_map;
+    player->name = "Player";
+    intro_level_map.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");
+
+    Game::get_instance()->load_map(intro_level_map);
+    Game::get_instance()->push_entity(player);
+    Game::get_instance()->push_entity(testEnemy);
 }

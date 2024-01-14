@@ -30,10 +30,7 @@ SpriteRenderer::~SpriteRenderer() {
     delete texture;
 }
 
-void SpriteRenderer::update_component() {
-    //    sprite->setPosition(daddy->get_position());
-//    sprite->setRotation(daddy->get_rotation());
-}
+void SpriteRenderer::update_component() { }
 
 void SpriteRenderer::destroy_component() { }
 
@@ -47,4 +44,8 @@ float SpriteRenderer::get_distance_to_player() {
     return std::sqrt(std::abs(this->daddy->get_position().x - Game::get_instance()->get_player_pos().x)
                         +
                         std::abs(this->daddy->get_position().y - Game::get_instance()->get_player_pos().y));
+}
+
+void SpriteRenderer::change_image(const char *path) {
+    image->loadFromFile(path);
 }

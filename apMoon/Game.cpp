@@ -75,6 +75,8 @@ void Game::start_game_loop()
 
         InputService::get_instance()->tick();
 
+        map->process_entities(entities.data(), entities.size());
+
         for (int i = 0; i < entities.size(); ++i) {
             entities[i]->update_entity();
             entities[i]->update_all_components();
