@@ -19,7 +19,7 @@ public:
 
     std::vector<sf::Vector2u> restore_path(PathNode *endNode);
 
-    bool check(PathNode *pNode, std::vector<PathNode *> vector1);
+    bool check(PathNode *node, std::vector<PathNode *> ignore);
 };
 
 #endif //SOME_FROZEN_EVENTS_PATHFINDER_H

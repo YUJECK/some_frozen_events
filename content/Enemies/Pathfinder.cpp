@@ -35,6 +35,7 @@ std::vector<sf::Vector2u> Pathfinder::get_path(sf::Vector2u start, sf::Vector2u 
         }
 
         connectedTemp = get_connected(current, visited);
+        
         toVisit.insert(toVisit.end(), connectedTemp.begin(), connectedTemp.end());
 
         visited.push_back(current);
@@ -89,9 +90,9 @@ std::vector<sf::Vector2u> Pathfinder::restore_path(PathNode *endNode) {
     return path;
 }
 
-bool Pathfinder::check(PathNode *pNode, std::vector<PathNode *> vector1) {
-    for (int i = 0; i < vector1.size(); ++i) {
-        if(pNode->x == vector1[i]->x && pNode->y == vector1[i]->y)
+bool Pathfinder::check(PathNode *node, std::vector<PathNode *> ignore) {
+    for (int i = 0; i < ignore.size(); ++i) {
+        if(node->x == ignore[i]->x && node->y == ignore[i]->y)
             return false;
     }
 
