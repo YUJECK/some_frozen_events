@@ -11,7 +11,7 @@
 
 class MapCell {
 public:
-    MapCell(int index, const char* texture_path, bool dec);
+    MapCell(int index, std::string texture_path, bool dec);
     ~MapCell();
 
     bool is_decoration();
@@ -24,11 +24,11 @@ public:
 
     void set_entity(Entity *newEntity);
 
-    const char *get_tex_path() const;
+    std::string get_tex_path() const;
 private:
     int index;
     bool isDecoration;
-    const char* tex_path;
+    std::string tex_path;
     sf::Image wallSprite;
 
     Entity * entity = 0;

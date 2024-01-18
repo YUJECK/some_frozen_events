@@ -16,7 +16,7 @@ protected:
     void apply_transform() override;
 
 public:
-    StaticImage(const char* imagePath, sf::Vector2f position, sf::Vector2f scale);
+    StaticImage(std::string imagePath, sf::Vector2f position, sf::Vector2f scale);
 
     bool targetable() override;
 

@@ -9,7 +9,7 @@ int MapCell::get_index() {
     return index;
 }
 
-MapCell::MapCell(int index, const char* texture_path, bool isDec) {
+MapCell::MapCell(int index, std::string texture_path, bool isDec) {
     this->index = index;
     this->isDecoration = isDec;
     tex_path = texture_path;
@@ -31,7 +31,7 @@ bool MapCell::is_decoration() {
     return isDecoration;
 }
 
-const char *MapCell::get_tex_path() const {
+std::string MapCell::get_tex_path() const {
     return tex_path;
 }
 

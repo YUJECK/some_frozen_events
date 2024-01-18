@@ -22,7 +22,9 @@ void EnemyMovement::update_component() {
                 sf::Vector2u(daddy->get_position().x,daddy->get_position().y),
                 sf::Vector2u(Game::get_instance()->get_player_pos().x, Game::get_instance()->get_player_pos().y));
 
-        get_daddy()->set_position(path[path.size()-1].x, path[path.size()-1].y);
+        get_daddy()->move_position(sf::Vector2f(path[path.size()-1].x, path[path.size()-1].y) , 0.1f);
+
+        //get_daddy()->set_position(get_daddy()->get_position() + sf::Vector2f(0.1, 0.1));
     }
 }
 

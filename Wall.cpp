@@ -5,7 +5,7 @@
 #include "Wall.h"
 #include "apMoon/Renderer/SpriteRenderer.h"
 
-Wall::Wall(const char *path) {
+Wall::Wall(std::string path) {
     pathToImage = path;
 }
 

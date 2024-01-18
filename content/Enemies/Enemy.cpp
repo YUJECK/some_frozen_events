@@ -13,10 +13,9 @@ Enemy::~Enemy() {
 }
 
 void Enemy::start_entity() {
-
     add_component(new PlayerTrigger(fov));
     add_component(new EnemyMovement());
-    add_component(new SpriteRenderer("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/4.png"));
+    add_component(new SpriteRenderer(Game::process_path("4.png").data()));
 }
 
 void Enemy::update_entity() {
@@ -25,14 +24,14 @@ void Enemy::update_entity() {
         SpriteRenderer* component = nullptr;
 
         if(has_component(component))
-            component->change_image("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/4red.png");
+            component->change_image(Game::process_path("4red.png").data());
     }
     else
     {
         SpriteRenderer* component = nullptr;
 
         if(has_component(component))
-            component->change_image("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/4.png");
+            component->change_image(Game::process_path("4.png").data());
     }
 }
 

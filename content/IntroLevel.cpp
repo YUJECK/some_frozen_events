@@ -21,7 +21,7 @@ void IntroLevel::upload() {
 
     sf::Image intro_level_map;
     player->name = "Player";
-    intro_level_map.loadFromFile("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/FirstLevel.png");
+    intro_level_map.loadFromFile(Game::process_path("FirstLevel.png"));
 
     Game::get_instance()->load_map(intro_level_map);
     Game::get_instance()->push_entity(player);

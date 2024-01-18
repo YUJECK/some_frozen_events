@@ -6,6 +6,7 @@
 #include "../Wall.h"
 #include "Scene.h"
 #include "GUI/GUIRenderer.h"
+#include <cstring>
 
 //
 // Created by destructive_crab on 12/4/23.
@@ -120,6 +121,11 @@ void Game::load_scene(Scene * scene)
 
     currentScene = scene;
     scene->upload();
+}
+
+std::string Game::process_path(std::string resource)
+{
+    return "/home/destructive_crab/dev/ussless_beard/Assets/" + resource;
 }
 
 Player *Game::get_player() {

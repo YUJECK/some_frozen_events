@@ -11,7 +11,7 @@ SpriteRenderer::SpriteRenderer(sf::Texture* tex)
     sprite = new sf::Sprite(*tex);
 }
 
-SpriteRenderer::SpriteRenderer(const char *path) {
+SpriteRenderer::SpriteRenderer(std::string path) {
     texture = new sf::Texture;
     texture->loadFromFile(path);
 

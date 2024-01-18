@@ -5,10 +5,7 @@
 #ifndef SOME_FROZEN_EVENTS_ENTITY_H
 #define SOME_FROZEN_EVENTS_ENTITY_H
 
-#include<map>
-#include<iostream>
 #include<vector>
-#include<typeinfo>
 #include "Component.h"
 #include "Transform.h"
 
@@ -35,6 +32,8 @@ public:
     sf::Vector2<float> get_position();
 
     void set_position(sf::Vector2<float> position);
+
+    void move_position(sf::Vector2<float> position, float speed);
 
     float get_rotation();
 

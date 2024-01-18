@@ -33,11 +33,11 @@ WorldMap::~WorldMap() {
 MapCell * WorldMap::process_color(sf::Color color) {
     MapCell* cell;
 
-    const char* path0 = "";
-    const char* path1 = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/1.png";
-    const char* path2 = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/2.png";
-    const char* path3 = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/3.png";
-    const char* path4 = "/home/destructive_crab/CLionProjects/some_frozen_events/Assets/4.png";
+    std::string path0 = "";
+    std::string path1 = Game::process_path("1.png");
+    std::string path2 = Game::process_path("2.png");
+    std::string path3 = Game::process_path("3.png");
+    std::string path4 = Game::process_path("4.png");
 
     if(color == sf::Color(0, 0, 0, 0))
         cell = new MapCell(0, path0, false);

@@ -9,10 +9,10 @@
 
 class Wall : public Entity {
 private:
-    const char* pathToImage;
+    std::string pathToImage;
 
 public:
-    Wall(const char* path);
+    Wall(std::string path);
 
     void start_entity() override;
     void update_entity() override;

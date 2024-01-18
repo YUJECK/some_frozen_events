@@ -5,7 +5,7 @@
 #include <iostream>
 #include "StaticImage.h"
 
-StaticImage::StaticImage(const char* imagePath, sf::Vector2f position, sf::Vector2f scale)
+StaticImage::StaticImage(std::string imagePath, sf::Vector2f position, sf::Vector2f scale)
 : GUIElement(position, scale)
 {
     sprite = new sf::Sprite;

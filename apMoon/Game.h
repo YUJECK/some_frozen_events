@@ -2,7 +2,6 @@
 #define SOME_FROZEN_EVENTS_GAME_H
 
 #include <vector>
-#include <algorithm>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "Entity.h"
 #include "WorldMap.h"
@@ -22,6 +21,7 @@ public:
     void delete_entity(Entity* entity);
     void load_map(sf::Image image);
     void load_scene(Scene *scene);
+    static std::string process_path(std::string resource);
 
     void start_game_loop();
 private:

@@ -3,12 +3,13 @@
 //
 
 #include "PlayerHUD.h"
+#include "../apMoon/Game.h"
 #include "StaticImage.h"
 
 PlayerHUD::PlayerHUD(const sf::Vector2f &position, const sf::Vector2f &scale) : GUILevel(position, scale) {}
 
 void PlayerHUD::on_pushed() {
-    add_child(new StaticImage("/home/destructive_crab/CLionProjects/some_frozen_events/Assets/1.png", sf::Vector2f(100, 100), sf::Vector2f(1, 1)));
+    add_child(new StaticImage(Game::process_path("1.png"), sf::Vector2f(100, 100), sf::Vector2f(1, 1)));
 }
 
 void PlayerHUD::on_update() {

@@ -13,7 +13,7 @@ class SpriteRenderer : public IRendererComponent
 {
 public:
     SpriteRenderer(sf::Texture* tex);
-    SpriteRenderer(const char* path);
+    SpriteRenderer(std::string path);
     ~SpriteRenderer();
 
     void change_image(const char *path);
