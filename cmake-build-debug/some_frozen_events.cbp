@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="some_frozen_events"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/destructive_crab/dev/ussless_beard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="some_frozen_events">
+				<Option output="/home/destructive_crab/dev/ussless_beard/cmake-build-debug/some_frozen_events" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/destructive_crab/dev/ussless_beard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/../../../../include/c++/13"/>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/../../../../include/c++/13/x86_64-alt-linux"/>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/../../../../include/c++/13/backward"/>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 some_frozen_events"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="some_frozen_events/fast">
+				<Option output="/home/destructive_crab/dev/ussless_beard/cmake-build-debug/some_frozen_events" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/destructive_crab/dev/ussless_beard/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/../../../../include/c++/13"/>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/../../../../include/c++/13/x86_64-alt-linux"/>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/../../../../include/c++/13/backward"/>
+					<Add directory="/usr/lib64/gcc/x86_64-alt-linux/13/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 some_frozen_events/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/destructive_crab/dev/ussless_beard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/destructive_crab/dev/ussless_beard/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/destructive_crab/dev/ussless_beard/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/Health.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/Health.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/MovementComponent.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/MovementComponent.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/Player.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/Player.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/PlayerHealth.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/PlayerHealth.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/PlayerShooting.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/PlayerShooting.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/Wall.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/Wall.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Component.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Component.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Entity.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Entity.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUIElement.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUIElement.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUILevel.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUILevel.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUIRenderer.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUIRenderer.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Game.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Game.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Inputs/InputService.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Inputs/InputService.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/MapCell.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/MapCell.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/Pseudo3DRenderer.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/Pseudo3DRenderer.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RayData.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RayData.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RendererManager.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RendererManager.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RendererMethod.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Scene.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Scene.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Transform.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Transform.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/WorldMap.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/WorldMap.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/Enemy.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/Enemy.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/EnemyMovement.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/EnemyMovement.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/PathNode.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/PathNode.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/Pathfinder.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/Pathfinder.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/PlayerTrigger.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/Enemies/PlayerTrigger.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/IntroLevel.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/IntroLevel.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/PlayerHUD.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/PlayerHUD.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/StaticImage.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/content/StaticImage.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/main.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
