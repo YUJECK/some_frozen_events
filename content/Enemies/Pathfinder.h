@@ -8,18 +8,17 @@
 #include <SFML/System/Vector2.hpp>
 #include "PathNode.h"
 #include <vector>
-#include <queue>
 
 class Pathfinder
 {
 private:
-    std::vector<PathNode *> get_connected(PathNode *center, std::vector<PathNode *> ignore);
+    std::vector<PathNode *> get_connected(PathNode *center, const std::vector<PathNode *>& ignore);
 public:
     std::vector<sf::Vector2u> get_path(sf::Vector2u start, sf::Vector2u end);
 
-    std::vector<sf::Vector2u> restore_path(PathNode *endNode);
+    static std::vector<sf::Vector2u> restore_path(PathNode *endNode);
 
-    bool check(PathNode *node, std::vector<PathNode *> ignore);
+    static bool check(sf::Vector2u node, std::vector<PathNode *> ignore);
 };
 
 #endif //SOME_FROZEN_EVENTS_PATHFINDER_H

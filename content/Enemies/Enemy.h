@@ -13,8 +13,6 @@ class Enemy : public Entity {
 private:
     int fov = 10;
 
-    bool check_trigger();
-
 public:
     ~Enemy() override;
 

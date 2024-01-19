@@ -12,10 +12,8 @@ std::vector<sf::Vector2u> Pathfinder::get_path(sf::Vector2u start, sf::Vector2u 
 
     PathNode* current = new PathNode(start.x, start.y, nullptr);
 
-    auto connectedTemp = get_connected(current, visited);
+    std::vector<PathNode*> connectedTemp = get_connected(current, visited);
     toVisit.insert(toVisit.end(), connectedTemp.begin(), connectedTemp.end());
-
-    int test = 0;
 
     while (toVisit.size() > 0)
     {
@@ -40,36 +38,26 @@ std::vector<sf::Vector2u> Pathfinder::get_path(sf::Vector2u start, sf::Vector2u 
 
         visited.push_back(current);
         toVisit.erase(toVisit.begin());
-
-        //std::cout << current->x << " " << current->y << std::endl;
     }
-
 
     return std::vector<sf::Vector2u>();
 }
 
-std::vector<PathNode *> Pathfinder::get_connected(PathNode *center, std::vector<PathNode *> ignore) {
-    std::vector<PathNode*> connected;
+std::vector<PathNode *> Pathfinder::get_connected(PathNode *center, const std::vector<PathNode *>& ignore) {
+    std::vector<sf::Vector2u> connected;
     std::vector<PathNode*> connectedResult;
 
-    connected.push_back(new PathNode(center->x - 1, center->y + 1, center));
-    connected.push_back(new PathNode(center->x + 1, center->y - 1, center));
-    connected.push_back(new PathNode(center->x + 1, center->y + 1, center));
-    connected.push_back(new PathNode(center->x - 1, center->y - 1, center));
-    connected.push_back(new PathNode(center->x, center->y + 1, center));
-    connected.push_back(new PathNode(center->x, center->y - 1, center));
-    connected.push_back(new PathNode(center->x + 1, center->y, center));
-    connected.push_back(new PathNode(center->x - 1, center->y, center));
+    connected.push_back(sf::Vector2u(center->x, center->y + 1));
+    connected.push_back(sf::Vector2u(center->x, center->y - 1));
+    connected.push_back(sf::Vector2u(center->x + 1, center->y));
+    connected.push_back(sf::Vector2u(center->x - 1, center->y));
 
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 4; ++i) {
 
-        if(Game::get_instance()->get_map()->get(connected[i]->x, connected[i]->y) == 0 && check(connected[i], ignore))
+        if(Game::get_instance()->get_map()->get(connected[i].x, connected[i].y) == 0 && check(connected[i], ignore))
         {
-            connectedResult.push_back(connected[i]);
-            continue;
+            connectedResult.push_back(new PathNode(connected[i].x, connected[i].y, center));
         }
-
-        delete connected[i];
     }
 
     return connectedResult;
@@ -90,9 +78,9 @@ std::vector<sf::Vector2u> Pathfinder::restore_path(PathNode *endNode) {
     return path;
 }
 
-bool Pathfinder::check(PathNode *node, std::vector<PathNode *> ignore) {
+bool Pathfinder::check(sf::Vector2u node, std::vector<PathNode *> ignore) {
     for (int i = 0; i < ignore.size(); ++i) {
-        if(node->x == ignore[i]->x && node->y == ignore[i]->y)
+        if(node.x == ignore[i]->x && node.y == ignore[i]->y)
             return false;
     }
 

@@ -17,7 +17,7 @@
 #define UP_MAP_WIDTH 64
 #define UP_MAP_HEIGHT 64
 
-#define CELL_SIZE 16
+#define CELL_SIZE 24
 
 class WorldMap {
 public:

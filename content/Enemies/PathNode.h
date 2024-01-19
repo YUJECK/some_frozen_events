@@ -15,9 +15,9 @@ public:
 
     PathNode(unsigned int x, unsigned int y, PathNode *prev);
 
-    bool operator==(const PathNode& rhs);
+    bool operator==(const PathNode& rhs) const;
 
-    bool operator!=(const PathNode& rhs);
+    bool operator!=(const PathNode& rhs) const;
 };
 
 
