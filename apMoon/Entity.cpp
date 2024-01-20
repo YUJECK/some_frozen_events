@@ -28,14 +28,18 @@ void Entity::set_position(sf::Vector2<float> position) {
     transform->position->y = position.y;
 }
 
-void Entity::move_position(sf::Vector2<float> position, float speed)
+bool Entity::move_position(sf::Vector2<float> position, float speed)
 {
     auto velocity = position - *transform->position;
 
     velocity.x = std::clamp<float>(velocity.x, -1, 1);
     velocity.y = std::clamp<float>(velocity.y, -1, 1);
 
-    set_position(*transform->position + velocity * speed);
+    auto movedPos = *transform->position + velocity * 0.1f;
+
+    set_position(movedPos);
+
+    return movedPos == position;
 }
 
 void Entity::set_position(float x, float y) {

@@ -11,7 +11,7 @@
 class Enemy : public Entity {
 
 private:
-    int fov = 10;
+    int fov = 15;
 
 public:
     ~Enemy() override;

@@ -14,12 +14,25 @@ private:
 
     const int KEYS_COUNT = 256;
     std::map<int, int> pressingData;
+    sf::Vector2f mouseVelocity;
+    sf::Vector2i mousePosition;
+    sf::Vector2i old_mousePosition;
 
 public:
     InputService();
     ~InputService();
 
     static InputService* get_instance();
+
+    sf::Vector2f mouse_velocity() const
+    {
+        return mouseVelocity;
+    }
+
+    sf::Vector2i mouse_position() const
+    {
+        return mousePosition;
+    }
 
     void tick();
 

@@ -15,6 +15,9 @@ private:
     std::vector<sf::Vector2u> currentPath;
     PlayerTrigger* playerTrigger;
     Pathfinder pathfinder;
+    bool test = false;
+    int test2 = 0;
+    std::vector<sf::Vector2u> path;
 
 public:
     ~EnemyMovement() override;

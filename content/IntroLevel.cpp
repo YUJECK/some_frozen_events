@@ -17,7 +17,7 @@ void IntroLevel::upload() {
     player->set_position(2, 10);
 
     Enemy *testEnemy = new Enemy;
-    testEnemy->set_position(4, 10);
+    testEnemy->set_position(15, 9);
 
     sf::Image intro_level_map;
     player->name = "Player";

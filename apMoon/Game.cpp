@@ -15,7 +15,7 @@ Game* Game::instance = 0;
 
 Game::Game()
 {
-    renderWindow = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "SFML not works!", sf::Style::Resize);
+    renderWindow = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "SFML not works!", sf::Style::Fullscreen);
     windowSize = renderWindow->getSize();
 }
 
@@ -60,19 +60,6 @@ void Game::start_game_loop()
     while (renderWindow->isOpen())
     {
         renderWindow->clear();
-
-        sf::Event event;
-        while (renderWindow->pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed) {
-                renderWindow->close();
-            }
-            if(event.type == sf::Event::Resized)
-            {
-                GUIRenderer::get_instance()->resize(windowSize, renderWindow->getSize());
-                windowSize = renderWindow->getSize();
-            }
-        }
 
         InputService::get_instance()->tick();
 

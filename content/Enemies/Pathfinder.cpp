@@ -74,6 +74,7 @@ std::vector<sf::Vector2u> Pathfinder::restore_path(PathNode *endNode) {
     }
 
     std::reverse(std::begin(path), std::end(path));
+    path.erase(path.begin());
 
     return path;
 }

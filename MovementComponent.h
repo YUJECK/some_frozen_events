@@ -11,7 +11,7 @@ class MovementComponent : public Component
 {
 private:
     double PIby180;
-    float rotateSpeed = 4.2;
+    float rotateSpeed = 3;
 
     float get_x_move();
     float get_y_move();

@@ -4,6 +4,8 @@
 
 #include "InputService.h"
 
+#include "../Game.h"
+
 InputService* InputService::instance = 0;
 
 InputService::InputService() {
@@ -21,6 +23,37 @@ void InputService::tick() {
         else if(pressingData[key] > 0)
             pressingData[key] = -1;
     }
+
+    if(Game::get_instance()->get_window()->hasFocus())
+    {
+        mouseVelocity =
+            sf::Vector2f(
+                (int)mouse_position().x - (int)old_mousePosition.x,
+                (int)mouse_position().y - (int)old_mousePosition.y);
+
+
+        std::cout << sf::Mouse::getPosition().x << " " << sf::Mouse::getPosition().y << std::endl;
+    }
+
+    sf::Event event;
+    while (Game::get_instance()->get_window()->pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed) {
+            Game::get_instance()->get_window()->close();
+        }
+
+        if(event.type == sf::Event::MouseMoved)
+        {
+            old_mousePosition = mouse_position();
+            mousePosition = sf::Mouse::getPosition(*Game::get_instance()->get_window());
+
+            sf::Vector2u size = Game::get_instance()->get_window()->getSize();
+
+            sf::Mouse::setPosition(
+                sf::Vector2i(Game::get_instance()->get_window()->getPosition().x + size.x/2, Game::get_instance()->get_window()->getPosition().x + size.y/2), *Game::get_instance()->get_window());
+        }
+    }
+
 }
 
 bool InputService::is_key_pressed(sf::Keyboard::Key key) {

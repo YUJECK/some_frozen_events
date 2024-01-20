@@ -33,7 +33,7 @@ public:
 
     void set_position(sf::Vector2<float> position);
 
-    void move_position(sf::Vector2<float> position, float speed);
+    bool move_position(sf::Vector2<float> position, float speed);
 
     float get_rotation();
 
