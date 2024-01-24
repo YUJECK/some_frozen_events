@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/destructive_crab/dev/ussless_beard/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -272,6 +272,30 @@ Wall.s: Wall.cpp.s
 Wall.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/some_frozen_events.dir/build.make CMakeFiles/some_frozen_events.dir/Wall.cpp.s
 .PHONY : Wall.cpp.s
+
+apMoon/Animation.o: apMoon/Animation.cpp.o
+.PHONY : apMoon/Animation.o
+
+# target to build an object file
+apMoon/Animation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/some_frozen_events.dir/build.make CMakeFiles/some_frozen_events.dir/apMoon/Animation.cpp.o
+.PHONY : apMoon/Animation.cpp.o
+
+apMoon/Animation.i: apMoon/Animation.cpp.i
+.PHONY : apMoon/Animation.i
+
+# target to preprocess a source file
+apMoon/Animation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/some_frozen_events.dir/build.make CMakeFiles/some_frozen_events.dir/apMoon/Animation.cpp.i
+.PHONY : apMoon/Animation.cpp.i
+
+apMoon/Animation.s: apMoon/Animation.cpp.s
+.PHONY : apMoon/Animation.s
+
+# target to generate assembly for a file
+apMoon/Animation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/some_frozen_events.dir/build.make CMakeFiles/some_frozen_events.dir/apMoon/Animation.cpp.s
+.PHONY : apMoon/Animation.cpp.s
 
 apMoon/BasicRenderer.o: apMoon/BasicRenderer.cpp.o
 .PHONY : apMoon/BasicRenderer.o
@@ -924,6 +948,9 @@ help:
 	@echo "... Wall.o"
 	@echo "... Wall.i"
 	@echo "... Wall.s"
+	@echo "... apMoon/Animation.o"
+	@echo "... apMoon/Animation.i"
+	@echo "... apMoon/Animation.s"
 	@echo "... apMoon/BasicRenderer.o"
 	@echo "... apMoon/BasicRenderer.i"
 	@echo "... apMoon/BasicRenderer.s"

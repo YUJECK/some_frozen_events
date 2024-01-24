@@ -116,6 +116,12 @@
 		<Unit filename="/home/destructive_crab/dev/ussless_beard/Wall.h">
 			<Option target="some_frozen_events"/>
 		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Animation.cpp">
+			<Option target="some_frozen_events"/>
+		</Unit>
+		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/Animation.h">
+			<Option target="some_frozen_events"/>
+		</Unit>
 		<Unit filename="/home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.cpp">
 			<Option target="some_frozen_events"/>
 		</Unit>

@@ -52,6 +52,11 @@ std::vector<PathNode *> Pathfinder::get_connected(PathNode *center, const std::v
     connected.push_back(sf::Vector2u(center->x + 1, center->y));
     connected.push_back(sf::Vector2u(center->x - 1, center->y));
 
+    connected.push_back(sf::Vector2u(center->x+1, center->y + 1));
+    connected.push_back(sf::Vector2u(center->x + 1, center->y - 1));
+    connected.push_back(sf::Vector2u(center->x - 1, center->y + 1));
+    connected.push_back(sf::Vector2u(center->x - 1, center->y -1));
+
     for (int i = 0; i < 4; ++i) {
 
         if(Game::get_instance()->get_map()->get(connected[i].x, connected[i].y) == 0 && check(connected[i], ignore))

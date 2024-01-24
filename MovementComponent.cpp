@@ -38,17 +38,14 @@ void MovementComponent::update_component() {
         }
     }
 
-    if (InputService::get_instance()->mouse_velocity().x > 0)
+    if (InputService::get_instance()->is_key_pressed(sf::Keyboard::D))
     {
         daddy->rotate(rotateSpeed);
-        std::cout << InputService::get_instance()->mouse_velocity().x << std::endl;
     }
 
-
-    if (InputService::get_instance()->mouse_velocity().x < 0)
+    if (InputService::get_instance()->is_key_pressed(sf::Keyboard::A))
     {
         daddy->rotate(-rotateSpeed);
-        std::cout << InputService::get_instance()->mouse_velocity().x << std::endl;
     }
 }
 

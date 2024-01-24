@@ -2021,6 +2021,414 @@ CMakeFiles/some_frozen_events.dir/Wall.cpp.o: /home/destructive_crab/dev/ussless
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h
 
+CMakeFiles/some_frozen_events.dir/apMoon/Animation.cpp.o: /home/destructive_crab/dev/ussless_beard/apMoon/Animation.cpp \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Animation.h \
+  /home/destructive_crab/dev/ussless_beard/Player.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Entity.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Component.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Entity.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Game.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/MapCell.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/MapCell.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RayData.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Scene.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Transform.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/WorldMap.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.h \
+  /usr/include/SFML/Config.hpp \
+  /usr/include/SFML/Graphics.hpp \
+  /usr/include/SFML/Graphics/BlendMode.hpp \
+  /usr/include/SFML/Graphics/CircleShape.hpp \
+  /usr/include/SFML/Graphics/Color.hpp \
+  /usr/include/SFML/Graphics/ConvexShape.hpp \
+  /usr/include/SFML/Graphics/Drawable.hpp \
+  /usr/include/SFML/Graphics/Export.hpp \
+  /usr/include/SFML/Graphics/Font.hpp \
+  /usr/include/SFML/Graphics/Glsl.hpp \
+  /usr/include/SFML/Graphics/Glsl.inl \
+  /usr/include/SFML/Graphics/Glyph.hpp \
+  /usr/include/SFML/Graphics/Image.hpp \
+  /usr/include/SFML/Graphics/PrimitiveType.hpp \
+  /usr/include/SFML/Graphics/Rect.hpp \
+  /usr/include/SFML/Graphics/Rect.inl \
+  /usr/include/SFML/Graphics/RectangleShape.hpp \
+  /usr/include/SFML/Graphics/RenderStates.hpp \
+  /usr/include/SFML/Graphics/RenderTarget.hpp \
+  /usr/include/SFML/Graphics/RenderTexture.hpp \
+  /usr/include/SFML/Graphics/RenderWindow.hpp \
+  /usr/include/SFML/Graphics/Shader.hpp \
+  /usr/include/SFML/Graphics/Shape.hpp \
+  /usr/include/SFML/Graphics/Sprite.hpp \
+  /usr/include/SFML/Graphics/Text.hpp \
+  /usr/include/SFML/Graphics/Texture.hpp \
+  /usr/include/SFML/Graphics/Transform.hpp \
+  /usr/include/SFML/Graphics/Transformable.hpp \
+  /usr/include/SFML/Graphics/Vertex.hpp \
+  /usr/include/SFML/Graphics/VertexArray.hpp \
+  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  /usr/include/SFML/Graphics/View.hpp \
+  /usr/include/SFML/System.hpp \
+  /usr/include/SFML/System/Clock.hpp \
+  /usr/include/SFML/System/Err.hpp \
+  /usr/include/SFML/System/Export.hpp \
+  /usr/include/SFML/System/FileInputStream.hpp \
+  /usr/include/SFML/System/InputStream.hpp \
+  /usr/include/SFML/System/Lock.hpp \
+  /usr/include/SFML/System/MemoryInputStream.hpp \
+  /usr/include/SFML/System/Mutex.hpp \
+  /usr/include/SFML/System/NonCopyable.hpp \
+  /usr/include/SFML/System/Sleep.hpp \
+  /usr/include/SFML/System/String.hpp \
+  /usr/include/SFML/System/String.inl \
+  /usr/include/SFML/System/Thread.hpp \
+  /usr/include/SFML/System/Thread.inl \
+  /usr/include/SFML/System/ThreadLocal.hpp \
+  /usr/include/SFML/System/ThreadLocalPtr.hpp \
+  /usr/include/SFML/System/ThreadLocalPtr.inl \
+  /usr/include/SFML/System/Time.hpp \
+  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/SFML/System/Utf.inl \
+  /usr/include/SFML/System/Vector2.hpp \
+  /usr/include/SFML/System/Vector2.inl \
+  /usr/include/SFML/System/Vector3.hpp \
+  /usr/include/SFML/System/Vector3.inl \
+  /usr/include/SFML/Window.hpp \
+  /usr/include/SFML/Window/Clipboard.hpp \
+  /usr/include/SFML/Window/Context.hpp \
+  /usr/include/SFML/Window/ContextSettings.hpp \
+  /usr/include/SFML/Window/Cursor.hpp \
+  /usr/include/SFML/Window/Event.hpp \
+  /usr/include/SFML/Window/Export.hpp \
+  /usr/include/SFML/Window/GlResource.hpp \
+  /usr/include/SFML/Window/Joystick.hpp \
+  /usr/include/SFML/Window/Keyboard.hpp \
+  /usr/include/SFML/Window/Mouse.hpp \
+  /usr/include/SFML/Window/Sensor.hpp \
+  /usr/include/SFML/Window/Touch.hpp \
+  /usr/include/SFML/Window/VideoMode.hpp \
+  /usr/include/SFML/Window/Vulkan.hpp \
+  /usr/include/SFML/Window/Window.hpp \
+  /usr/include/SFML/Window/WindowBase.hpp \
+  /usr/include/SFML/Window/WindowHandle.hpp \
+  /usr/include/SFML/Window/WindowStyle.hpp \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm/unistd.h \
+  /usr/include/asm/unistd_64.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/confname.h \
+  /usr/include/bits/cpu-set.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/errno.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-logb.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/iscanonical.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/bits/locale.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/semaphore.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/syscall.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/error_t.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/types/struct_sched_param.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/types/wint_t.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/bits/unistd_ext.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/wctype-wchar.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/array \
+  /usr/include/c++/13/atomic \
+  /usr/include/c++/13/backward/binders.h \
+  /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/align.h \
+  /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/13/bits/atomic_timed_wait.h \
+  /usr/include/c++/13/bits/atomic_wait.h \
+  /usr/include/c++/13/bits/basic_ios.h \
+  /usr/include/c++/13/bits/basic_ios.tcc \
+  /usr/include/c++/13/bits/basic_string.h \
+  /usr/include/c++/13/bits/basic_string.tcc \
+  /usr/include/c++/13/bits/char_traits.h \
+  /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
+  /usr/include/c++/13/bits/chrono_io.h \
+  /usr/include/c++/13/bits/codecvt.h \
+  /usr/include/c++/13/bits/concept_check.h \
+  /usr/include/c++/13/bits/cpp_type_traits.h \
+  /usr/include/c++/13/bits/cxxabi_forced.h \
+  /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
+  /usr/include/c++/13/bits/erase_if.h \
+  /usr/include/c++/13/bits/exception.h \
+  /usr/include/c++/13/bits/exception_defines.h \
+  /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/functexcept.h \
+  /usr/include/c++/13/bits/functional_hash.h \
+  /usr/include/c++/13/bits/hash_bytes.h \
+  /usr/include/c++/13/bits/invoke.h \
+  /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
+  /usr/include/c++/13/bits/iterator_concepts.h \
+  /usr/include/c++/13/bits/locale_classes.h \
+  /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
+  /usr/include/c++/13/bits/locale_facets.h \
+  /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/localefwd.h \
+  /usr/include/c++/13/bits/max_size_type.h \
+  /usr/include/c++/13/bits/memory_resource.h \
+  /usr/include/c++/13/bits/memoryfwd.h \
+  /usr/include/c++/13/bits/move.h \
+  /usr/include/c++/13/bits/nested_exception.h \
+  /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/node_handle.h \
+  /usr/include/c++/13/bits/ostream.tcc \
+  /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
+  /usr/include/c++/13/bits/postypes.h \
+  /usr/include/c++/13/bits/predefined_ops.h \
+  /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
+  /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/ranges_algo.h \
+  /usr/include/c++/13/bits/ranges_algobase.h \
+  /usr/include/c++/13/bits/ranges_base.h \
+  /usr/include/c++/13/bits/ranges_cmp.h \
+  /usr/include/c++/13/bits/ranges_util.h \
+  /usr/include/c++/13/bits/refwrap.h \
+  /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/semaphore_base.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/specfun.h \
+  /usr/include/c++/13/bits/sstream.tcc \
+  /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_bvector.h \
+  /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/stl_iterator.h \
+  /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_map.h \
+  /usr/include/c++/13/bits/stl_multimap.h \
+  /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/stream_iterator.h \
+  /usr/include/c++/13/bits/streambuf.tcc \
+  /usr/include/c++/13/bits/streambuf_iterator.h \
+  /usr/include/c++/13/bits/string_view.tcc \
+  /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/bits/uses_allocator_args.h \
+  /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cctype \
+  /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/charconv \
+  /usr/include/c++/13/chrono \
+  /usr/include/c++/13/climits \
+  /usr/include/c++/13/clocale \
+  /usr/include/c++/13/cmath \
+  /usr/include/c++/13/compare \
+  /usr/include/c++/13/concepts \
+  /usr/include/c++/13/cstddef \
+  /usr/include/c++/13/cstdint \
+  /usr/include/c++/13/cstdio \
+  /usr/include/c++/13/cstdlib \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/cwchar \
+  /usr/include/c++/13/cwctype \
+  /usr/include/c++/13/debug/assertions.h \
+  /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/ext/alloc_traits.h \
+  /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/ext/numeric_traits.h \
+  /usr/include/c++/13/ext/string_conversions.h \
+  /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/format \
+  /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
+  /usr/include/c++/13/ios \
+  /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
+  /usr/include/c++/13/iterator \
+  /usr/include/c++/13/limits \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/map \
+  /usr/include/c++/13/new \
+  /usr/include/c++/13/numbers \
+  /usr/include/c++/13/optional \
+  /usr/include/c++/13/ostream \
+  /usr/include/c++/13/pstl/execution_defs.h \
+  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/ratio \
+  /usr/include/c++/13/semaphore \
+  /usr/include/c++/13/span \
+  /usr/include/c++/13/sstream \
+  /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stop_token \
+  /usr/include/c++/13/streambuf \
+  /usr/include/c++/13/string \
+  /usr/include/c++/13/string_view \
+  /usr/include/c++/13/system_error \
+  /usr/include/c++/13/thread \
+  /usr/include/c++/13/tr1/bessel_function.tcc \
+  /usr/include/c++/13/tr1/beta_function.tcc \
+  /usr/include/c++/13/tr1/ell_integral.tcc \
+  /usr/include/c++/13/tr1/exp_integral.tcc \
+  /usr/include/c++/13/tr1/gamma.tcc \
+  /usr/include/c++/13/tr1/hypergeometric.tcc \
+  /usr/include/c++/13/tr1/legendre_function.tcc \
+  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/13/tr1/poly_hermite.tcc \
+  /usr/include/c++/13/tr1/poly_laguerre.tcc \
+  /usr/include/c++/13/tr1/riemann_zeta.tcc \
+  /usr/include/c++/13/tr1/special_function_util.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/type_traits \
+  /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/variant \
+  /usr/include/c++/13/vector \
+  /usr/include/c++/13/x86_64-alt-linux/bits/atomic_word.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/c++allocator.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/c++config.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/c++locale.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/cpu_defines.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/ctype_base.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/ctype_inline.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/error_constants.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/gthr-default.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/gthr.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/messages_members.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/os_defines.h \
+  /usr/include/c++/13/x86_64-alt-linux/bits/time_members.h \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/libintl.h \
+  /usr/include/limits.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
+  /usr/include/locale.h \
+  /usr/include/math.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/semaphore.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/sys/select.h \
+  /usr/include/sys/single_threaded.h \
+  /usr/include/sys/syscall.h \
+  /usr/include/sys/time.h \
+  /usr/include/sys/types.h \
+  /usr/include/syscall.h \
+  /usr/include/time.h \
+  /usr/include/unistd.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/limits.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/stdarg.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/stddef.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/syslimits.h
+
 CMakeFiles/some_frozen_events.dir/apMoon/BasicRenderer.cpp.o: /home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.cpp \
   /home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Component.h \
@@ -7295,21 +7703,24 @@ CMakeFiles/some_frozen_events.dir/apMoon/WorldMap.cpp.o: /home/destructive_crab/
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h
 
 CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive_crab/dev/ussless_beard/content/Enemies/Enemy.cpp \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Animation.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Component.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Entity.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Game.h \
   /home/destructive_crab/dev/ussless_beard/Player.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Entity.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Component.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Entity.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Game.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/MapCell.h \
-  /home/destructive_crab/dev/ussless_beard/apMoon/Component.h \
-  /home/destructive_crab/dev/ussless_beard/apMoon/Game.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/MapCell.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/RayData.h \
-  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Scene.h \
-  /home/destructive_crab/dev/ussless_beard/apMoon/Transform.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/WorldMap.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Transform.h \
   /home/destructive_crab/dev/ussless_beard/content/Enemies/Enemy.h \
   /home/destructive_crab/dev/ussless_beard/content/Enemies/EnemyMovement.h \
   /home/destructive_crab/dev/ussless_beard/content/Enemies/PathNode.h \
@@ -7395,31 +7806,42 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/asm/unistd.h \
+  /usr/include/asm/unistd_64.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
+  /usr/include/bits/confname.h \
   /usr/include/bits/cpu-set.h \
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
+  /usr/include/bits/environments.h \
   /usr/include/bits/errno.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/flt-eval-method.h \
   /usr/include/bits/fp-fast.h \
   /usr/include/bits/fp-logb.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/getopt_posix.h \
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/posix_opt.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/sched.h \
   /usr/include/bits/select.h \
+  /usr/include/bits/semaphore.h \
   /usr/include/bits/setjmp.h \
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-uintn.h \
@@ -7427,6 +7849,7 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/syscall.h \
   /usr/include/bits/thread-shared-types.h \
   /usr/include/bits/time.h \
   /usr/include/bits/time64.h \
@@ -7459,28 +7882,42 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/bits/unistd_ext.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/array \
+  /usr/include/c++/13/atomic \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/13/bits/atomic_timed_wait.h \
+  /usr/include/c++/13/bits/atomic_wait.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
+  /usr/include/c++/13/bits/chrono_io.h \
   /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
@@ -7509,9 +7946,11 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/ranges_algo.h \
   /usr/include/c++/13/bits/ranges_algobase.h \
@@ -7520,8 +7959,14 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/c++/13/bits/ranges_util.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/semaphore_base.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/specfun.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -7543,18 +7988,24 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/charconv \
+  /usr/include/c++/13/chrono \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
   /usr/include/c++/13/concepts \
   /usr/include/c++/13/cstddef \
+  /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/ctime \
@@ -7566,10 +8017,13 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/format \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
@@ -7580,15 +8034,22 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/c++/13/map \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
+  /usr/include/c++/13/optional \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/ratio \
+  /usr/include/c++/13/semaphore \
+  /usr/include/c++/13/span \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stop_token \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
   /usr/include/c++/13/system_error \
+  /usr/include/c++/13/thread \
   /usr/include/c++/13/tr1/bessel_function.tcc \
   /usr/include/c++/13/tr1/beta_function.tcc \
   /usr/include/c++/13/tr1/ell_integral.tcc \
@@ -7604,6 +8065,7 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/variant \
   /usr/include/c++/13/vector \
   /usr/include/c++/13/x86_64-alt-linux/bits/atomic_word.h \
   /usr/include/c++/13/x86_64-alt-linux/bits/c++allocator.h \
@@ -7626,11 +8088,15 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/libintl.h \
+  /usr/include/limits.h \
+  /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
+  /usr/include/semaphore.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
@@ -7638,13 +8104,19 @@ CMakeFiles/some_frozen_events.dir/content/Enemies/Enemy.cpp.o: /home/destructive
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
+  /usr/include/sys/syscall.h \
+  /usr/include/sys/time.h \
   /usr/include/sys/types.h \
+  /usr/include/syscall.h \
   /usr/include/time.h \
+  /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stddef.h \
-  /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/syslimits.h
 
 CMakeFiles/some_frozen_events.dir/content/Enemies/EnemyMovement.cpp.o: /home/destructive_crab/dev/ussless_beard/content/Enemies/EnemyMovement.cpp \
   /home/destructive_crab/dev/ussless_beard/Player.h \
@@ -8710,7 +9182,11 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /home/destructive_crab/dev/ussless_beard/apMoon/Scene.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Transform.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/WorldMap.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Animation.h \
   /home/destructive_crab/dev/ussless_beard/apMoon/Entity.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Game.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/IRendererComponent.h \
+  /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.h \
   /home/destructive_crab/dev/ussless_beard/content/Enemies/Enemy.h \
   /home/destructive_crab/dev/ussless_beard/content/IntroLevel.h \
   /home/destructive_crab/dev/ussless_beard/content/PlayerHUD.h \
@@ -8794,31 +9270,42 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/asm/unistd.h \
+  /usr/include/asm/unistd_64.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
+  /usr/include/bits/confname.h \
   /usr/include/bits/cpu-set.h \
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
+  /usr/include/bits/environments.h \
   /usr/include/bits/errno.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/flt-eval-method.h \
   /usr/include/bits/fp-fast.h \
   /usr/include/bits/fp-logb.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/getopt_posix.h \
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/posix_opt.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/sched.h \
   /usr/include/bits/select.h \
+  /usr/include/bits/semaphore.h \
   /usr/include/bits/setjmp.h \
   /usr/include/bits/stdint-intn.h \
   /usr/include/bits/stdint-uintn.h \
@@ -8826,6 +9313,7 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
   /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/syscall.h \
   /usr/include/bits/thread-shared-types.h \
   /usr/include/bits/time.h \
   /usr/include/bits/time64.h \
@@ -8858,28 +9346,42 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/bits/unistd_ext.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/array \
+  /usr/include/c++/13/atomic \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
+  /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/13/bits/atomic_timed_wait.h \
+  /usr/include/c++/13/bits/atomic_wait.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
   /usr/include/c++/13/bits/basic_string.h \
   /usr/include/c++/13/bits/basic_string.tcc \
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
+  /usr/include/c++/13/bits/chrono.h \
+  /usr/include/c++/13/bits/chrono_io.h \
   /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
@@ -8908,9 +9410,11 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
+  /usr/include/c++/13/bits/parse_numbers.h \
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/ranges_algo.h \
   /usr/include/c++/13/bits/ranges_algobase.h \
@@ -8919,8 +9423,14 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/c++/13/bits/ranges_util.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/semaphore_base.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/specfun.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -8942,18 +9452,24 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/this_thread_sleep.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/charconv \
+  /usr/include/c++/13/chrono \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
   /usr/include/c++/13/concepts \
   /usr/include/c++/13/cstddef \
+  /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
   /usr/include/c++/13/cstdlib \
   /usr/include/c++/13/ctime \
@@ -8965,10 +9481,13 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
+  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/ext/numeric_traits.h \
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
+  /usr/include/c++/13/format \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
@@ -8979,15 +9498,22 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/c++/13/map \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
+  /usr/include/c++/13/optional \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/ratio \
+  /usr/include/c++/13/semaphore \
+  /usr/include/c++/13/span \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stop_token \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
   /usr/include/c++/13/system_error \
+  /usr/include/c++/13/thread \
   /usr/include/c++/13/tr1/bessel_function.tcc \
   /usr/include/c++/13/tr1/beta_function.tcc \
   /usr/include/c++/13/tr1/ell_integral.tcc \
@@ -9003,6 +9529,7 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/variant \
   /usr/include/c++/13/vector \
   /usr/include/c++/13/x86_64-alt-linux/bits/atomic_word.h \
   /usr/include/c++/13/x86_64-alt-linux/bits/c++allocator.h \
@@ -9025,11 +9552,15 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/libintl.h \
+  /usr/include/limits.h \
+  /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
+  /usr/include/semaphore.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
@@ -9037,13 +9568,19 @@ CMakeFiles/some_frozen_events.dir/content/IntroLevel.cpp.o: /home/destructive_cr
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/single_threaded.h \
+  /usr/include/sys/syscall.h \
+  /usr/include/sys/time.h \
   /usr/include/sys/types.h \
+  /usr/include/syscall.h \
   /usr/include/time.h \
+  /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-alt-linux/13/include/stddef.h \
-  /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-alt-linux/13/include/syslimits.h
 
 CMakeFiles/some_frozen_events.dir/content/PlayerHUD.cpp.o: /home/destructive_crab/dev/ussless_beard/content/PlayerHUD.cpp \
   /home/destructive_crab/dev/ussless_beard/Player.h \
@@ -10055,8 +10592,6 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /home/destructive_crab/dev/ussless_beard/content/IntroLevel.cpp:
 
-/home/destructive_crab/dev/ussless_beard/content/Enemies/PlayerTrigger.cpp:
-
 /home/destructive_crab/dev/ussless_beard/content/Enemies/Pathfinder.cpp:
 
 /home/destructive_crab/dev/ussless_beard/content/Enemies/PathNode.cpp:
@@ -10099,7 +10634,67 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.h:
 
+/usr/lib64/gcc/x86_64-alt-linux/13/include/limits.h:
+
+/usr/include/syscall.h:
+
+/usr/include/c++/13/variant:
+
+/usr/include/c++/13/thread:
+
+/usr/include/c++/13/semaphore:
+
+/usr/include/c++/13/iomanip:
+
+/usr/include/c++/13/format:
+
+/usr/include/sys/syscall.h:
+
+/usr/include/c++/13/ext/concurrence.h:
+
+/home/destructive_crab/dev/ussless_beard/content/Enemies/PlayerTrigger.cpp:
+
+/usr/include/c++/13/chrono:
+
+/usr/include/c++/13/charconv:
+
+/usr/include/c++/13/bits/sstream.tcc:
+
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/usr/include/c++/13/bits/semaphore_base.h:
+
+/usr/include/c++/13/bits/quoted_string.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/13/array:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/c++/13/bits/align.h:
+
+/usr/include/bits/getopt_core.h:
+
 /home/destructive_crab/dev/ussless_beard/apMoon/BasicRenderer.cpp:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/asm/unistd_64.h:
+
+/home/destructive_crab/dev/ussless_beard/apMoon/Animation.h:
+
+/usr/include/bits/uio_lim.h:
+
+/home/destructive_crab/dev/ussless_beard/apMoon/Animation.cpp:
 
 /home/destructive_crab/dev/ussless_beard/Wall.cpp:
 
@@ -10133,6 +10728,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/bits/concept_check.h:
 
+/usr/include/c++/13/optional:
+
 /usr/include/c++/13/ext/numeric_traits.h:
 
 /usr/include/c++/13/bits/stl_tree.h:
@@ -10144,6 +10741,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/c++/13/bits/algorithmfwd.h:
 
 /usr/include/bits/types/__FILE.h:
+
+/usr/include/c++/13/bits/chrono_io.h:
 
 /usr/include/c++/13/algorithm:
 
@@ -10171,6 +10770,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/SFML/System/Utf.inl:
 
+/usr/include/c++/13/bits/std_mutex.h:
+
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/bits/types/sigset_t.h:
@@ -10190,6 +10791,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/c++/13/bits/exception_ptr.h:
 
 /usr/include/bits/types/clock_t.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
@@ -10235,6 +10838,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/bits/locale.h:
 
+/usr/include/bits/syscall.h:
+
 /usr/include/c++/13/bits/specfun.h:
 
 /usr/include/bits/libc-header-start.h:
@@ -10277,11 +10882,15 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/bits/atomic_wide_counter.h:
 
+/usr/include/bits/getopt_posix.h:
+
 /usr/include/asm-generic/errno.h:
 
 /home/destructive_crab/dev/ussless_beard/apMoon/Entity.cpp:
 
 /usr/include/bits/types/timer_t.h:
+
+/usr/include/c++/13/bits/this_thread_sleep.h:
 
 /usr/include/c++/13/bits/locale_facets_nonio.tcc:
 
@@ -10313,9 +10922,13 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/SFML/Window/Clipboard.hpp:
 
+/usr/include/sys/time.h:
+
 /usr/include/bits/types/struct_itimerspec.h:
 
 /usr/include/bits/endian.h:
+
+/usr/lib64/gcc/x86_64-alt-linux/13/include/syslimits.h:
 
 /usr/include/SFML/System/Utf.hpp:
 
@@ -10355,13 +10968,19 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/SFML/Graphics/Rect.hpp:
 
+/usr/include/c++/13/bits/enable_special_members.h:
+
 /usr/include/c++/13/bits/ranges_algo.h:
+
+/usr/include/c++/13/bits/atomic_timed_wait.h:
 
 /usr/include/SFML/System/String.inl:
 
 /usr/include/bits/errno.h:
 
 /usr/include/SFML/Graphics/PrimitiveType.hpp:
+
+/usr/include/bits/semaphore.h:
 
 /home/destructive_crab/dev/ussless_beard/Health.cpp:
 
@@ -10383,6 +11002,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/bits/ptr_traits.h:
 
+/usr/include/c++/13/bits/chrono.h:
+
 /usr/include/SFML/System/ThreadLocal.hpp:
 
 /usr/include/bits/stdint-uintn.h:
@@ -10395,9 +11016,13 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/SFML/System/Vector3.inl:
 
+/usr/include/c++/13/atomic:
+
 /usr/include/c++/13/bits/locale_conv.h:
 
 /usr/lib64/gcc/x86_64-alt-linux/13/include/stdint.h:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/bits/cpu-set.h:
 
@@ -10418,6 +11043,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/libintl.h:
 
 /usr/include/SFML/Window/Vulkan.hpp:
+
+/usr/include/asm/unistd.h:
 
 /usr/include/c++/13/tr1/poly_hermite.tcc:
 
@@ -10444,6 +11071,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/c++/13/bits/basic_ios.h:
 
 /home/destructive_crab/dev/ussless_beard/content/PlayerHUD.h:
+
+/usr/include/c++/13/span:
 
 /usr/include/c++/13/map:
 
@@ -10509,6 +11138,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/SFML/Graphics/Export.hpp:
 
+/usr/include/limits.h:
+
 /usr/include/bits/waitstatus.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
@@ -10537,6 +11168,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/SFML/Window/Cursor.hpp:
 
+/usr/include/linux/close_range.h:
+
 /usr/include/stdio.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
@@ -10551,6 +11184,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.cpp:
 
+/usr/include/c++/13/bits/atomic_wait.h:
+
 /usr/include/SFML/Window/Mouse.hpp:
 
 /usr/include/SFML/Window/Sensor.hpp:
@@ -10558,6 +11193,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/c++/13/cstring:
 
 /usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/bits/unistd_ext.h:
 
 /usr/include/c++/13/bits/functexcept.h:
 
@@ -10601,6 +11238,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/type_traits:
 
+/usr/include/bits/posix1_lim.h:
+
 /usr/include/bits/fp-fast.h:
 
 /usr/include/c++/13/bits/node_handle.h:
@@ -10612,6 +11251,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/bits/select.h:
 
 /usr/include/c++/13/numbers:
+
+/usr/include/unistd.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
@@ -10651,6 +11292,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/bits/stl_pair.h:
 
+/usr/include/c++/13/bits/unique_ptr.h:
+
 /usr/include/bits/floatn.h:
 
 /usr/include/c++/13/bits/stl_vector.h:
@@ -10663,15 +11306,21 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
 
+/usr/include/linux/limits.h:
+
 /usr/include/c++/13/bits/uses_allocator_args.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/climits:
 
 /usr/include/c++/13/x86_64-alt-linux/bits/atomic_word.h:
 
 /usr/include/c++/13/bits/vector.tcc:
 
 /usr/include/c++/13/clocale:
+
+/usr/include/c++/13/cstdint:
 
 /home/destructive_crab/dev/ussless_beard/apMoon/Renderer/SpriteRenderer.h:
 
@@ -10685,9 +11334,13 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/cstdlib:
 
+/usr/include/c++/13/stop_token:
+
 /usr/include/bits/flt-eval-method.h:
 
 /home/destructive_crab/dev/ussless_beard/content/StaticImage.cpp:
+
+/usr/include/c++/13/sstream:
 
 /home/destructive_crab/dev/ussless_beard/Health.h:
 
@@ -10702,6 +11355,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/c++/13/bits/nested_exception.h:
 
 /usr/include/c++/13/ext/atomicity.h:
+
+/usr/include/c++/13/bits/std_thread.h:
 
 /usr/include/stdint.h:
 
@@ -10739,6 +11394,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/pstl/execution_defs.h:
 
+/usr/include/c++/13/bits/atomic_base.h:
+
 /usr/include/c++/13/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/13/x86_64-alt-linux/bits/gthr.h:
@@ -10767,7 +11424,11 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 
 /usr/include/c++/13/x86_64-alt-linux/bits/c++config.h:
 
+/usr/include/semaphore.h:
+
 /usr/include/c++/13/x86_64-alt-linux/bits/c++locale.h:
+
+/usr/include/c++/13/ratio:
 
 /usr/include/sys/single_threaded.h:
 
@@ -10788,6 +11449,8 @@ CMakeFiles/some_frozen_events.dir/main.cpp.o: /home/destructive_crab/dev/ussless
 /usr/include/endian.h:
 
 /home/destructive_crab/dev/ussless_beard/apMoon/GUI/GUIElement.h:
+
+/usr/include/bits/xopen_lim.h:
 
 /usr/include/gnu/stubs-64.h:
 

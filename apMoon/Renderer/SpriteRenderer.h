@@ -17,6 +17,7 @@ public:
     ~SpriteRenderer();
 
     void change_image(const char *path);
+    void change_sprite(sf::Sprite* sprite);
 
     sf::Drawable * get_drawable() override;
     sf::Image * get_image() override;

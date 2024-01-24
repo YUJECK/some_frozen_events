@@ -7,11 +7,14 @@
 
 
 #include "../../apMoon/Entity.h"
+#include "../../apMoon/Animation.h"
 
 class Enemy : public Entity {
 
 private:
-    int fov = 15;
+    int fov = 10;
+    Animation * walkAnimation;
+    SpriteRenderer * spriteRenderer;
 
 public:
     ~Enemy() override;

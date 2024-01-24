@@ -49,3 +49,8 @@ float SpriteRenderer::get_distance_to_player() {
 void SpriteRenderer::change_image(const char *path) {
     image->loadFromFile(path);
 }
+
+void SpriteRenderer::change_sprite(sf::Sprite *sprite) {
+    this->sprite = sprite;
+    image = new sf::Image(sprite->getTexture()->copyToImage());
+}

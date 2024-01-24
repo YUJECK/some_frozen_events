@@ -67,6 +67,8 @@ add_executable(some_frozen_events main.cpp
         content/Enemies/Pathfinder.cpp
         content/Enemies/PathNode.cpp
         content/Enemies/PathNode.h
+        apMoon/Animation.cpp
+        apMoon/Animation.h
 )
 
 target_link_libraries(some_frozen_events PRIVATE sfml-graphics sfml-system sfml-window)

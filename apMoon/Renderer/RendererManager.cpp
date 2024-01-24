@@ -16,7 +16,6 @@ RendererManager* RendererManager::get_instance() {
 RendererManager::RendererManager() {
     method = new Pseudo3DRenderer;
     renderWindow = Game::get_instance()->get_window();
-    renderWindow->setFramerateLimit(60);
 }
 
 RendererManager::~RendererManager() {

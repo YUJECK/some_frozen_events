@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/some_frozen_events.dir/PlayerShooting.cpp.o.d"
   "CMakeFiles/some_frozen_events.dir/Wall.cpp.o"
   "CMakeFiles/some_frozen_events.dir/Wall.cpp.o.d"
+  "CMakeFiles/some_frozen_events.dir/apMoon/Animation.cpp.o"
+  "CMakeFiles/some_frozen_events.dir/apMoon/Animation.cpp.o.d"
   "CMakeFiles/some_frozen_events.dir/apMoon/BasicRenderer.cpp.o"
   "CMakeFiles/some_frozen_events.dir/apMoon/BasicRenderer.cpp.o.d"
   "CMakeFiles/some_frozen_events.dir/apMoon/Component.cpp.o"

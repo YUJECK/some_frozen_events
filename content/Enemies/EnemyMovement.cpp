@@ -25,8 +25,10 @@ void EnemyMovement::update_component() {
         test2 = 0;
     }
 
-    if(get_daddy()->move_position(sf::Vector2f(path[test2].x, path[test2].y) , 0.1f)){}
-        // test2++;
+    if(path.size() > test2 && get_daddy()->move_position(sf::Vector2f(path[test2].x, path[test2].y) , 0.1f))
+    {
+        test2++;
+    }
 }
 
 void EnemyMovement::destroy_component() {

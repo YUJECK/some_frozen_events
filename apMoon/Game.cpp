@@ -16,6 +16,7 @@ Game* Game::instance = 0;
 Game::Game()
 {
     renderWindow = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "SFML not works!", sf::Style::Fullscreen);
+    renderWindow->setFramerateLimit(60);
     windowSize = renderWindow->getSize();
 }
 

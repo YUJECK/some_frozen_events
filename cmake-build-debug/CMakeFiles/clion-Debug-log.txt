@@ -1,4 +1,4 @@
-/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/destructive_crab/dev/ussless_beard -B /home/destructive_crab/dev/ussless_beard/cmake-build-debug
+/home/destructive_crab/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/destructive_crab/dev/ussless_beard -B /home/destructive_crab/dev/ussless_beard/cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 

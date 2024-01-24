@@ -24,16 +24,14 @@ void InputService::tick() {
             pressingData[key] = -1;
     }
 
-    if(Game::get_instance()->get_window()->hasFocus())
-    {
-        mouseVelocity =
-            sf::Vector2f(
-                (int)mouse_position().x - (int)old_mousePosition.x,
-                (int)mouse_position().y - (int)old_mousePosition.y);
-
-
-        std::cout << sf::Mouse::getPosition().x << " " << sf::Mouse::getPosition().y << std::endl;
-    }
+    // mousePosition = sf::Mouse::getPosition(*Game::get_instance()->get_window());
+    //
+    // mouseVelocity =
+    //     sf::Vector2f(
+    //         (int)mouse_position().x - (int)old_mousePosition.x,
+    //         (int)mouse_position().y - (int)old_mousePosition.y);
+    //
+    // old_mousePosition = mouse_position();
 
     sf::Event event;
     while (Game::get_instance()->get_window()->pollEvent(event))
@@ -42,16 +40,16 @@ void InputService::tick() {
             Game::get_instance()->get_window()->close();
         }
 
-        if(event.type == sf::Event::MouseMoved)
-        {
-            old_mousePosition = mouse_position();
-            mousePosition = sf::Mouse::getPosition(*Game::get_instance()->get_window());
-
-            sf::Vector2u size = Game::get_instance()->get_window()->getSize();
-
-            sf::Mouse::setPosition(
-                sf::Vector2i(Game::get_instance()->get_window()->getPosition().x + size.x/2, Game::get_instance()->get_window()->getPosition().x + size.y/2), *Game::get_instance()->get_window());
-        }
+        // if(event.type == sf::Event::MouseMoved)
+        // {
+        //     old_mousePosition = mouse_position();
+        //     mousePosition = sf::Mouse::getPosition(*Game::get_instance()->get_window());
+        //
+        //     sf::Vector2u size = Game::get_instance()->get_window()->getSize();
+        //
+        //     sf::Mouse::setPosition(
+        //         sf::Vector2i(Game::get_instance()->get_window()->getPosition().x + size.x/2, Game::get_instance()->get_window()->getPosition().x + size.y/2), *Game::get_instance()->get_window());
+        // }
     }
 
 }
